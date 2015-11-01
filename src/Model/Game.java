@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 
 /**
  * Created by Dave on 9/16/2015.
+ *
  */
 public class Game {
     private Player[] players;
@@ -44,20 +45,24 @@ public class Game {
         int playersCreated = 1;
         //initialize non-AI player
         if (realPlayer) {
-            String playerName = getPlayerInput("Enter Player name: ", false);
-            players[0] = new Player(playerName, 0, table, true,printAll,AIPersonality.NONE);
+            String playerName = getPlayerInput("--> Enter Player name: \n", false);
+            players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
             playersCreated++;
         }
+
         //initalize AI players
-        players[playersCreated - 1] = new Player("Sticky Fingers",playersCreated,table,false,printAll,AIPersonality.STICKY_FINGERS);
+        Trait t = Trait.LONE_WOLF;
+        players[playersCreated - 1] = new Player(t.toString(),playersCreated,table,false, t);
         playersCreated++;
         while (playersCreated <= 5) {
-            players[playersCreated - 1] = new Player("Player " + playersCreated, playersCreated, table, false,printAll,AIPersonality.NONE);
+            players[playersCreated - 1] = new Player("Player " + playersCreated, playersCreated, table, false, Trait.Normal_Player);
             playersCreated++;
         }
         this.players = players;
         startRound = players[0];
     }
+
+
 
 
     /**
@@ -69,6 +74,7 @@ public class Game {
         scoreboard.newRound();
         dealer.dealCards(handSize);
         setTeams();
+        updateTeams();
 
         //play hands in round
         for (int hand = 0; hand < 6; hand++) {
@@ -78,46 +84,35 @@ public class Game {
         }
         endRound();
         dealer.collectCards();
-        shiftPlayers(null);
         if (printAll) System.out.println("---end round---\n");
     }
 
     /**
      * choose who picks up blind
-     * based on this, sets partner and non-partner team in players[]
+     * based on this,
      */
     private void setTeams() {
-        boolean pickedUp = false;
-        while (!pickedUp) {
-            for (Player p : players) {
-                if (p.isPlayer()) {//non ai player
-                    if (printAll) {
-                        System.out.println("Your current hand: \n");
-                        p.printHand();
-                    }
-                    if (getPlayerInput("pickup blind? y/n: ", true).equals("y")) {//player choses to pick up
-                        scoreboard.setPicker(p);
-                        p.pickUpBlind();
-                        p.printHand();
-                        Card c1 = askPlayerCard("Choose first card to bury: ", p);
-                        Card c2 = askPlayerCard("Choose second card to bury: ", p);
-                        p.buryCards(c1, c2);
-                        pickedUp = true;
-                    }
-                } else if (p.chooseToPickUp()) {//ai player
-                    scoreboard.setPicker(p); //note picker must come before partner
-                    pickedUp = true;
-                    break;
-                }
-            }
-            if (!pickedUp) { //blind not picked up by any player
-                if(printAll) System.out.println("Blind not picked up: Leaster will be played!!");
-                scoreboard.setLeaster();
-                table.setLeaster();
-                pickedUp=true;
+        for (Player p : players) {
+            if (p.isPlayer() && askPlayerToPickUp(p)) {//non ai player and chooses to pick up
+                scoreboard.setPicker(p);
+                return;
+            } else if (p.chooseToPickUp()) {//ai player
+                scoreboard.setPicker(p); //note picker must come before partner
+                return;
             }
         }
-        //updates partners on scoreboard
+        //blind not picked up by any player
+        if(printAll) System.out.println("Blind not picked up: Leaster will be played!!");
+        scoreboard.setLeaster();
+        table.setLeaster();
+
+
+
+    }
+
+    //updates partners on scoreboard
+    //sets partner and non-partner team in players[]
+    private void updateTeams(){
         for (Player p : players) {
             if (p.checkIsPartner()) scoreboard.setPartner(p);
             if (p.hasBlitzers()) scoreboard.setBlitzers(true);
@@ -125,10 +120,48 @@ public class Game {
     }
 
     /**
+     * asks player to pick up
+     * if true, asks for cards to bury and if want to play alone
+     * @return true if picks up, false otherwise
+     */
+    boolean askPlayerToPickUp(Player p){
+        if (printAll) { //shows player hand to see if want to pick up
+            System.out.println("Your current hand: \n");
+            p.printHand(false);
+            System.out.print("\n");
+        }
+        if (getPlayerInput("--> pick up blind? y/n: \n", true).equals("y")) {//player chooses to pick up
+            p.pickUpBlind();
+
+            if(p.getHand().contains(24)){//picked up and contains j of d
+                p.incrAbleToPlayAlone();
+                if(getPlayerInput("--> would you like to call up? \n", true).equals("y")){//call up
+                    p.setNotPlayAlone();
+                } else{ //not calling up
+                    p.setPlayAlone();
+                }
+            }
+
+            System.out.println("--> your hand is: \n");
+            p.printHand(false);
+            Card c1 = askPlayerCard(p,"--> Choose first card to bury: \n",true);
+            p.getHand().remove(c1);
+            System.out.print("\t buried card: ");c1.printCard();
+            Card c2 = askPlayerCard(p,"--> Choose second card to bury: \n",true);
+            p.getHand().remove(c2);
+            System.out.print("\t buried card: ");c2.printCard();
+            p.buryCards(c1, c2);
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * resets player variables
      * shifts players one seat over for new round
      */
     private void endRound() {
+        shiftPlayers(null);
         scoreboard.awardPoints(printAll); //tallies scores and ends round
         if (printAll) {
             scoreboard.printRoundDetails();
@@ -180,11 +213,9 @@ public class Game {
     private Player playHand() {
         for (Player p : players) {
             if (p.isPlayer()) {//ask non-AI to play card until valid
-                System.out.println("Your hand is: \n");
-                p.printHand();
-                Card c = askPlayerCard("Choose card to play: ", p);
-                while (!p.playCard(c))
-                    c = askPlayerCard("Choose card to play: ", p);
+                System.out.println("--> Your hand is: \n");
+                p.printHand(true);
+                p.playCard(askPlayerCard(p, "--> Choose card to play: \n", false));
             } else p.playCard();
         }
         Player winner = table.getWinner();
@@ -207,19 +238,19 @@ public class Game {
             System.out.print(prompt);
             input = bufferedReader.readLine();
         } catch (IOException e) {
-            System.out.println("error reading input");
+            System.out.println("ERROR READING INPUT");
             e.printStackTrace();
             System.exit(1);
         }
         if (input == null) {//no string entered
-            System.out.println("invalid input");
-            getPlayerInput(prompt, yesOrNo);
+            System.out.println("NO STRING ENTERED");
+            return getPlayerInput(prompt, yesOrNo);
         }
         if (yesOrNo) {//y/n prompt
             if (!input.equals("y") && !input.equals("n")) {
                 System.out.println(input);
-                System.out.println("invalid string (not 'y' or 'n')");
-                getPlayerInput(prompt, yesOrNo);
+                System.out.println("INVALID STRING (not 'y' or 'n')");
+                return getPlayerInput(prompt, false);
             }
 
         }
@@ -229,18 +260,30 @@ public class Game {
     /**
      * asks player to play a card
      * checks if valid card
-     * checks if in player hand
      *
      * @param prompt prompt to be displayed
-     * @param p      player chose from players[]
+     * @param buryCard is this asking for a card to be buried
+     * @param p player playing card
      * @return card played
      */
-    private Card askPlayerCard(String prompt, Player p) {
+    private Card askPlayerCard(Player p,String prompt,boolean buryCard) {
         String in = getPlayerInput(prompt, false);
         Card toPlay = dealer.getCardID(in);
-        if (toPlay.getId() == -1) {
-            System.out.println("invalid input");
-            askPlayerCard(prompt, p);
+        try{
+            if (toPlay.id() == -1) {//no card found
+                throw new IOException("ILLEGAL INPUT / NO CARD FOUND");
+            }
+            else if(!p.getHand().contains(toPlay)) //card not in hand
+                throw new IOException("Card not in hand");
+
+            else if(!buryCard){//card played in game
+                if(!table.validMove(toPlay,p.getHand()))
+                    throw new IOException();
+            }
+        } catch(IOException e){
+            if(e.getMessage()!=null)
+                System.out.println("\t" + e.getMessage() + " for input " + in);
+            return askPlayerCard(p, prompt, buryCard);
         }
         return toPlay;
     }
@@ -254,7 +297,7 @@ public class Game {
             System.out.print("---" + p.getUsername() + "---\n");
             if (p.isOnPartnerTeam()) System.out.println(p.getUsername() + " is partner");
             if (p.pickedUp()) System.out.println(p.getUsername() + " picked up");
-            p.printHand();
+            p.printHand(true);
             System.out.println("");
         }
     }
@@ -275,8 +318,6 @@ public class Game {
         }
 
     }
-
-
 
     public void printResults(){
         scoreboard.printScores();

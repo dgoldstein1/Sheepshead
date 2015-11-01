@@ -32,6 +32,47 @@ public class Hand {
         return hand.get(i);
     }
 
+    /**
+     * gets middle card
+     *
+     * @return Card middle
+     * @throws IllegalStateException
+     */
+    public Card middleCard(List<Card> possibilities) {
+        if (possibilities == null) possibilities = hand;
+        int mid = 15, closetToMid = mid + 2;
+        Card midC = null;
+        for (Card c : possibilities) {
+            if (Math.abs(mid - c.id()) < closetToMid) {
+                closetToMid = Math.abs(mid - c.id());
+                midC = c;
+            }
+        }
+        if (midC == null) {
+            throw new IllegalStateException("no card found in middleCard()");
+        }
+        return midC;
+    }
+
+    /**
+     * gets lowest card
+     *
+     * @param possibilities list of options to choose from, default = null
+     * @return lowest card in possibilites
+     */
+    public Card lowestCard(List<Card> possibilities) {
+        if (possibilities == null) possibilities = hand;
+        Card toPlay = null;
+        int lowestPoints = 32;
+        for (Card c : possibilities) {
+            if (c.id() < lowestPoints) {
+                toPlay = c;
+                lowestPoints = c.id();
+            }
+        }
+        return toPlay;
+    }
+
     /*
         getters + setters
      */
@@ -39,6 +80,7 @@ public class Hand {
     //prints contents of hand
     public void printHand() {
         for (Card c : hand) {
+            System.out.print("\t");
             c.printCard();
         }
     }
@@ -65,6 +107,18 @@ public class Hand {
     }
 
     /**
+     * check if hand has trump
+     *
+     * @return true if yes, no otherwise
+     */
+    public boolean containsTrump() {
+        for (Card c : hand) {
+            if (c.isTrump()) return true;
+        }
+        return false;
+    }
+
+    /**
      * checks if Card c is in hand
      *
      * @param c Card in hand
@@ -86,7 +140,7 @@ public class Hand {
      */
     public boolean contains(int id) {
         for (Card c : hand) {
-            if (c.getId() == id) return true;
+            if (c.id() == id) return true;
         }
         return false;
     }
@@ -131,16 +185,19 @@ public class Hand {
 
     /**
      * returns card given id
+     *
      * @param id Card id (int 0-31)
      * @return Card, else exits if out of range
      */
-    public Card getCard(int id){
-        for(Card c : hand){
-            if(c.getId()==id)
+    public Card getCard(int id) {
+        for (Card c : hand) {
+            if (c.id() == id)
                 return c;
         }
         System.out.println("NO CARD FOUND IN HAND id : " + id);
         System.exit(1);
         return null; //unreachable code
     }
+
+
 }

@@ -38,11 +38,11 @@ public class Card {
     }
 
     public boolean greaterThan(Card c) {
-        return id > c.getId();
+        return id > c.id();
     }
 
     public boolean equals(Card c) {
-        return id == c.getId();
+        return id == c.id();
     }
 
     //getters and setters
@@ -50,7 +50,7 @@ public class Card {
         return value;
     }
 
-    public int getId() {
+    public int id() {
         return id;
     }
 

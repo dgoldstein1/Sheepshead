@@ -3,4 +3,8 @@ package Model;
 /**
  * Created by Dave on 9/15/2015.
  */
-public enum Value {SEVEN, EIGHT, NINE, ACE, TEN, KING, JACK, QUEEN}
+
+/**
+ * Values are the 'face values' given to each card
+ */
+public enum Value {SEVEN, EIGHT, NINE, KING, TEN, ACE, JACK, QUEEN}

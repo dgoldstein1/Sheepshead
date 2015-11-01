@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,16 +18,19 @@ public class Table {
     private Card partnerCard, cardLed;
     private int currHandNumber;
     private boolean printAll, leaster;
-    private Player leasterBlindWinner;
+    private Player partner;
+    private List<Card> cardsPlayed;
 
     public Table(boolean printAll) {
         currHandNumber = 0;
         table = new ArrayList<Card>();
+        cardsPlayed = new ArrayList<Card>();
         currentHand = new HandHistory();
         blind = new Card[2];
         this.printAll = printAll;
-        leasterBlindWinner = null;
         leaster = false;
+        partner=null;
+        partnerCard = new Card(Value.JACK, Suit.DIAMONDS, 24); //init to j of d
     }
 
     /**
@@ -57,9 +61,7 @@ public class Table {
      * @param cards
      */
     public void returnBlind(Card[] cards) {
-        for (Card c : cards) {
-            table.add(c);
-        }
+        Collections.addAll(table, cards);
     }
 
     /**
@@ -67,26 +69,31 @@ public class Table {
      * players card on table and sets cads led if first card played
      *
      * @param c    Card to play
-     * @param name name of player
+     * @param player name of player
      */
-    public void playCard(Card c, Player name) {
-        currentHand.add(new CardHistory(c, name));
-        if (cardLed == null) {
+    public void playCard(Card c, Player player) {
+        cardsPlayed.add(c); //add to list of cards played (curr round cards)
+        table.add(c);       //add to table (curr hand cards)
+
+        if(c.equals(partnerCard)){//played partner card
+            partner = player;
+        }
+        currentHand.add(new CardHistory(c, player));
+        if (cardLed == null) {//first card played
             cardLed = c;
         }
-        table.add(c);
         if (printAll) {
-            System.out.print("\t" + name.getUsername() + " played ");
+            System.out.print("\t" + player.getUsername() + " played ");
             c.printCard();
         }
-        if (leaster && c.getId() == 24) { //J of D played
+        if (leaster && c.id() == 24) { //J of D played
             if(printAll)System.out.println("\t\tblind revealed:");
             for (Card card : blind) {
                 if(printAll){
                     System.out.print("\t\t");
                     card.printCard();
                 }
-                currentHand.add(new CardHistory(card, name));
+                currentHand.add(new CardHistory(card, player));
                 table.add(card);
             }
             blind = null;
@@ -102,9 +109,7 @@ public class Table {
     public List<Card> clearTable() {
         List<Card> temp = new ArrayList<Card>(table);
         if (blind != null && leaster) { //is leaster and blind not used
-            for (Card c : blind) {
-                temp.add(c);
-            }
+            Collections.addAll(temp, blind);
         }
         table.clear();
         leaster = false;
@@ -119,11 +124,12 @@ public class Table {
      */
     public HandHistory endHand() {
         currHandNumber = currHandNumber + 1 % 6;
-        partnerCard = null;
+        partnerCard = new Card(Value.JACK, Suit.DIAMONDS, 24); //reset to jack of diamonds
         cardLed = null;
         HandHistory temp = currentHand;
         currentHand = new HandHistory();
-        leasterBlindWinner = null;
+        partner = null;
+        cardsPlayed.clear();
         return temp;
 
     }
@@ -163,11 +169,11 @@ public class Table {
     /**
      * called by player if choosing to call up past J of D
      *
-     * @param id       new partner card number
+     * @param h       player hand
      * @param username username of player calling up
      */
-    public void callUp(int id, String username) {
-        partnerCard = intToCard(id);
+    public void callUp(String username,Hand h) {
+        partnerCard = intToCard(callUpHelper(h));
         if (printAll) {
             System.out.print("\t" + username + " calling up to ");
             partnerCard.printCard();
@@ -176,14 +182,60 @@ public class Table {
     }
 
     /**
-     * gets the current partner card
+     * after a player has decide to call up,
+     * chooses which card to call up to given hand
+     *
+     * @param h hand
+     * @return Card to Call up to
+     */
+    private int callUpHelper(Hand h) {
+        for (int i = 25; i < 30; i++) { //start at j of h
+            if (!h.contains(i)) {
+                return i;
+            }
+        }
+        return 30; //player has JD -> QC
+    }
+
+    /**
+     * a given card played is valid move
+     *
+     * @param cardToPlay Card to Play
+     * @param h          current Hand
+     * @return true if valid move, false if invalid
+     */
+    public boolean validMove(Card cardToPlay, Hand h) {
+        if(cardLed==null)return true; //first card played
+        Suit suitLed = cardLed.getCardSuit();
+        Suit playedSuit = cardToPlay.getCardSuit();
+        if (cardLed.isTrump())
+            suitLed = Suit.DIAMONDS; // make suit diamonds if trump led
+        if (cardLed.isTrump())
+            playedSuit = Suit.DIAMONDS; //make suit diamonds if card is trump
+
+        if (!h.contains(cardToPlay)) return false; //not in hand
+        if (cardLed.id() != -1) { //not first card led
+            if (h.contains(suitLed)) { //suit is in hand
+                if (playedSuit != suitLed) { //trump played and trump not led or vice versa
+                    System.out.print("\tDOES NOT FOLLOW SUIT. Suit led: " + cardLed.getCardSuit());
+                    System.out.print("\t, but card played: ");
+                    cardToPlay.printCard();
+                    return false; //not of same suit
+                }
+            }
+        }
+        return true;
+    }
+
+
+
+    /**
+     * gets the current partner card (card called up to)
      *
      * @return partner Card, default = J of D
      */
     public Card getPartnerCard() {
-        if (partnerCard != null)
-            return partnerCard;
-        return new Card(Value.JACK, Suit.DIAMONDS, -1);
+        return partnerCard;
     }
 
     /**
@@ -255,6 +307,20 @@ public class Table {
     public boolean isLeasterRound() {
         return leaster;
     }
+
+    /**
+     * checks if partner is known to all
+     * @returns Player partner if partner is revlealed, null otherwise
+     */
+    public Player currPartner(){
+       return partner;
+    }
+
+    /**
+     * gets curr list of hand histories of round
+     * @return currHandHistory
+     */
+    public HandHistory getCurrentHand(){return currentHand;}
 
 
 }

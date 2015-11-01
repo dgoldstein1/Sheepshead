@@ -16,26 +16,24 @@ public class Player {
     private Table table;
     private Card[] blind;
     private Card[] buried;
-    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon;
+    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone;
     private boolean pickedUp;
     private boolean onPartnerTeam;
     private boolean isPlayer;
     private PlayerBrain brain;
     private int playerID;
-    private boolean printAll;
     private boolean playAlone;
 
-    public Player(String username, int playerID, Table table, boolean isPlayer,boolean printAll,AIPersonality trait1) {
+    public Player(String username, int playerID, Table table, boolean isPlayer, Trait trait1) {
         this.username = username;
         this.table = table;
-        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon= 0;
+        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone= 0;
         onPartnerTeam = false;
         blind = null;
         pickedUp = false;
         this.isPlayer = isPlayer;
-        brain = new PlayerBrain(trait1,AIPersonality.NONE);
+        brain = new PlayerBrain(trait1, Trait.Normal_Player);
         this.playerID = playerID;
-        this.printAll = printAll;
         playAlone=false;
 
     }
@@ -50,11 +48,7 @@ public class Player {
      */
     public boolean chooseToPickUp() {
         if (brain.chooseToPickUp(hand)) {
-            pickedUp = true;
-            numberPickedUp++;
-            onPartnerTeam=true;
-            blind = table.pickUpBlind(username);
-            hand.addBlindtoHand(blind);
+            pickUpBlind();
             chooseToCallUp();
             buryCards(brain.toBury(hand));
             return true;
@@ -65,12 +59,14 @@ public class Player {
 
     /**
      * called by non-player in Game when chooses to pick up
+     * also called internally as a helper
      *
      * @return success
      */
     public boolean pickUpBlind() {
         pickedUp = true;
         numberPickedUp++;
+        onPartnerTeam = true;
         blind = table.pickUpBlind(username);
         hand.addBlindtoHand(blind);
         return true;
@@ -99,16 +95,34 @@ public class Player {
      */
     public boolean chooseToCallUp() {
         if(hand.contains(24)){ //contains j of d
+            ableToPlayAlone++;
             if(brain.playAlone(hand)){//choose to play alone
-                numberPlayAlone++;
-                playAlone = true;
+                setPlayAlone();
             }
             else{//choose to call up
-                table.callUp(brain.callUp(hand), username); //notifies table
+                setNotPlayAlone();
             }
         }
         return true;
     }
+
+    /**
+     * used as helper for nonAI to
+     * notify playing alone
+     */
+    public void setPlayAlone(){
+        numberPlayAlone++;
+        playAlone = true;
+    }
+
+    /**
+     * helper to for nonAI to
+     * notify not playing alone
+     */
+    public void setNotPlayAlone(){
+        table.callUp(username,hand); //notifies table
+    }
+
 
     /**
      * internal helper function called by chooseToPickUp()
@@ -143,10 +157,11 @@ public class Player {
      * @return true if no errors
      */
     public boolean playCard() {
-        Card c = brain.cardToPlay(table.cardsOnTable(),hand, table.cardLed(), onPartnerTeam, points,table.isLeasterRound());
-        if (!brain.validMove(c, hand, table.cardLed())) { //not valid move
+        Card c = brain.cardToPlay(hand, table.cardLed(), onPartnerTeam, table.isLeasterRound(),
+                table.currPartner(),table.getCurrentHand());
+        if (!table.validMove(c, hand)) { //not valid move
             System.out.println("INVALID MOVE BY AI");
-            System.exit(1);
+            throw new IllegalStateException();
         }
         hand.remove(c);
         table.playCard(c, this);
@@ -156,17 +171,14 @@ public class Player {
     /**
      * called by game
      * plays given card chosen by non-AI player
+     * assuming already checked is valid move by Game
      *
      * @param card card chose by player
      * @return true if valid move, false if not
      */
-    public boolean playCard(Card card) {
-        if (brain.validMove(card, hand, table.cardLed())) {
-            table.playCard(card, this);
-            hand.remove(card);
-            return true;
-        }
-        return false;
+    public void playCard(Card card) {
+        table.playCard(card, this);
+        hand.remove(card);
     }
 
     /**
@@ -200,8 +212,8 @@ public class Player {
     }
 
     /**
-     * @override
-     * @param other
+     * @override equals()
+     * @param other player
      * @return true if players are same, false otherwise
      */
     public boolean equals(Player other) {
@@ -257,9 +269,21 @@ public class Player {
         return username;
     }
 
-    public void printHand() {
-        if (pickedUp) {
-            System.out.print("buried: " + buried[0].getCardValue() + " of " + buried[0].getCardSuit());
+    public Hand getHand(){
+        return hand;
+    }
+
+    public void incrAbleToPlayAlone(){
+        ableToPlayAlone++;
+    }
+
+    /**
+     * prints player hand
+     * @param printBuried should burried cards be printed?
+     */
+    public void printHand(boolean printBuried) {
+        if (pickedUp && printBuried) {
+            System.out.print("\tburied: " + buried[0].getCardValue() + " of " + buried[0].getCardSuit());
             System.out.println(" and " + buried[1].getCardValue() + " of " + buried[1].getCardSuit());
         }
         hand.printHand();
@@ -273,8 +297,8 @@ public class Player {
         System.out.println(" | Player Name : " + username);
         System.out.println(" | score: " + score);
         System.out.println(" | winning percentage:  " + (float) gamesWon / gamesPlayed * 100 + "%");
-        System.out.println(" | percentage picked up " + (float) numberPickedUp / gamesPlayed * 100 + "%");
-        System.out.println(" | percentage played alone " + (float) numberPlayAlone / gamesPlayed * 100 + "%");
-        System.out.println(" | total points:  " + totalPoints + "\n");
+        System.out.println(" | percentage picked up: " + (float) numberPickedUp / gamesPlayed * 100 + "%");
+        System.out.println(" | percentage played alone: " + (float) numberPlayAlone / ableToPlayAlone * 100 + "%");
+        System.out.println(" | total points: " + totalPoints + "\n");
     }
 }

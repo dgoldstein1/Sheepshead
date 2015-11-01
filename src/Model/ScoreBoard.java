@@ -198,6 +198,7 @@ public class ScoreBoard {
      * prints player teams. Used at end of the game, called by printScores()
      */
     public void printTeams(){
+        if(currRound.isLeaster()) return; //no teams for leaster
         System.out.print("\tpartner team:  \t ");
         for(Player p : players){
             if(p.isOnPartnerTeam()) System.out.print(" " + p.getUsername() + " | ");

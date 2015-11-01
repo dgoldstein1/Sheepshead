@@ -29,12 +29,13 @@ public class HandHistory {
      * returns by value then suit
      *
      * @return Player winner
+     * @throws IllegalStateException if asked for top player but no cards played
      */
     public Player topPlayer() {
         Card cardLed = hand.get(0).c;
-        if (cardLed.getId() == -1) {//no cards played
+        if (cardLed.id() == -1) {//no cards played
             System.out.println("NO CARDS PLAYED YET. IMPOSSIBLE TO GET TOP CARD");
-            System.exit(1);
+            throw new IllegalStateException();
         }
         Player p = hand.get(0).playedBy; //place holder for comparison
         Card top = hand.get(0).c;        //place holder for comparison
@@ -66,6 +67,19 @@ public class HandHistory {
             }
         }
         return p;
+    }
+
+    /**
+     * gets current Card winner
+     * @return Card topcard
+     * @throws IllegalStateException no card found
+     */
+    public Card topCard(){
+        Player topPlayer = topPlayer();
+        for(CardHistory ch: hand){
+            if(topPlayer.equals(ch.playedBy)) return ch.c;
+        }
+        throw new IllegalStateException("could not get top card in topCard()");
     }
 
 

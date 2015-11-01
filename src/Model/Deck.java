@@ -2,9 +2,7 @@ package Model;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by Dave on 9/15/2015.
@@ -128,15 +126,15 @@ public class Deck {
         if (cardName.equals("NH")) return new Card(Value.NINE, Suit.HEARTS, 6);
         if (cardName.equals("NS")) return new Card(Value.NINE, Suit.SPADES, 7);
         if (cardName.equals("NC")) return new Card(Value.NINE, Suit.CLUBS, 8);
-        if (cardName.equals("AH")) return new Card(Value.ACE, Suit.HEARTS, 9);
-        if (cardName.equals("AS")) return new Card(Value.ACE, Suit.SPADES, 10);
-        if (cardName.equals("AC")) return new Card(Value.ACE, Suit.CLUBS, 11);
+        if (cardName.equals("KH")) return new Card(Value.KING, Suit.HEARTS, 9);
+        if (cardName.equals("KS")) return new Card(Value.KING, Suit.SPADES, 10);
+        if (cardName.equals("KC")) return new Card(Value.KING, Suit.CLUBS, 11);
         if (cardName.equals("TH")) return new Card(Value.TEN, Suit.HEARTS, 12);
         if (cardName.equals("TS")) return new Card(Value.TEN, Suit.SPADES, 13);
         if (cardName.equals("TC")) return new Card(Value.TEN, Suit.CLUBS, 14);
-        if (cardName.equals("KH")) return new Card(Value.KING, Suit.HEARTS, 15);
-        if (cardName.equals("KS")) return new Card(Value.KING, Suit.SPADES, 16);
-        if (cardName.equals("KC")) return new Card(Value.KING, Suit.CLUBS, 17);
+        if (cardName.equals("AH")) return new Card(Value.ACE, Suit.HEARTS, 15);
+        if (cardName.equals("AS")) return new Card(Value.ACE, Suit.SPADES, 16);
+        if (cardName.equals("AC")) return new Card(Value.ACE, Suit.CLUBS, 17);
         if (cardName.equals("SD")) return new Card(Value.SEVEN, Suit.DIAMONDS, 18);
         if (cardName.equals("ED")) return new Card(Value.EIGHT, Suit.DIAMONDS, 19);
         if (cardName.equals("ND")) return new Card(Value.NINE, Suit.DIAMONDS, 20);
@@ -160,7 +158,7 @@ public class Deck {
      */
     public void printDeck() {
         for (Card c : deck) {
-            System.out.print(c.getId());
+            System.out.print(c.id());
             c.printCard();
         }
         System.out.println("------------");
