@@ -1,7 +1,0 @@
-package Model;
-
-/**
- * Created by Dave on 10/19/2015.
- */
-public enum AIPersonality {NONE, AGGRESSIVE, PASSIVE, COWARD, LOGICAL,STICKY_FINGERS,MAUER,TRUSTING_PARTNER,NON_TRUSTING_PARTNER}
-
