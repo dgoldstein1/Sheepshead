@@ -1,13 +1,15 @@
 package Model;
 
 
+import Controller.GameNotifier;
+import Controller.GameObserver;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
  * Created by Dave on 9/16/2015.
- *
  */
 public class Game {
     private Player[] players;
@@ -18,6 +20,7 @@ public class Game {
     private boolean printAll;
     private BufferedReader bufferedReader;
     private Player startRound;
+    private GameObserver obs;
 
     /**
      * initializes game by setting up scoreboard, dealer, and table
@@ -25,7 +28,7 @@ public class Game {
      * @param printAll   should the actions of this game be printed to console?
      * @param realPlayer is a real player playing with this game?
      */
-    public Game(boolean printAll, boolean realPlayer) {
+    public Game(boolean printAll, boolean realPlayer, GameObserver obs) {
         handSize = 6;
         table = new Table(printAll);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -33,6 +36,7 @@ public class Game {
         scoreboard = new ScoreBoard(players);
         dealer = new Dealer(players, table);
         this.printAll = printAll;
+        this.obs = obs;
     }
 
     /**
@@ -45,14 +49,14 @@ public class Game {
         int playersCreated = 1;
         //initialize non-AI player
         if (realPlayer) {
-            String playerName = getPlayerInput("--> Enter Player name: \n", false);
+            String playerName = "David";
             players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
             playersCreated++;
         }
 
         //initalize AI players
         Trait t = Trait.LONE_WOLF;
-        players[playersCreated - 1] = new Player(t.toString(),playersCreated,table,false, t);
+        players[playersCreated - 1] = new Player(t.toString(), playersCreated, table, false, t);
         playersCreated++;
         while (playersCreated <= 5) {
             players[playersCreated - 1] = new Player("Player " + playersCreated, playersCreated, table, false, Trait.Normal_Player);
@@ -61,8 +65,6 @@ public class Game {
         this.players = players;
         startRound = players[0];
     }
-
-
 
 
     /**
@@ -102,17 +104,16 @@ public class Game {
             }
         }
         //blind not picked up by any player
-        if(printAll) System.out.println("Blind not picked up: Leaster will be played!!");
+        if (printAll) System.out.println("Blind not picked up: Leaster will be played!!");
         scoreboard.setLeaster();
         table.setLeaster();
-
 
 
     }
 
     //updates partners on scoreboard
     //sets partner and non-partner team in players[]
-    private void updateTeams(){
+    private void updateTeams() {
         for (Player p : players) {
             if (p.checkIsPartner()) scoreboard.setPartner(p);
             if (p.hasBlitzers()) scoreboard.setBlitzers(true);
@@ -122,9 +123,10 @@ public class Game {
     /**
      * asks player to pick up
      * if true, asks for cards to bury and if want to play alone
+     *
      * @return true if picks up, false otherwise
      */
-    boolean askPlayerToPickUp(Player p){
+    boolean askPlayerToPickUp(Player p) {
         if (printAll) { //shows player hand to see if want to pick up
             System.out.println("Your current hand: \n");
             p.printHand(false);
@@ -133,23 +135,25 @@ public class Game {
         if (getPlayerInput("--> pick up blind? y/n: \n", true).equals("y")) {//player chooses to pick up
             p.pickUpBlind();
 
-            if(p.getHand().contains(24)){//picked up and contains j of d
+            if (p.getHand().contains(24)) {//picked up and contains j of d
                 p.incrAbleToPlayAlone();
-                if(getPlayerInput("--> would you like to call up? \n", true).equals("y")){//call up
+                if (getPlayerInput("--> would you like to call up? \n", true).equals("y")) {//call up
                     p.setNotPlayAlone();
-                } else{ //not calling up
+                } else { //not calling up
                     p.setPlayAlone();
                 }
             }
 
             System.out.println("--> your hand is: \n");
             p.printHand(false);
-            Card c1 = askPlayerCard(p,"--> Choose first card to bury: \n",true);
+            Card c1 = askPlayerCard(p, "--> Choose first card to bury: \n", true);
             p.getHand().remove(c1);
-            System.out.print("\t buried card: ");c1.printCard();
-            Card c2 = askPlayerCard(p,"--> Choose second card to bury: \n",true);
+            System.out.print("\t buried card: ");
+            c1.printCard();
+            Card c2 = askPlayerCard(p, "--> Choose second card to bury: \n", true);
             p.getHand().remove(c2);
-            System.out.print("\t buried card: ");c2.printCard();
+            System.out.print("\t buried card: ");
+            c2.printCard();
             p.buryCards(c1, c2);
             return true;
         }
@@ -261,33 +265,34 @@ public class Game {
      * asks player to play a card
      * checks if valid card
      *
-     * @param prompt prompt to be displayed
+     * @param prompt   prompt to be displayed
      * @param buryCard is this asking for a card to be buried
-     * @param p player playing card
+     * @param p        player playing card
      * @return card played
      */
-    private Card askPlayerCard(Player p,String prompt,boolean buryCard) {
+    private Card askPlayerCard(Player p, String prompt, boolean buryCard) {
         String in = getPlayerInput(prompt, false);
         Card toPlay = dealer.getCardID(in);
-        try{
+        try {
             if (toPlay.id() == -1) {//no card found
                 throw new IOException("ILLEGAL INPUT / NO CARD FOUND");
-            }
-            else if(!p.getHand().contains(toPlay)) //card not in hand
+            } else if (!p.getHand().contains(toPlay)) //card not in hand
                 throw new IOException("Card not in hand");
 
-            else if(!buryCard){//card played in game
-                if(!table.validMove(toPlay,p.getHand()))
+            else if (!buryCard) {//card played in game
+                if (!table.validMove(toPlay, p.getHand()))
                     throw new IOException();
             }
-        } catch(IOException e){
-            if(e.getMessage()!=null)
+        } catch (IOException e) {
+            if (e.getMessage() != null)
                 System.out.println("\t" + e.getMessage() + " for input " + in);
             return askPlayerCard(p, prompt, buryCard);
         }
         return toPlay;
     }
 
+
+    /*printers*/
 
     /**
      * prints out cards held by each player
@@ -306,21 +311,31 @@ public class Game {
      * prints out stats of game
      * called by run
      */
-    public void stats(){
+    public void stats() {
         System.out.println("overall stats: \n");
         System.out.println("\t| rounds played: " + scoreboard.roundsPlayed());
         System.out.println("\t| leaster games played: " + scoreboard.getLeasterCount());
-        System.out.println("\t| leaster percentage: " + (float) scoreboard.getLeasterCount() /  scoreboard.roundsPlayed() * 100 + "%\n");
+        System.out.println("\t| leaster percentage: " + (float) scoreboard.getLeasterCount() / scoreboard.roundsPlayed() * 100 + "%\n");
         System.out.println("player specific stats: \n" + "\t-----");
-        for(Player p: players){
+        for (Player p : players) {
             p.printDetailedStats(scoreboard.roundsPlayed());
             System.out.println("\t-----");
         }
 
     }
 
-    public void printResults(){
+    public void printResults() {
         scoreboard.printScores();
+    }
+
+    /*getters */
+
+    public ScoreBoard getScoreboard() {
+        return scoreboard;
+    }
+
+    public Player[] getPlayers() {
+        return players;
     }
 
 
