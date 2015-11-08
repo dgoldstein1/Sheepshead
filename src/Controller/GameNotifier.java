@@ -19,7 +19,7 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
 
     /*in from Game*/
     public void aiCardPlayed(int cardID) {
-        //g.playNonAiCard(id)
+        //frame.playNonAiCard(id)
     }
 
 
