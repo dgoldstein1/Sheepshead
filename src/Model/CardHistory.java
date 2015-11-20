@@ -17,6 +17,14 @@ public class CardHistory{
         this.playedBy = playedBy;
     }
 
+    public Player playerBy(){
+        return playedBy;
+    }
+
+    public Card card(){
+        return c;
+    }
+
 }
 
 

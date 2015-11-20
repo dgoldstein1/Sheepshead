@@ -3,6 +3,7 @@ package Controller;
 import Model.Game;
 import View.SheepsheadMainFrame;
 
+import javax.smartcardio.Card;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +17,7 @@ public class Controller {
     private Game g;
     private SheepsheadMainFrame frame;
     private GameNotifier gameNotifier;
+    private Timer refreshTimer;
 
     /**
      * takes in Game and matching GUI
@@ -23,23 +25,29 @@ public class Controller {
      */
     public Controller(){
         gameNotifier = new GameNotifier(this);
-        g = new Game(false,true,gameNotifier);
+        g = new Game(true,true,gameNotifier);
         frame = new SheepsheadMainFrame(g,gameNotifier);
+
+        refreshTimer = new Timer(10, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.refresh(g);
+            }
+        });
+        refreshTimer.start();
+        this.playRound();
 
     }
 
     /*in from View out to Game*/
-    public void cardPlayed(int cardID){
-        //g.nonAICardPlayed(int id)
+
+    public void playRound(){
+        g.playRound();
     }
 
     /*in from Game out to View*/
-    public void validCardPlayed(int id){
-        //frame.validCardPlayed(int id)
-    }
-    public void invalidCardPlayed(int id){
-        //frame.invalidCardPlayed(int id)
-    }
+
+
     public void newRound(){
         //frame.newRound
     }

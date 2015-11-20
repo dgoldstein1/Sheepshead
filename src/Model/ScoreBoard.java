@@ -236,4 +236,8 @@ public class ScoreBoard {
     public int getLeasterCount(){return leasterCount;}
 
     public int roundsPlayed(){return scoreboard.size();}
+
+    public Player[] getNonStaticPlayers(){
+        return players;
+    }
 }

@@ -30,12 +30,13 @@ public class TableButton extends JButton{
     /**
      * constructor for cards
      * @param type type of card / button
-     * @param c card
+     * cards are initialized to null (showing "-")
      */
-    public TableButton(ButtonType type, Card c){
+    public TableButton(ButtonType type){
         this.type = type;
-        this.label = c.getPointValue() + " of " + c.getCardSuit();
-        this.c = c;
+        this.label = "-";
+        setText(label);
+        this.c = null;
         //setIcon(new StretchIcon("icons/untouched/untouched"+c.id()+".png",false));
         init();
     }
@@ -65,6 +66,42 @@ public class TableButton extends JButton{
      */
     public Card card(){
         return c;
+    }
+
+    /**
+     * called by view to make card view null
+     */
+    public void setAsNull(){
+        label = "-";
+        setText(label);
+        c = null;
+    }
+
+    /**
+     * called by view for AI players
+     */
+    public void setFaceDown(){
+        label = "x";
+        setText(label);
+    }
+
+    /**
+     * called by view to setButton to specific value
+     * @param c card to set value to
+     */
+    public void setCard(Card c){
+        label = c.getCardValue() + " of " + c.getCardSuit();
+        setText(label);
+        this.c = c;
+    }
+
+    /*getters and setters*/
+
+    public boolean isNull(){
+        return label.equals("-");
+    }
+    public boolean isFaceDown(){
+        return label.equals("x");
     }
 
 }

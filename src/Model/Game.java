@@ -1,12 +1,11 @@
 package Model;
 
-
-import Controller.GameNotifier;
 import Controller.GameObserver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Timer;
 
 /**
  * Created by Dave on 9/16/2015.
@@ -51,6 +50,7 @@ public class Game {
         if (realPlayer) {
             String playerName = "David";
             players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
+            players[0].setNonAIPlayer();
             playersCreated++;
         }
 
@@ -87,6 +87,7 @@ public class Game {
         endRound();
         dealer.collectCards();
         if (printAll) System.out.println("---end round---\n");
+
     }
 
     /**
@@ -108,7 +109,6 @@ public class Game {
         scoreboard.setLeaster();
         table.setLeaster();
 
-
     }
 
     //updates partners on scoreboard
@@ -126,7 +126,7 @@ public class Game {
      *
      * @return true if picks up, false otherwise
      */
-    boolean askPlayerToPickUp(Player p) {
+    private boolean askPlayerToPickUp(Player p) {
         if (printAll) { //shows player hand to see if want to pick up
             System.out.println("Your current hand: \n");
             p.printHand(false);
@@ -220,12 +220,30 @@ public class Game {
                 System.out.println("--> Your hand is: \n");
                 p.printHand(true);
                 p.playCard(askPlayerCard(p, "--> Choose card to play: \n", false));
-            } else p.playCard();
+            } else{
+                //wait before playing card (emulate thinking)
+                playerPause(300);
+                p.playCard();
+                playerPause(300);
+            }
         }
         Player winner = table.getWinner();
         HandHistory hand = table.endHand();
         scoreboard.addHand(hand, printAll); //adds hand including points
         return winner;
+    }
+
+    /**
+     * internal method used to make game pause to make card player visible
+     */
+    private void playerPause(int time){
+        if(time < 0) throw new IndexOutOfBoundsException("negative time set in PLAYER PAUSE");
+        try{
+            Thread.sleep(700);
+        } catch (Exception e){
+            System.out.println("PROBLEM WITH PLAYER PAUSE");
+            System.exit(1);
+        }
     }
 
     /**
@@ -337,6 +355,24 @@ public class Game {
     public Player[] getPlayers() {
         return players;
     }
+
+    //return Player[] from scoreboard that does not rotate
+    public Player[] getStaticPlayers(){return scoreboard.getNonStaticPlayers();}
+
+    public Table getTable(){
+        return table;
+    }
+
+    public Player getNonAiPlayer() throws IllegalStateException {
+        for(Player p : getPlayers()){
+            if(p.isNonAIPlayer()){
+                return p;
+            }
+        }
+        throw new IllegalStateException("COULD NOT FIND NON-AI PLAYER");
+
+    }
+
 
 
 }

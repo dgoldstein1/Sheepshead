@@ -23,6 +23,7 @@ public class Player {
     private PlayerBrain brain;
     private int playerID;
     private boolean playAlone;
+    private boolean isNonAIPlayer;
 
     public Player(String username, int playerID, Table table, boolean isPlayer, Trait trait1) {
         this.username = username;
@@ -35,6 +36,7 @@ public class Player {
         brain = new PlayerBrain(trait1, Trait.Normal_Player);
         this.playerID = playerID;
         playAlone=false;
+        isNonAIPlayer=false;
 
     }
 
@@ -277,6 +279,14 @@ public class Player {
         ableToPlayAlone++;
     }
 
+    public void setNonAIPlayer() {
+        isNonAIPlayer=true;
+    }
+
+    public boolean isNonAIPlayer() {
+        return isNonAIPlayer;
+    }
+
     /**
      * prints player hand
      * @param printBuried should burried cards be printed?
@@ -300,5 +310,9 @@ public class Player {
         System.out.println(" | percentage picked up: " + (float) numberPickedUp / gamesPlayed * 100 + "%");
         System.out.println(" | percentage played alone: " + (float) numberPlayAlone / ableToPlayAlone * 100 + "%");
         System.out.println(" | total points: " + totalPoints + "\n");
+    }
+
+    public int getNCards(){
+        return hand.handSize;
     }
 }

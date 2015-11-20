@@ -1,26 +1,28 @@
 package Controller;
 
+import Model.Card;
 import Model.Game;
 import View.ButtonType;
 import View.TableButton;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Created by Dave on 11/2/2015.
  */
 public class GameNotifier extends MouseAdapter implements GameObserver {
     private Controller control;
+    private Card playerCardToPlay;
 
-    public GameNotifier(Controller control) {
+    public GameNotifier(final Controller control) {
         this.control = control;
+        playerCardToPlay = null;
+
     }
 
-    /*in from Game*/
-    public void aiCardPlayed(int cardID) {
-        //frame.playNonAiCard(id)
-    }
+    /*in from game*/
 
 
     /*in from view*/
@@ -39,7 +41,11 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
             } else if (buttonType.equals(ButtonType.NEW_GAME)) {
 
             } else if (buttonType.equals(ButtonType.PLAYERCARD)) {
+                System.out.println("-----------------------------> got here");
+                if(playerCardToPlay==null){ //expecting input
+                    playerCardToPlay = button.card(); //return card above
 
+                }
             }
 
 

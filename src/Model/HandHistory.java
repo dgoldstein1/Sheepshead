@@ -101,8 +101,20 @@ public class HandHistory {
         return points;
     }
 
+    /**
+     * @return list of cards in this Hand History
+     */
+    public List<Card> getCardsInHand(){
+        List<Card> cards = new ArrayList<Card>();
+        for(CardHistory ch : hand){
+            cards.add(ch.c);
+        }
+        return cards;
+    }
 
-
+    public List<CardHistory> getHand(){
+        return hand;
+    }
 
 }
 

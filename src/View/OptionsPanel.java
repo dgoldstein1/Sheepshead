@@ -60,7 +60,6 @@ class HelpPanel extends JFrame{
     //helpFrame
     HelpPanel(){
         super("HELP");
-        System.out.println("got here");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {

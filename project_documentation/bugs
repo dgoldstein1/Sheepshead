@@ -1,0 +1,318 @@
+"C:\Program Files\Java\jdk1.8.0_11\bin\java" -Didea.launcher.port=7532 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin" -Dfile.encoding=windows-1256 -classpath "C:\Program Files\Java\jdk1.8.0_11\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\zipfs.jar;C:\Users\Dave\Dropbox\senior\Comp 484\Sheepshead\out\production\Project;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain SheepsheadRun
+---start round---
+Your current hand:
+
+	KING of CLUBS
+	SEVEN of HEARTS
+	QUEEN of HEARTS
+	ACE of DIAMONDS
+	SEVEN of DIAMONDS
+	TEN of DIAMONDS
+
+--> pick up blind? y/n:
+y
+	David picked up
+
+--> your hand is:
+
+	KING of CLUBS
+	SEVEN of HEARTS
+	QUEEN of HEARTS
+	ACE of DIAMONDS
+	SEVEN of DIAMONDS
+	TEN of DIAMONDS
+	QUEEN of SPADES
+	EIGHT of DIAMONDS
+--> Choose first card to bury:
+ED
+	 buried card: EIGHT of DIAMONDS
+--> Choose second card to bury:
+SD
+	 buried card: SEVEN of DIAMONDS
+--> Your hand is:
+
+	buried: EIGHT of DIAMONDS and SEVEN of DIAMONDS
+	KING of CLUBS
+	SEVEN of HEARTS
+	QUEEN of HEARTS
+	ACE of DIAMONDS
+	TEN of DIAMONDS
+	QUEEN of SPADES
+--> Choose card to play:
+QS
+	David played QUEEN of SPADES
+	LONE_WOLF played JACK of DIAMONDS
+	Player 3 played KING of DIAMONDS
+	Player 4 played JACK of SPADES
+	Player 5 played NINE of DIAMONDS
+	David won this hand for 11 points
+ | David: 11 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 0
+
+--> Your hand is:
+
+	buried: EIGHT of DIAMONDS and SEVEN of DIAMONDS
+	KING of CLUBS
+	SEVEN of HEARTS
+	QUEEN of HEARTS
+	ACE of DIAMONDS
+	TEN of DIAMONDS
+--> Choose card to play:
+QH
+	David played QUEEN of HEARTS
+	LONE_WOLF played JACK of HEARTS
+	Player 3 played ACE of CLUBS
+	Player 4 played QUEEN of DIAMONDS
+	Player 5 played JACK of CLUBS
+	David won this hand for 21 points
+ | David: 32 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 0
+
+--> Your hand is:
+
+	buried: EIGHT of DIAMONDS and SEVEN of DIAMONDS
+	KING of CLUBS
+	SEVEN of HEARTS
+	ACE of DIAMONDS
+	TEN of DIAMONDS
+--> Choose card to play:
+TD
+	David played TEN of DIAMONDS
+	LONE_WOLF played ACE of HEARTS
+	Player 3 played TEN of CLUBS
+	Player 4 played TEN of HEARTS
+	Player 5 played QUEEN of CLUBS
+	Player 5 won this hand for 44 points
+ | David: 32 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 44
+
+	Player 5 played EIGHT of SPADES
+--> Your hand is:
+
+	buried: EIGHT of DIAMONDS and SEVEN of DIAMONDS
+	KING of CLUBS
+	SEVEN of HEARTS
+	ACE of DIAMONDS
+--> Choose card to play:
+AD
+	David played ACE of DIAMONDS
+	LONE_WOLF played NINE of CLUBS
+	Player 3 played TEN of SPADES
+	Player 4 played NINE of SPADES
+	David won this hand for 21 points
+ | David: 53 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 44
+
+--> Your hand is:
+
+	buried: EIGHT of DIAMONDS and SEVEN of DIAMONDS
+	KING of CLUBS
+	SEVEN of HEARTS
+	ACE of DIAMONDS
+--> Choose card to play:
+AD
+	David played ACE of DIAMONDS
+	LONE_WOLF played EIGHT of CLUBS
+	Player 3 played KING of SPADES
+	Player 4 played KING of HEARTS
+	Player 5 played ACE of SPADES
+	David won this hand for 30 points
+ | David: 83 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 44
+
+--> Your hand is:
+
+	buried: EIGHT of DIAMONDS and SEVEN of DIAMONDS
+	KING of CLUBS
+	SEVEN of HEARTS
+	ACE of DIAMONDS
+--> Choose card to play:
+AD
+	David played ACE of DIAMONDS
+	LONE_WOLF played SEVEN of CLUBS
+	Player 3 played EIGHT of HEARTS
+	Player 4 played SEVEN of SPADES
+	Player 5 played NINE of HEARTS
+	David won this hand for 11 points
+ | David: 94 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 44
+
+TOTAL NOT EQUAL TO 120 POINTS138
+ | David: 94 | LONE_WOLF: 0 | Player 3: 0 | Player 4: 0 | Player 5: 44
+
+Exception in thread "main" java.lang.IllegalStateException
+	at Model.ScoreBoard.checkScoresBalance(ScoreBoard.java:149)
+	at Model.ScoreBoard.awardPoints(ScoreBoard.java:72)
+	at Model.Game.endRound(Game.java:171)
+	at Model.Game.playRound(Game.java:88)
+	at Controller.Controller.playRound(Controller.java:45)
+	at Controller.Controller.<init>(Controller.java:38)
+	at SheepsheadRun.main(SheepsheadRun.java:8)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+
+	_____________________________________________________________________________________
+
+	"C:\Program Files\Java\jdk1.8.0_11\bin\java" -Didea.launcher.port=7533 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin" -Dfile.encoding=windows-1256 -classpath "C:\Program Files\Java\jdk1.8.0_11\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\zipfs.jar;C:\Users\Dave\Dropbox\senior\Comp 484\Sheepshead\out\production\Project;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain SheepsheadRun
+    ---start round---
+    Your current hand:
+
+    	TEN of SPADES
+    	JACK of HEARTS
+    	SEVEN of HEARTS
+    	ACE of SPADES
+    	ACE of CLUBS
+    	KING of HEARTS
+
+    --> pick up blind? y/n:
+    n
+    	David picked up
+
+    --> Your hand is:
+
+    	buried: KING of DIAMONDS and TEN of DIAMONDS
+    	TEN of SPADES
+    	JACK of HEARTS
+    	SEVEN of HEARTS
+    	ACE of SPADES
+    	ACE of CLUBS
+    	KING of HEARTS
+    --> Choose card to play:
+
+______does not play card in user hand______
+
+"C:\Program Files\Java\jdk1.8.0_11\bin\java" -Didea.launcher.port=7535 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin" -Dfile.encoding=windows-1256 -classpath "C:\Program Files\Java\jdk1.8.0_11\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\zipfs.jar;C:\Users\Dave\Dropbox\senior\Comp 484\Sheepshead\out\production\Project;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain SheepsheadRun
+---start round---
+Your current hand:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	SEVEN of SPADES
+	NINE of HEARTS
+	QUEEN of SPADES
+	TEN of CLUBS
+
+--> pick up blind? y/n:
+n
+	Player 3 picked up
+
+--> Your hand is:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	SEVEN of SPADES
+	NINE of HEARTS
+	QUEEN of SPADES
+	TEN of CLUBS
+--> Choose card to play:
+KD
+	David played KING of DIAMONDS
+	LONE_WOLF played SEVEN of DIAMONDS
+	Player 3 played TEN of DIAMONDS
+	Player 4 played JACK of SPADES
+	Player 5 played JACK of DIAMONDS
+	Player 4 won this hand for 18 points
+ | David: 0 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 0
+
+	Player 4 played NINE of SPADES
+	Player 5 played TEN of SPADES
+--> Your hand is:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	SEVEN of SPADES
+	NINE of HEARTS
+	QUEEN of SPADES
+	TEN of CLUBS
+--> Choose card to play:
+NH
+	DOES NOT FOLLOW SUIT. Suit led: SPADES	, but card played: NINE of HEARTS
+--> Choose card to play:
+SS
+	David played SEVEN of SPADES
+	LONE_WOLF played KING of SPADES
+	Player 3 played EIGHT of SPADES
+	Player 5 won this hand for 14 points
+ | David: 0 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 14
+
+	Player 5 played QUEEN of CLUBS
+--> Your hand is:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	NINE of HEARTS
+	QUEEN of SPADES
+	TEN of CLUBS
+--> Choose card to play:
+QS
+	David played QUEEN of SPADES
+	LONE_WOLF played NINE of DIAMONDS
+	Player 3 played ACE of DIAMONDS
+	Player 4 played QUEEN of DIAMONDS
+	Player 5 won this hand for 20 points
+ | David: 0 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 34
+
+	Player 5 played QUEEN of HEARTS
+--> Your hand is:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	NINE of HEARTS
+	TEN of CLUBS
+--> Choose card to play:
+KD
+	David played KING of DIAMONDS
+	LONE_WOLF played KING of HEARTS
+	Player 3 played TEN of HEARTS
+	Player 4 played ACE of HEARTS
+	Player 5 won this hand for 32 points
+ | David: 0 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 66
+
+	Player 5 played ACE of CLUBS
+--> Your hand is:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	NINE of HEARTS
+	TEN of CLUBS
+--> Choose card to play:
+ED
+	DOES NOT FOLLOW SUIT. Suit led: CLUBS	, but card played: EIGHT of DIAMONDS
+--> Choose card to play:
+TC
+	David played TEN of CLUBS
+	LONE_WOLF played NINE of CLUBS
+	Player 3 played EIGHT of HEARTS
+	Player 4 played KING of CLUBS
+	Player 5 won this hand for 25 points
+ | David: 0 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 91
+
+	Player 5 played EIGHT of CLUBS
+--> Your hand is:
+
+	KING of DIAMONDS
+	EIGHT of DIAMONDS
+	NINE of HEARTS
+--> Choose card to play:
+KD
+Exception in thread "main" java.lang.IllegalStateException
+	at Model.ScoreBoard.checkScoresBalance(ScoreBoard.java:149)
+	at Model.ScoreBoard.awardPoints(ScoreBoard.java:72)
+	at Model.Game.endRound(Game.java:171)
+	at Model.Game.playRound(Game.java:88)
+	at Controller.Controller.playRound(Controller.java:45)
+	at Controller.Controller.<init>(Controller.java:38)
+	at SheepsheadRun.main(SheepsheadRun.java:8)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+	David played KING of DIAMONDS
+	LONE_WOLF played SEVEN of CLUBS
+	Player 3 played SEVEN of HEARTS
+	Player 4 played ACE of SPADES
+	David won this hand for 15 points
+ | David: 15 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 91
+
+TOTAL NOT EQUAL TO 120 POINTS128
+ | David: 15 | LONE_WOLF: 0 | Player 3: 4 | Player 4: 18 | Player 5: 91
+
+

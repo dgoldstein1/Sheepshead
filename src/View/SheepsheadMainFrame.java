@@ -11,16 +11,16 @@ import java.awt.event.WindowEvent;
 
 /**
  * Created by Dave on 11/2/2015.
- *
+ * <p/>
  * Maine frame holding all relevant panels
  */
-public class SheepsheadMainFrame extends JFrame{
+public class SheepsheadMainFrame extends JFrame {
     private Container contentPane;
-    private TablePanel table;
+    private GamePanel table;
     private OptionsPanel options;
     private MainSound sounds;
 
-    public SheepsheadMainFrame(Game g,final MouseListener listener){
+    public SheepsheadMainFrame(Game g, final MouseListener listener) {
         super("Sheaphead");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -33,54 +33,59 @@ public class SheepsheadMainFrame extends JFrame{
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        setPreferredSize(new Dimension(700,500));
+        setPreferredSize(new Dimension(900, 600));
         setLayout(new BorderLayout());
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 setVisible(false);
                 dispose();
+                System.exit(0);
             }
         });
 
         contentPane = getContentPane();
         sounds = new MainSound();
-        initPanels(listener,g);
+        initPanels(listener, g);
         pack();
         setVisible(true);
     }
 
     /**
      * creates and adds panels to this frame
+     *
      * @param listener mouselistener
-     * @param g game from model
+     * @param g        game from model
      * @return success
      */
-    private boolean initPanels(MouseListener listener, Game g){
-        table = new TablePanel(g,listener);
-        options = new OptionsPanel(listener,sounds);
+    private boolean initPanels(MouseListener listener, Game g) {
+        table = new GamePanel(g, listener);
+        options = new OptionsPanel(listener, sounds);
         contentPane.add(table, BorderLayout.CENTER);
-        contentPane.add(options,BorderLayout.NORTH);
+        contentPane.add(options, BorderLayout.NORTH);
         return true;
     }
 
     /**
      * refreshes all values in GUI from model
      * called by notifier
+     *
      * @param g Game from model
      * @return success
      */
-    public boolean refresh(Game g){
+    public boolean refresh(Game g) {
         return table.refresh(g);
     }
 
 
     /* in from notifier*/
 
+
     /*out to options*/
-    public void helpPushed(){
+    public void helpPushed() {
         options.helpPushed();
     }
-    public void statsPushed(ScoreBoard s){
+
+    public void statsPushed(ScoreBoard s) {
         options.statsPushed(s);
     }
 
