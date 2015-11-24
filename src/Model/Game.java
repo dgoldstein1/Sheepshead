@@ -44,23 +44,22 @@ public class Game {
      * @param realPlayer is a real player playing this game
      */
     private void initPlayers(boolean realPlayer) {
-        Player[] players = new Player[5];
-        int playersCreated = 1;
+        Player[] players = new Player[5];;
         //initialize non-AI player
         if (realPlayer) {
             String playerName = "David";
             players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
             players[0].setNonAIPlayer();
-            playersCreated++;
         }
 
         //initalize AI players
-        Trait t = Trait.LONE_WOLF;
-        players[playersCreated - 1] = new Player(t.toString(), playersCreated, table, false, t);
-        playersCreated++;
-        while (playersCreated <= 5) {
-            players[playersCreated - 1] = new Player("Player " + playersCreated, playersCreated, table, false, Trait.Normal_Player);
-            playersCreated++;
+        Trait[] traits = Trait.values();
+        Trait t;
+        int i;
+        for (int playersCreated = 1; playersCreated < 5; playersCreated++) {
+            i = (int) ((Math.random()) * (Trait.values().length));
+            t = traits[i];
+            players[playersCreated] = new Player(t.toString() + " " + playersCreated, playersCreated, table, false, t);
         }
         this.players = players;
         startRound = players[0];
@@ -99,7 +98,7 @@ public class Game {
             if (p.isPlayer() && askPlayerToPickUp(p)) {//non ai player and chooses to pick up
                 scoreboard.setPicker(p);
                 return;
-            } else if (p.chooseToPickUp()) {//ai player
+            } else if (!p.isNonAIPlayer() && p.chooseToPickUp()) {//ai player and chooses to pick up
                 scoreboard.setPicker(p); //note picker must come before partner
                 return;
             }
@@ -108,7 +107,6 @@ public class Game {
         if (printAll) System.out.println("Blind not picked up: Leaster will be played!!");
         scoreboard.setLeaster();
         table.setLeaster();
-
     }
 
     //updates partners on scoreboard
@@ -137,7 +135,7 @@ public class Game {
 
             if (p.getHand().contains(24)) {//picked up and contains j of d
                 p.incrAbleToPlayAlone();
-                if (getPlayerInput("--> would you like to call up? \n", true).equals("y")) {//call up
+                if (getPlayerInput("--> would you like to call up? y/n \n", true).equals("y")) {//call up
                     p.setNotPlayAlone();
                 } else { //not calling up
                     p.setPlayAlone();

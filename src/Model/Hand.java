@@ -199,5 +199,12 @@ public class Hand {
         return null; //unreachable code
     }
 
+    /**
+     * getter for number of cards curr in hand (different from hand size)
+     * @return #cards in hand
+     */
+    public int numberCardinHand(){
+        return hand.size();
+    }
 
 }

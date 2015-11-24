@@ -313,6 +313,6 @@ public class Player {
     }
 
     public int getNCards(){
-        return hand.handSize;
+        return hand.numberCardinHand();
     }
 }

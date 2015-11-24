@@ -1,5 +1,7 @@
 package View;
 
+import Model.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -37,22 +39,21 @@ public class PlayerPanel extends JPanel {
      * refresh called by controller
      * sets displayed cards = number of cards in hand
      *
-     * @param cardsInHand number of cards in hand
-     * @param points player points in current round
+     * @param p curr player updating
      * @return true if success, false otherwise
      */
-    public boolean refresh(int cardsInHand, int points) {
-        while (cardsInHand > numberFaceDownCards) {//more cards in hand than displayed
+    public boolean refresh(Player p) {
+        while (p.getNCards() > numberFaceDownCards) {//more cards in hand than displayed
             aiHandDisplay.addCard();
         }
-        while (cardsInHand < numberFaceDownCards) {//more cards displayed than in hand
+        while (p.getNCards() < numberFaceDownCards) {//more cards displayed than in hand
             aiHandDisplay.deleteCard();
         }
 
         //update player points
-        if(points!=pointsDisplayed){
-            pointDisplayer.setText("Points: " + points);
-            pointsDisplayed = points;
+        if(p.getPoints()!=pointsDisplayed){
+            pointDisplayer.setText("Points: " + p.getPoints());
+            pointsDisplayed = p.getPoints();
         }
 
         return true;

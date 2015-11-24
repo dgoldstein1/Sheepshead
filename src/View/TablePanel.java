@@ -75,7 +75,7 @@ class TablePanel extends JPanel {
 
     public boolean refresh(java.util.List<Card> cardsOnTable,Player[] players, Table t) {
         for(int i = 0;i<4;i++){
-            if(!aiplayers.get(i).refresh((players[i+1]).getNCards(),(players[i+1]).getPoints())){
+            if(!aiplayers.get(i).refresh(players[i+1])){
                 return false;
             }
         }
