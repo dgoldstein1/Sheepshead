@@ -23,15 +23,15 @@ public class Game {
 
     /**
      * initializes game by setting up scoreboard, dealer, and table
+     * automatically set to have real player
      *
      * @param printAll   should the actions of this game be printed to console?
-     * @param realPlayer is a real player playing with this game?
      */
-    public Game(boolean printAll, boolean realPlayer, GameObserver obs) {
+    public Game(boolean printAll, GameObserver obs) {
         handSize = 6;
         table = new Table(printAll);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        initPlayers(realPlayer);
+        initPlayers();
         scoreboard = new ScoreBoard(players);
         dealer = new Dealer(players, table);
         this.printAll = printAll;
@@ -41,16 +41,14 @@ public class Game {
     /**
      * initializes players into players[]
      *
-     * @param realPlayer is a real player playing this game
      */
-    private void initPlayers(boolean realPlayer) {
+    private void initPlayers() {
         Player[] players = new Player[5];;
-        //initialize non-AI player
-        if (realPlayer) {
-            String playerName = "David";
-            players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
-            players[0].setNonAIPlayer();
-        }
+        //initialize non-AI player. Always first in array
+        String playerName = "David";
+        players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
+        players[0].setNonAIPlayer();
+
 
         //initalize AI players
         Trait[] traits = Trait.values();
@@ -104,13 +102,15 @@ public class Game {
             }
         }
         //blind not picked up by any player
-        if (printAll) System.out.println("Blind not picked up: Leaster will be played!!");
+        System.out.println("Blind not picked up: Leaster will be played!!");
         scoreboard.setLeaster();
         table.setLeaster();
     }
 
-    //updates partners on scoreboard
-    //sets partner and non-partner team in players[]
+    /**
+     * updates partners on scoreboard
+     / sets partner and non-partner team in players[]
+     */
     private void updateTeams() {
         for (Player p : players) {
             if (p.checkIsPartner()) scoreboard.setPartner(p);
@@ -125,11 +125,6 @@ public class Game {
      * @return true if picks up, false otherwise
      */
     private boolean askPlayerToPickUp(Player p) {
-        if (printAll) { //shows player hand to see if want to pick up
-            System.out.println("Your current hand: \n");
-            p.printHand(false);
-            System.out.print("\n");
-        }
         if (getPlayerInput("--> pick up blind? y/n: \n", true).equals("y")) {//player chooses to pick up
             p.pickUpBlind();
 
@@ -141,9 +136,7 @@ public class Game {
                     p.setPlayAlone();
                 }
             }
-
-            System.out.println("--> your hand is: \n");
-            p.printHand(false);
+            
             Card c1 = askPlayerCard(p, "--> Choose first card to bury: \n", true);
             p.getHand().remove(c1);
             System.out.print("\t buried card: ");
@@ -215,14 +208,12 @@ public class Game {
     private Player playHand() {
         for (Player p : players) {
             if (p.isPlayer()) {//ask non-AI to play card until valid
-                System.out.println("--> Your hand is: \n");
-                p.printHand(true);
                 p.playCard(askPlayerCard(p, "--> Choose card to play: \n", false));
             } else{
                 //wait before playing card (emulate thinking)
-                playerPause(300);
+               // playerPause(0);
                 p.playCard();
-                playerPause(300);
+               // playerPause(0);
             }
         }
         Player winner = table.getWinner();
@@ -297,7 +288,7 @@ public class Game {
 
             else if (!buryCard) {//card played in game
                 if (!table.validMove(toPlay, p.getHand()))
-                    throw new IOException();
+                    throw new IOException("illegal move");
             }
         } catch (IOException e) {
             if (e.getMessage() != null)

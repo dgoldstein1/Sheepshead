@@ -138,9 +138,9 @@ public class Deck {
         if (cardName.equals("SD")) return new Card(Value.SEVEN, Suit.DIAMONDS, 18);
         if (cardName.equals("ED")) return new Card(Value.EIGHT, Suit.DIAMONDS, 19);
         if (cardName.equals("ND")) return new Card(Value.NINE, Suit.DIAMONDS, 20);
-        if (cardName.equals("AD")) return new Card(Value.ACE, Suit.DIAMONDS, 21);
+        if (cardName.equals("KD")) return new Card(Value.KING, Suit.DIAMONDS, 21);
         if (cardName.equals("TD")) return new Card(Value.TEN, Suit.DIAMONDS, 22);
-        if (cardName.equals("KD")) return new Card(Value.KING, Suit.DIAMONDS, 23);
+        if (cardName.equals("AD")) return new Card(Value.ACE, Suit.DIAMONDS, 23);
         if (cardName.equals("JD")) return new Card(Value.JACK, Suit.DIAMONDS, 24);
         if (cardName.equals("JH")) return new Card(Value.JACK, Suit.HEARTS, 25);
         if (cardName.equals("JS")) return new Card(Value.JACK, Suit.SPADES, 26);

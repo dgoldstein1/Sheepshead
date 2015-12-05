@@ -42,7 +42,7 @@ public class Table {
     public Card[] pickUpBlind(String username) {
         Card[] temp = blind;
         blind = null;
-        if (printAll) System.out.println("\t" + username + " picked up \n");
+        System.out.println("\t" + username + " picked up \n");
         return temp;
     }
 
@@ -81,10 +81,6 @@ public class Table {
         currentHand.add(new CardHistory(c, player));
         if (cardLed == null) {//first card played
             cardLed = c;
-        }
-        if (printAll) {
-            System.out.print("\t" + player.getUsername() + " played ");
-            c.printCard();
         }
         if (leaster && c.id() == 24) { //J of D played
             if(printAll)System.out.println("\t\tblind revealed:");
@@ -207,23 +203,18 @@ public class Table {
     public boolean validMove(Card cardToPlay, Hand h) {
         if(cardLed==null)return true; //first card played
         Suit suitLed = cardLed.getCardSuit();
-        Suit playedSuit = cardToPlay.getCardSuit();
+        Suit suitPlayed = cardToPlay.getCardSuit();
         if (cardLed.isTrump())
             suitLed = Suit.DIAMONDS; // make suit diamonds if trump led
-        if (cardLed.isTrump())
-            playedSuit = Suit.DIAMONDS; //make suit diamonds if card is trump
+        if (cardToPlay.isTrump())
+            suitPlayed = Suit.DIAMONDS; //make suit diamonds if card is trump
 
         if (!h.contains(cardToPlay)) return false; //not in hand
-        if (cardLed.id() != -1) { //not first card led
-            if (h.contains(suitLed)) { //suit is in hand
-                if (playedSuit != suitLed) { //trump played and trump not led or vice versa
-                    System.out.print("\tDOES NOT FOLLOW SUIT. Suit led: " + cardLed.getCardSuit());
-                    System.out.print("\t, but card played: ");
-                    cardToPlay.printCard();
-                    return false; //not of same suit
-                }
-            }
-        }
+
+        if (h.contains(suitLed) && suitPlayed != suitLed) //suit in hand but different suit played
+            return false; //not of same suit
+
+
         return true;
     }
 

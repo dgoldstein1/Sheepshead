@@ -25,7 +25,7 @@ public class Controller {
      */
     public Controller(){
         gameNotifier = new GameNotifier(this);
-        g = new Game(true,true,gameNotifier);
+        g = new Game(true,gameNotifier);
         frame = new SheepsheadMainFrame(g,gameNotifier);
 
         refreshTimer = new Timer(10, new ActionListener() {
@@ -35,7 +35,9 @@ public class Controller {
             }
         });
         refreshTimer.start();
-        this.playRound();
+        while(true){
+            this.playRound();
+        }
 
     }
 

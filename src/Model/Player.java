@@ -179,8 +179,8 @@ public class Player {
      * @return true if valid move, false if not
      */
     public void playCard(Card card) {
-        table.playCard(card, this);
         hand.remove(card);
+        table.playCard(card, this);
     }
 
     /**
