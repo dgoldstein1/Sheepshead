@@ -13,6 +13,9 @@ public class TableButton extends JButton{
     private ButtonType type;
     private String label;
     private Card c;
+    //isFaceDown means displaying 'faceDown' icon
+    //isEmpty means not displaying any icon (is null)
+    private boolean isFaceDown,isNull;
 
     /**
      * constructor for non-card buttons
@@ -33,11 +36,28 @@ public class TableButton extends JButton{
      * cards are initialized to null (showing "-")
      */
     public TableButton(ButtonType type){
+        Dimension standardCardSize = new Dimension(50,75);
+        Dimension aiPlayerCardSize = new Dimension(20,27);
+        if(type.equals(ButtonType.PLAYERCARD)) setPreferredSize(standardCardSize);
+        else if(type.equals(ButtonType.AICARD)){
+            setPreferredSize(aiPlayerCardSize);
+            setMinimumSize(aiPlayerCardSize);
+        }
+        else if(type.equals(ButtonType.CARD_PLAYED)) setPreferredSize(standardCardSize);
+
+        //set as transparent
+        setBorder(null);
+        setBorderPainted(false);
+        setContentAreaFilled(false);
+        setOpaque(false);
+
+
+
+        isFaceDown=true;
+        isNull=true;
         this.type = type;
-        this.label = "-";
-        setText(label);
         this.c = null;
-        //setIcon(new StretchIcon("icons/untouched/untouched"+c.id()+".png",false));
+
         init();
     }
 
@@ -56,33 +76,34 @@ public class TableButton extends JButton{
     public ButtonType type(){
         return type;
     }
-    public String label(){
-        return label;
-    }
 
     /**
      * if not of type card returns null
      * @return card
      */
-    public Card card(){
-        return c;
+    public int cardID(){
+        if(c!=null)
+            return c.id();
+        return -1;
     }
 
     /**
      * called by view to make card view null
      */
     public void setAsNull(){
-        label = "-";
-        setText(label);
+        setIcon(null);
         c = null;
+        isNull=true;
+        isFaceDown=false;
     }
 
     /**
      * called by view for AI players
      */
     public void setFaceDown(){
-        label = "x";
-        setText(label);
+        isNull=false;
+        isFaceDown=true;
+        setIcon(new StretchIcon("CardImages/FACE_DOWN.JPG", false));
     }
 
     /**
@@ -90,18 +111,23 @@ public class TableButton extends JButton{
      * @param c card to set value to
      */
     public void setCard(Card c){
-        label = c.getCardValue() + " of " + c.getCardSuit();
-        setText(label);
+        isFaceDown=false;
+        isNull=false;
+        setIcon(new StretchIcon("CardImages/" + c.id() + ".JPG", false));
         this.c = c;
     }
 
     /*getters and setters*/
 
     public boolean isNull(){
-        return label.equals("-");
+        return isNull;
     }
+    //default (null) state is faceDown
     public boolean isFaceDown(){
-        return label.equals("x");
+        return isFaceDown;
+    }
+    public Card card(){
+        return c;
     }
 
 }

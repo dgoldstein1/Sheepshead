@@ -1,122 +1,19 @@
-implement displaying revealed blind for leaster
-
-"C:\Program Files\Java\jdk1.8.0_11\bin\java" -Didea.launcher.port=7534 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin" -Dfile.encoding=windows-1256 -classpath "C:\Program Files\Java\jdk1.8.0_11\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\zipfs.jar;C:\Users\Dave\Dropbox\senior\Comp 484\Sheepshead\out\production\Project;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain SheepsheadRun
+"C:\Program Files\Java\jdk1.8.0_11\bin\java" -Didea.launcher.port=7539 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin" -Dfile.encoding=windows-1256 -classpath "C:\Program Files\Java\jdk1.8.0_11\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_11\jre\lib\ext\zipfs.jar;C:\Users\Dave\Dropbox\senior\Comp 484\Sheepshead\out\production\Project;C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain SheepsheadRun
 ---start round---
-Your current hand:
-
-	ACE of SPADES
-	NINE of SPADES
-	TEN of HEARTS
-	ACE of HEARTS
-	TEN of CLUBS
-	JACK of SPADES
-
---> pick up blind? y/n:
+--> pick up blind? y/n: 
 n
 Blind not picked up: Leaster will be played!!
---> Choose card to play:
-AH
-card ids: 15 -- 16
-card ids: 15 -- 7
-card ids: 15 -- 12
-card ids: 15 -- 15
-card ids: 0 -- 13
-card ids: 0 -- 18
-card ids: 0 -- 0
-card ids: 2 -- 5
-card ids: 2 -- 4
-card ids: 2 -- 11
-card ids: 2 -- 2
-card ids: 6 -- 23
-card ids: 6 -- 17
-card ids: 6 -- 6
-card ids: 3 -- 28
-card ids: 3 -- 3
-	David won this hand for 11 points
- | David: 11 | Normal_Player 1: 0 | MAUER 2: 0 | MAUER 3: 0 | STICKY_FINGERS 4: 0
+--> Choose card to play: 
+AC
+	David won this hand for 25 points 
+ | David: 25 | Normal_Player 1: 0 | GREESY_FINGERS 2: 0 | Normal_Player 3: 0 | MAUER 4: 0
 
---> Choose card to play:
-AS
-card ids: 16 -- 16
-card ids: 13 -- 13
-card ids: 4 -- 5
-card ids: 4 -- 4
-card ids: 10 -- 23
-card ids: 10 -- 17
-card ids: 10 -- 9
-card ids: 10 -- 31
-card ids: 10 -- 10
-card ids: 1 -- 28
-card ids: 1 -- 30
-card ids: 1 -- 8
-card ids: 1 -- 1
-	David won this hand for 25 points
- | David: 36 | Normal_Player 1: 0 | MAUER 2: 0 | MAUER 3: 0 | STICKY_FINGERS 4: 0
-
---> Choose card to play:
-NS
-card ids: 7 -- 7
-card ids: 18 -- 18
-card ids: 5 -- 5
-card ids: 9 -- 23
-card ids: 9 -- 17
-card ids: 9 -- 9
-card ids: 8 -- 28
-card ids: 8 -- 30
-card ids: 8 -- 8
-	Normal_Player 1 won this hand for 4 points
- | David: 36 | Normal_Player 1: 4 | MAUER 2: 0 | MAUER 3: 0 | STICKY_FINGERS 4: 0
-
-card ids: 25 -- 24
-card ids: 25 -- 21
-card ids: 25 -- 25
-Tcard ids: 19 -- 11
-card ids: 19 -- 29
-card ids: 19 -- 19
-card ids: 23 -- 23
-card ids: 20 -- 28
-card ids: 20 -- 30
-card ids: 20 -- 20
---> Choose card to play:
-TH
-	ILLEGAL INPUT / NO CARD FOUND for input TTH
---> Choose card to play:
-TH
-	illegal move for input TH
---> Choose card to play:
-JS
-card ids: 26 -- 12
-card ids: 26 -- 14
-card ids: 26 -- 26
-	David won this hand for 15 points
- | David: 51 | Normal_Player 1: 4 | MAUER 2: 0 | MAUER 3: 0 | STICKY_FINGERS 4: 0
-
---> Choose card to play:
-TH
-card ids: 12 -- 12
-card ids: 21 -- 24
-card ids: 21 -- 21
-card ids: 11 -- 11
-card ids: 17 -- 17
-card ids: 28 -- 28
-	STICKY_FINGERS 4 won this hand for 32 points
- | David: 51 | Normal_Player 1: 4 | MAUER 2: 0 | MAUER 3: 0 | STICKY_FINGERS 4: 32
-
-card ids: 30 -- 30
---> Choose card to play:
-TC
-card ids: 14 -- 14
-card ids: 24 -- 24
-		blind revealed:
-		JACK of CLUBS
-		TEN of DIAMONDS
-card ids: 29 -- 29
-card ids: 31 -- 31
-Exception in thread "AWT-EventQueue-0" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:886)
-	at java.util.ArrayList$Itr.next(ArrayList.java:836)
-	at View.CardsOnTable.refresh(CardsOnTable.java:101)
-	at View.TablePanel.refresh(TablePanel.java:82)
+--> Choose card to play: 
+Exception in thread "AWT-EventQueue-0" java.lang.IndexOutOfBoundsException: HAND EMPTY CANNOT DELETE CARD
+	at View.PlayerPanel$AIPlayerHandDisplay.deleteCard(PlayerPanel.java:95)
+	at View.PlayerPanel$AIPlayerHandDisplay.access$100(PlayerPanel.java:63)
+	at View.PlayerPanel.refresh(PlayerPanel.java:50)
+	at View.TablePanel.refresh(TablePanel.java:78)
 	at View.GamePanel.refresh(GamePanel.java:39)
 	at View.SheepsheadMainFrame.refresh(SheepsheadMainFrame.java:76)
 	at Controller.Controller$1.actionPerformed(Controller.java:34)
@@ -136,40 +33,42 @@ Exception in thread "AWT-EventQueue-0" java.util.ConcurrentModificationException
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
-	MAUER 3 won this hand for 33 points
- | David: 51 | Normal_Player 1: 4 | MAUER 2: 0 | MAUER 3: 33 | STICKY_FINGERS 4: 32
+QC
+	David won this hand for 6 points
+ | David: 31 | Normal_Player 1: 0 | GREESY_FINGERS 2: 0 | Normal_Player 3: 0 | MAUER 4: 0
 
-Player Normal_Player 1 won leaster with 4 points
+--> Choose card to play:
+AC
+	Card not in hand for input AC
+--> Choose card to play:
+TD
+		blind revealed:
+		JACK of CLUBS
+		QUEEN of SPADES
+	Normal_Player 1 won this hand for 31 points
+ | David: 31 | Normal_Player 1: 31 | GREESY_FINGERS 2: 0 | Normal_Player 3: 0 | MAUER 4: 0
+
+--> Choose card to play:
+KD
+	David won this hand for 15 points
+ | David: 46 | Normal_Player 1: 31 | GREESY_FINGERS 2: 0 | Normal_Player 3: 0 | MAUER 4: 0
+
+--> Choose card to play:
+JH
+	GREESY_FINGERS 2 won this hand for 14 points
+ | David: 46 | Normal_Player 1: 31 | GREESY_FINGERS 2: 14 | Normal_Player 3: 0 | MAUER 4: 0
+
+--> Choose card to play:
+KS
+	GREESY_FINGERS 2 won this hand for 29 points
+ | David: 46 | Normal_Player 1: 31 | GREESY_FINGERS 2: 43 | Normal_Player 3: 0 | MAUER 4: 0
+
+Player Normal_Player 1 won leaster with 31 points
 
 player scores:
 
- | David: -1 | Normal_Player 1: 4 | MAUER 2: -1 | MAUER 3: -1 | STICKY_FINGERS 4: -1
+ | David: -1 | Normal_Player 1: 4 | GREESY_FINGERS 2: -1 | Normal_Player 3: -1 | MAUER 4: -1
 ---end round---
 
----start round---
-	STICKY_FINGERS 4 picked up
 
-card ids: 11 -- 15
-card ids: 11 -- 13
-card ids: 11 -- 27
-card ids: 11 -- 25
-card ids: 11 -- 31
-card ids: 11 -- 30
-card ids: 11 -- 22
-card ids: 11 -- 11
-card ids: 22 -- 15
-card ids: 22 -- 13
-card ids: 22 -- 27
-card ids: 22 -- 25
-card ids: 22 -- 31
-card ids: 22 -- 30
-card ids: 22 -- 22
-card ids: 0 -- 21
-card ids: 0 -- 5
-card ids: 0 -- 0
-card ids: 12 -- 7
-card ids: 12 -- 12
-card ids: 16 -- 26
-card ids: 16 -- 16
-card ids: 15 -- 15
---> Choose card to play:
+playing leaster in view

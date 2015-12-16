@@ -7,6 +7,7 @@ import Model.Player;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -14,6 +15,7 @@ import java.util.ArrayList;
  */
 class CardsOnTable extends JPanel {
     private ArrayList<CardPlayedPanel> cardsOnTable;
+    private Image background;
 
     CardsOnTable(Player[] players) {
         this.cardsOnTable = new ArrayList<CardPlayedPanel>(10);
@@ -23,6 +25,9 @@ class CardsOnTable extends JPanel {
         }
         setLayout();
         setBorder(BorderFactory.createLineBorder(Color.black));
+        background = iconToImage(new StretchIcon("Textures/green_felt.JPG", false));
+        setMinimumSize(new Dimension(230,230));
+        setOpaque(false);
 
     }
 
@@ -80,6 +85,38 @@ class CardsOnTable extends JPanel {
 
 
     }
+
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(background,0,0,null);
+    }
+
+    /**
+     * converts icon to Image
+     * @param icon icon
+     * @return Image of icon
+     * taken from stack Overflow (http://stackoverflow.com/questions/19125707/simplest-way-to-set-image-as-jpanel-background)
+     */
+    private Image iconToImage(Icon icon){
+        if (icon instanceof ImageIcon) {
+            return ((ImageIcon)icon).getImage();
+        } else {
+            int w = icon.getIconWidth();
+            int h = icon.getIconHeight();
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            GraphicsDevice gd = ge.getDefaultScreenDevice();
+            GraphicsConfiguration gc = gd.getDefaultConfiguration();
+            BufferedImage image = gc.createCompatibleImage(w, h);
+            Graphics2D g = image.createGraphics();
+            icon.paintIcon(null, g, 0, 0);
+            g.dispose();
+            return image;
+        }
+    }
+
+
 
     /**
      * called by timer
@@ -146,11 +183,10 @@ class CardsOnTable extends JPanel {
         private Player player;
 
         CardPlayedPanel(Player p) {
-            add(new JLabel(p.getUsername()));
             player = p;
             card = new TableButton(ButtonType.CARD_PLAYED);
             this.add(card);
-            setBorder(BorderFactory.createLineBorder(Color.blue));
+            setOpaque(false);
         }
 
         public Card getCard() {

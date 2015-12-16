@@ -26,6 +26,7 @@ public class GamePanel extends JPanel {
         tableView = new TablePanel(g.getPlayers());
         this.add(playerHand, BorderLayout.SOUTH);
         this.add(tableView, BorderLayout.CENTER);
+        setOpaque(false);
     }
 
 

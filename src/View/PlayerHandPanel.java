@@ -22,20 +22,27 @@ class PlayerHandPanel extends JPanel {
 
     PlayerHandPanel(String name,MouseListener listener) {
         this.listener = listener;
-        add(new JLabel(name));
+        JLabel nameLabel = new JLabel(name);
+        nameLabel.setForeground(Color.WHITE);
+        add(nameLabel);
+
+        pointsDisplayed = 0;
+        pointsDisplayer = new JLabel("| Points: " + pointsDisplayed);
+        pointsDisplayer.setForeground(Color.WHITE);
+        add(pointsDisplayer);
 
         //init numberFaceDownCards as buttons and init 6 null buttons
         cardsDisplayed = new ArrayList<TableButton>(8);
         for (int i = 0; i < 8; i++) {
-            cardsDisplayed.add(i, new TableButton(ButtonType.PLAYERCARD));
+            TableButton card = new TableButton(ButtonType.PLAYERCARD);
+            card.addMouseListener(listener);
+            cardsDisplayed.add(i, card);
             this.add(cardsDisplayed.get(i)); //put on panel
         }
 
-        pointsDisplayed = 0;
-        pointsDisplayer = new JLabel("Points: " + pointsDisplayed);
-        add(pointsDisplayer);
 
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        setOpaque(false);
+
 
     }
 
@@ -59,7 +66,7 @@ class PlayerHandPanel extends JPanel {
             }
         }
         if(points!=pointsDisplayed){
-            pointsDisplayer.setText("Points: " + points);
+            pointsDisplayer.setText("| Points: " + points);
             pointsDisplayed = points;
         }
         return true;

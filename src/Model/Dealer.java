@@ -62,4 +62,13 @@ public class Dealer {
         return deck.getID(cardName);
     }
 
+    /**
+     * called by game to process player input
+     * @param ID card id
+     * @return card if found, null if not
+     */
+    public Card getCard(int ID){
+        return deck.getCard(ID);
+    }
+
 }

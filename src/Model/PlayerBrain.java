@@ -29,7 +29,7 @@ public class PlayerBrain {
         for (Card c : h.getHand()) {
             n += c.id() * c.getPointValue();
         }
-        if (n < pickUpThreshold * 1.3 && traits.is(Trait.GREESY_FINGERS))
+        if (n < pickUpThreshold * 1.3 && traits.is(Trait.GREASY_FINGERS))
             return false; //does not pick if not greater than scale * threshold
         if (n > pickUpThreshold && traits.is(Trait.MAUER)) return false; //mauer does not pick up even if good hand
         return (traits.is(Trait.STICKY_FINGERS) && n > pickUpThreshold / 2) || (n > pickUpThreshold);

@@ -20,6 +20,7 @@ public class Game {
     private BufferedReader bufferedReader;
     private Player startRound;
     private GameObserver obs;
+    private int currPlayerTurn;
 
     /**
      * initializes game by setting up scoreboard, dealer, and table
@@ -84,8 +85,9 @@ public class Game {
         endRound();
         dealer.collectCards();
         if (printAll) System.out.println("---end round---\n");
-
     }
+
+
 
     /**
      * choose who picks up blind
@@ -136,7 +138,7 @@ public class Game {
                     p.setPlayAlone();
                 }
             }
-            
+
             Card c1 = askPlayerCard(p, "--> Choose first card to bury: \n", true);
             p.getHand().remove(c1);
             System.out.print("\t buried card: ");
@@ -206,20 +208,31 @@ public class Game {
      * @return Player winner
      */
     private Player playHand() {
-        for (Player p : players) {
+        for (int i = 0 ; i < 5 ; i++) {
+            currPlayerTurn = i;
+            Player p = players[i];
             if (p.isPlayer()) {//ask non-AI to play card until valid
                 p.playCard(askPlayerCard(p, "--> Choose card to play: \n", false));
             } else{
                 //wait before playing card (emulate thinking)
-               // playerPause(0);
+                playerPause(0);
                 p.playCard();
-               // playerPause(0);
+                playerPause(0);
             }
         }
         Player winner = table.getWinner();
         HandHistory hand = table.endHand();
         scoreboard.addHand(hand, printAll); //adds hand including points
+        playerPause(0);//pause so player can see cards played
         return winner;
+    }
+
+    /**
+     * used after game has stopped and is expecting user input
+     * @param toBePlayed card to be played by user on return
+     */
+    private void finishHand(Card toBePlayed){
+
     }
 
     /**
@@ -359,6 +372,19 @@ public class Game {
             }
         }
         throw new IllegalStateException("COULD NOT FIND NON-AI PLAYER");
+
+    }
+
+    /*in from view*/
+
+    public void playerCardPushed(int cardID){
+/* todo
+        //check if real player turn?
+        if(!players[currPlayerTurn].isNonAIPlayer())
+            return;
+
+        Card c = dealer.getCard(cardID);
+*/
 
     }
 

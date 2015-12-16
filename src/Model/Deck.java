@@ -13,6 +13,7 @@ import java.util.List;
 public class Deck {
     private List<Card> deck;
     private int deckSize;
+    private List<Card> orderList;
 
     /**
      * init deck and adds sheephead cards
@@ -46,6 +47,8 @@ public class Deck {
         deck.add(new Card(Value.QUEEN, Suit.CLUBS, id++));
 
         deckSize = deck.size();
+
+        orderList = deck;
     }
 
 
@@ -107,6 +110,17 @@ public class Deck {
     /*
         getters and setters
      */
+
+    /**
+     * returns card given int id
+     * @param id card id
+     * @return Card object
+     */
+    public Card getCard(int id){
+        if(id<0 || id > 31)
+            return null;
+        return orderList.get(id);
+    }
 
     /**
      * called by dealer to get card id based on input

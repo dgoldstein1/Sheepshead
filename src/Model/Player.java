@@ -17,13 +17,9 @@ public class Player {
     private Card[] blind;
     private Card[] buried;
     private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone;
-    private boolean pickedUp;
-    private boolean onPartnerTeam;
-    private boolean isPlayer;
-    private PlayerBrain brain;
+    private boolean pickedUp,onPartnerTeam, isPlayer ,playAlone, isNonAIPlayer;
     private int playerID;
-    private boolean playAlone;
-    private boolean isNonAIPlayer;
+    private PlayerBrain brain;
 
     public Player(String username, int playerID, Table table, boolean isPlayer, Trait trait1) {
         this.username = username;
@@ -214,7 +210,6 @@ public class Player {
     }
 
     /**
-     * @override equals()
      * @param other player
      * @return true if players are same, false otherwise
      */

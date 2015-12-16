@@ -19,6 +19,7 @@ public class SheepsheadMainFrame extends JFrame {
     private GamePanel table;
     private OptionsPanel options;
     private MainSound sounds;
+    private Dimension standardSize;
 
     public SheepsheadMainFrame(Game g, final MouseListener listener) {
         super("Sheaphead");
@@ -33,7 +34,10 @@ public class SheepsheadMainFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        setPreferredSize(new Dimension(900, 600));
+        standardSize = new Dimension(1000,730);
+        setPreferredSize(standardSize);
+        setMinimumSize(standardSize);
+        setContentPane(new JLabel(new StretchIcon("Textures/wood.JPG", false)));
         setLayout(new BorderLayout());
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -58,12 +62,18 @@ public class SheepsheadMainFrame extends JFrame {
      * @return success
      */
     private boolean initPanels(MouseListener listener, Game g) {
+        Font standardFont = new Font("Helvetica",Font.PLAIN,12);
+
+        UIManager.put("Button.font", standardFont);
+        UIManager.put("Label.font", standardFont);
+
         table = new GamePanel(g, listener);
         options = new OptionsPanel(listener, sounds);
         contentPane.add(table, BorderLayout.CENTER);
         contentPane.add(options, BorderLayout.NORTH);
         return true;
     }
+
 
     /**
      * refreshes all values in GUI from model

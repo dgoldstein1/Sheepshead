@@ -8,8 +8,11 @@ import Model.Card;
 import Model.Player;
 import Model.Table;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.*;
 
 /**
@@ -25,8 +28,10 @@ class TablePanel extends JPanel {
         for(int i=0;i<4;i++){
             aiplayers.add(new PlayerPanel(players[i+1].getUsername()));
         }
+
+        setOpaque(false);
         setupLayout();
-        setBorder(BorderFactory.createLineBorder(Color.black));
+       // setBorder(BorderFactory.createLineBorder(Color.black));
 
     }
 

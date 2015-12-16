@@ -23,16 +23,18 @@ public class PlayerPanel extends JPanel {
         int allign = (int) JPanel.CENTER_ALIGNMENT;
         JLabel name = new JLabel(playerName);
         name.setHorizontalAlignment(allign);
+        name.setForeground(Color.WHITE);
         add(name,BorderLayout.NORTH);
         displayedCards = new ArrayList<TableButton>(8);
         numberFaceDownCards = 0;
         aiHandDisplay = new AIPlayerHandDisplay();
         this.add(aiHandDisplay,BorderLayout.CENTER);
         pointDisplayer = new JLabel("Points: " + pointsDisplayed);
+        pointDisplayer.setForeground(Color.WHITE);
         pointDisplayer.setHorizontalAlignment(allign);
         add(pointDisplayer, BorderLayout.SOUTH);
-
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        setOpaque(false);
+        //setBorder(BorderFactory.createLineBorder(Color.black));
     }
 
     /**
@@ -66,6 +68,7 @@ public class PlayerPanel extends JPanel {
             for (int i = 0; i < 8; i++) {
                 displayedCards.add(i, new TableButton(ButtonType.AICARD));
                 this.add(displayedCards.get(i)); //put on panel
+                setOpaque(false);
             }
         }
         /**

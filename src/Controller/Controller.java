@@ -35,13 +35,14 @@ public class Controller {
             }
         });
         refreshTimer.start();
-        while(true){
-            this.playRound();
-        }
-
+        this.playRound();
     }
 
     /*in from View out to Game*/
+
+    public void playerCardPushed(int cardID){
+        g.playerCardPushed(cardID);
+    }
 
     public void playRound(){
         g.playRound();

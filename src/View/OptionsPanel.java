@@ -12,12 +12,13 @@ import java.util.ArrayList;
 public class OptionsPanel extends JPanel{
     private ArrayList<TableButton> optionsButtons;
     private MainSound sounds;
+    private Dimension standardWindowSize;
 
     public OptionsPanel(final MouseListener listener, MainSound sounds){
         setLayout(new GridLayout(1,3));
         setBorder(BorderFactory.createLineBorder(Color.black));
         this.sounds = sounds;
-
+        standardWindowSize = new Dimension(300,475);
 
         optionsButtons = new ArrayList<TableButton>();
         this.addButton(new TableButton(ButtonType.NEW_GAME,"NEW GAME"),listener);
@@ -46,19 +47,19 @@ public class OptionsPanel extends JPanel{
     public void newGamePushed(){}
 
     public void helpPushed(){
-        new HelpPanel();
+        new HelpFrame(standardWindowSize);
     }
 
     public void statsPushed(ScoreBoard scoreBoard) {
-        new StatsPanel(scoreBoard);
+        new StatsFrame(scoreBoard,standardWindowSize);
     }
 }
 
 
 
-class HelpPanel extends JFrame{
+class HelpFrame extends JFrame{
     //helpFrame
-    HelpPanel(){
+    HelpFrame(Dimension size){
         super("HELP");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -71,8 +72,9 @@ class HelpPanel extends JFrame{
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        setPreferredSize(new Dimension(450,375));
-        setLayout(new BorderLayout());
+        setPreferredSize(size);
+        setLayout(new FlowLayout());
+
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 setVisible(false);
@@ -98,14 +100,71 @@ class HelpPanel extends JFrame{
 
 
 
-class StatsPanel extends JPanel{
-    StatsPanel(ScoreBoard scoreboard){
-        setLayout(new GridLayout(5,2));
-        setBorder(BorderFactory.createLineBorder(Color.black));
+class StatsFrame extends JFrame{
+    private JTextArea statsArea;
+    private Dimension windowSize,textAreaSize;
+
+    StatsFrame(ScoreBoard scoreboard, Dimension size){
+        super("Stats");
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+        setPreferredSize(size);
+        setMinimumSize(size);
+        this.windowSize = size;
+        setContentPane(new JLabel(new StretchIcon("Textures/wood.JPG", false)));
+
+        //add in scroll bars
+        initScrollWindow(size);
+
+        setPreferredSize(size);
+        setLayout(new FlowLayout());
+
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                setVisible(false);
+                dispose();
+            }
+        });
+
+        pack();
+        setVisible(true);
+
     }
 
-    //creates row with description of stat and stat on right side
-    private void createRow(String s, int n){
+    /**
+     * adds in stats areas and scroll bar
+     * @param windowSize overall size of window
+     */
+    private void initScrollWindow(Dimension windowSize){
+        int width,height;
+        width = windowSize.width / 3;
+        height = windowSize.height / 2;
+        statsArea = new JTextArea();
+        textAreaSize = new Dimension(width,height);
+        statsArea.setPreferredSize(textAreaSize);
+        statsArea.setEditable(false);
+        JScrollPane scroller = new JScrollPane(statsArea);
+        scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.getContentPane().add(scroller);
+
+    }
+
+
+    /**
+     //creates row with description of stat and stat on right side
+     * @param s Stat name
+     * @param n stats number
+     */
+    private void writeRow(String s, int n){
         JLabel label = new JLabel(s);
         label.setBorder(BorderFactory.createLineBorder(Color.black));
         label.setHorizontalAlignment(SwingConstants.CENTER);
