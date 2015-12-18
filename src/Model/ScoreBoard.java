@@ -106,6 +106,7 @@ public class ScoreBoard {
                 }
             }
         }
+        currRound.createPointHistory();
     }
 
     /**
@@ -240,4 +241,8 @@ public class ScoreBoard {
     public Player[] getNonStaticPlayers(){
         return players;
     }
+
+    public List<Round> getListOfRound() {return scoreboard;}
+
+
 }

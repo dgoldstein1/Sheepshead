@@ -15,13 +15,13 @@ public class PlayerPanel extends JPanel {
     private AIPlayerHandDisplay aiHandDisplay;
     private int numberFaceDownCards;
     private int pointsDisplayed;
-    private JLabel pointDisplayer;
+    private JLabel pointDisplayer, name;
 
     //stores cards for each AI Player
     PlayerPanel(String playerName) {
         setLayout(new BorderLayout());
         int allign = (int) JPanel.CENTER_ALIGNMENT;
-        JLabel name = new JLabel(playerName);
+        name = new JLabel(playerName);
         name.setHorizontalAlignment(allign);
         name.setForeground(Color.WHITE);
         add(name,BorderLayout.NORTH);
@@ -45,6 +45,10 @@ public class PlayerPanel extends JPanel {
      * @return true if success, false otherwise
      */
     public boolean refresh(Player p) {
+        if(!p.getUsername().equals(name.getText())){
+            name.setText(p.getUsername());
+        }
+
         while (p.getNCards() > numberFaceDownCards) {//more cards in hand than displayed
             aiHandDisplay.addCard();
         }

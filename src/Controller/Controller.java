@@ -3,7 +3,6 @@ package Controller;
 import Model.Game;
 import View.SheepsheadMainFrame;
 
-import javax.smartcardio.Card;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,7 +34,7 @@ public class Controller {
             }
         });
         refreshTimer.start();
-        this.playRound();
+        this.play();
     }
 
     /*in from View out to Game*/
@@ -44,8 +43,13 @@ public class Controller {
         g.playerCardPushed(cardID);
     }
 
-    public void playRound(){
-        g.playRound();
+    /**
+     * plays sheepshead games indefinitely
+     */
+    public void play(){
+        while(true){
+            g.playRound();
+        }
     }
 
     /*in from Game out to View*/
@@ -60,10 +64,16 @@ public class Controller {
         frame.helpPushed();
     }
     public void statsPushed(){
-        frame.statsPushed(g.getScoreboard());
+       // frame.statsPushed(g.getScoreboard());
     }
+
     public void newGamePushed(){
-        //todo
+        /*
+        frame.dispose();
+        g = new Game(true,gameNotifier);
+        frame = new SheepsheadMainFrame(g,gameNotifier);
+ //       this.play();
+ */
     }
 
 

@@ -14,11 +14,13 @@ public class Round {
     public List<HandHistory> hands;
     public Player[] players;
     private boolean leaster;
+    int[] playerpoints;
 
     public Round(int roundNumber, Player[] players) {
         this.players = players;
         this.roundNumber = roundNumber;
         hands = new ArrayList<HandHistory>();
+        playerpoints = new int[5];
     }
 
 
@@ -111,6 +113,19 @@ public class Round {
     }
 
     /**
+     * called at end of round
+     * tallies up curr points for each player
+     * stores in array to be displayed by options panel
+     */
+    public void createPointHistory(){
+        int i = 0;
+        for(Player p : players){
+            playerpoints[i] = p.getPoints();
+            i++;
+        }
+    }
+
+    /**
      * sets this round to 'leaster' round
      */
     public void setLeaster() {
@@ -119,6 +134,10 @@ public class Round {
 
     public boolean isLeaster() {
         return leaster;
+    }
+
+    public int[] getPlayerpoints(){
+        return playerpoints;
     }
 
 }

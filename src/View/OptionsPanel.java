@@ -1,4 +1,6 @@
 package View;
+
+import Model.Player;
 import Model.ScoreBoard;
 
 import javax.swing.*;
@@ -9,57 +11,55 @@ import java.util.ArrayList;
 /**
  * Created by Dave on 10/02/2015.
  */
-public class OptionsPanel extends JPanel{
+public class OptionsPanel extends JPanel {
     private ArrayList<TableButton> optionsButtons;
     private MainSound sounds;
     private Dimension standardWindowSize;
 
-    public OptionsPanel(final MouseListener listener, MainSound sounds){
-        setLayout(new GridLayout(1,3));
+    public OptionsPanel(final MouseListener listener, MainSound sounds) {
+        setLayout(new GridLayout(1, 3));
         setBorder(BorderFactory.createLineBorder(Color.black));
         this.sounds = sounds;
-        standardWindowSize = new Dimension(300,475);
+        standardWindowSize = new Dimension(800,500);
 
         optionsButtons = new ArrayList<TableButton>();
-        this.addButton(new TableButton(ButtonType.NEW_GAME,"NEW GAME"),listener);
-        this.addButton(new TableButton(ButtonType.HELP,"HELP"),listener);
-        this.addButton(new TableButton(ButtonType.SCOREBOARD,"SCORES"),listener);
+        this.addButton(new TableButton(ButtonType.NEW_GAME, "NEW GAME"), listener);
+        this.addButton(new TableButton(ButtonType.HELP, "HELP"), listener);
+        this.addButton(new TableButton(ButtonType.SCOREBOARD, "SCORES"), listener);
 
     }
 
     /**
      * helper method for setting up buttons
+     *
      * @param tb
      * @param ml
      */
-    private void addButton(TableButton tb, MouseListener ml){
+    private void addButton(TableButton tb, MouseListener ml) {
         tb.addMouseListener(ml);
         optionsButtons.add(tb);
         this.add(tb);
     }
 
 
-
-
-
     //called by notifiers
 
-    public void newGamePushed(){}
+    public void newGamePushed() {
+    }
 
-    public void helpPushed(){
+    public void helpPushed() {
         new HelpFrame(standardWindowSize);
     }
 
     public void statsPushed(ScoreBoard scoreBoard) {
-        new StatsFrame(scoreBoard,standardWindowSize);
+        new StatsFrame(scoreBoard, standardWindowSize);
     }
 }
 
 
-
-class HelpFrame extends JFrame{
+class HelpFrame extends JFrame {
     //helpFrame
-    HelpFrame(Dimension size){
+    HelpFrame(Dimension size) {
         super("HELP");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -99,12 +99,11 @@ class HelpFrame extends JFrame{
 }
 
 
+class StatsFrame extends JFrame {
+    private SheepsheadStatsTable statsArea;
+    private Dimension windowSize, textAreaSize;
 
-class StatsFrame extends JFrame{
-    private JTextArea statsArea;
-    private Dimension windowSize,textAreaSize;
-
-    StatsFrame(ScoreBoard scoreboard, Dimension size){
+    StatsFrame(ScoreBoard scoreboard, Dimension size) {
         super("Stats");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -118,12 +117,11 @@ class StatsFrame extends JFrame{
             e.printStackTrace();
         }
         setPreferredSize(size);
-        setMinimumSize(size);
         this.windowSize = size;
         setContentPane(new JLabel(new StretchIcon("Textures/wood.JPG", false)));
 
         //add in scroll bars
-        initScrollWindow(size);
+        initScrollWindow(scoreboard);
 
         setPreferredSize(size);
         setLayout(new FlowLayout());
@@ -141,37 +139,66 @@ class StatsFrame extends JFrame{
     }
 
     /**
-     * adds in stats areas and scroll bar
-     * @param windowSize overall size of window
+     * initializes table with scoreboard values
      */
-    private void initScrollWindow(Dimension windowSize){
-        int width,height;
-        width = windowSize.width / 3;
-        height = windowSize.height / 2;
-        statsArea = new JTextArea();
-        textAreaSize = new Dimension(width,height);
-        statsArea.setPreferredSize(textAreaSize);
-        statsArea.setEditable(false);
-        JScrollPane scroller = new JScrollPane(statsArea);
-        scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        this.getContentPane().add(scroller);
+    private void initScrollWindow(ScoreBoard sb) {
+
+        String[][] data = {
+                {"0", "1", "2", "3", "4", "5"},
+        };
+        parseData(sb);
+        String[] columns = parseColumns(sb);
+        if (data[0].length != columns.length) {
+            new PopUpFrame("columns and data not compatible" +
+                    "       colums = " + columns.length + " but data[0]" + data[0].length);
+            this.dispose(); //exit
+        }
+
+        statsArea = new SheepsheadStatsTable(this.getContentPane(), windowSize, data, columns);
 
     }
-
 
     /**
-     //creates row with description of stat and stat on right side
-     * @param s Stat name
-     * @param n stats number
+     * @param sb Scoreboard of curr game
+     * @return list of players in game as strings
      */
-    private void writeRow(String s, int n){
-        JLabel label = new JLabel(s);
-        label.setBorder(BorderFactory.createLineBorder(Color.black));
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        this.add(label);
-        JLabel stat = new JLabel("" + n);
-        stat.setBorder(BorderFactory.createLineBorder(Color.black));
-        stat.setHorizontalAlignment(SwingConstants.CENTER);
-        this.add(stat);
+    private String[] parseColumns(ScoreBoard sb) {
+        String[] columns = new String[6];
+        columns[0] = "Round";
+        for (int i = 1; i < 6; i++) {
+            columns[i] = sb.getNonStaticPlayers()[i - 1].getUsername();
+        }
+        return columns;
     }
+
+    /**
+     * given sb gets round points for game
+     *
+     * @param sb Scoreboard
+     * @return String[][] of round data where:
+     * String[round][playerId+1] = roundPoint
+     */
+    private String[][] parseData(ScoreBoard sb) {
+        String[][] data = new String[sb.roundsPlayed()][6];
+        int[] roundPlayerPoints;
+
+        for (int round = 0; round < sb.roundsPlayed(); round++) {
+
+            data[round][0] = round + 1 + ""; //set column number
+
+            roundPlayerPoints = sb.getListOfRound().get(round).getPlayerpoints();
+            for (int playerId = 1; playerId < 6; playerId++) {
+
+                data[round][playerId] = roundPlayerPoints[playerId - 1] + "";
+                System.out.print(data[round][playerId] + " - ");
+
+            }
+            System.out.println("");
+        }
+
+        return data;
+    }
+
+
+
 }
