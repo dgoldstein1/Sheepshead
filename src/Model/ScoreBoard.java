@@ -70,6 +70,7 @@ public class ScoreBoard {
             awardNormalPoints(basePoint);
         }
         checkScoresBalance();
+        currRound.createPointHistory(); //finalize scores in scoreboard
     }
 
     /**
@@ -106,7 +107,6 @@ public class ScoreBoard {
                 }
             }
         }
-        currRound.createPointHistory();
     }
 
     /**

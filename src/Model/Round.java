@@ -14,13 +14,13 @@ public class Round {
     public List<HandHistory> hands;
     public Player[] players;
     private boolean leaster;
-    int[] playerpoints;
+    int[] playerScores;
 
     public Round(int roundNumber, Player[] players) {
         this.players = players;
         this.roundNumber = roundNumber;
         hands = new ArrayList<HandHistory>();
-        playerpoints = new int[5];
+        playerScores = new int[5];
     }
 
 
@@ -120,7 +120,7 @@ public class Round {
     public void createPointHistory(){
         int i = 0;
         for(Player p : players){
-            playerpoints[i] = p.getPoints();
+            playerScores[i] = p.getScore();
             i++;
         }
     }
@@ -136,8 +136,8 @@ public class Round {
         return leaster;
     }
 
-    public int[] getPlayerpoints(){
-        return playerpoints;
+    public int[] getPlayerScores(){
+        return playerScores;
     }
 
 }

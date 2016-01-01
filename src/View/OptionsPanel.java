@@ -1,6 +1,5 @@
 package View;
 
-import Model.Player;
 import Model.ScoreBoard;
 
 import javax.swing.*;
@@ -143,10 +142,7 @@ class StatsFrame extends JFrame {
      */
     private void initScrollWindow(ScoreBoard sb) {
 
-        String[][] data = {
-                {"0", "1", "2", "3", "4", "5"},
-        };
-        parseData(sb);
+        String[][] data = parseData(sb);
         String[] columns = parseColumns(sb);
         if (data[0].length != columns.length) {
             new PopUpFrame("columns and data not compatible" +
@@ -154,7 +150,7 @@ class StatsFrame extends JFrame {
             this.dispose(); //exit
         }
 
-        statsArea = new SheepsheadStatsTable(this.getContentPane(), windowSize, data, columns);
+        statsArea = new SheepsheadStatsTable(this, windowSize, data, columns);
 
     }
 
@@ -186,12 +182,12 @@ class StatsFrame extends JFrame {
 
             data[round][0] = round + 1 + ""; //set column number
 
-            roundPlayerPoints = sb.getListOfRound().get(round).getPlayerpoints();
+            roundPlayerPoints = sb.getListOfRound().get(sb.roundsPlayed() - round - 1).getPlayerScores();
+
             for (int playerId = 1; playerId < 6; playerId++) {
 
                 data[round][playerId] = roundPlayerPoints[playerId - 1] + "";
-                System.out.print(data[round][playerId] + " - ");
-
+               // System.out.print(data[round][playerId] + " - ");
             }
             System.out.println("");
         }

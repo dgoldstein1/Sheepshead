@@ -64,7 +64,7 @@ public class Controller {
         frame.helpPushed();
     }
     public void statsPushed(){
-       // frame.statsPushed(g.getScoreboard());
+        frame.statsPushed(g.getScoreboard());
     }
 
     public void newGamePushed(){
