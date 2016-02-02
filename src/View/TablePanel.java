@@ -84,6 +84,7 @@ class TablePanel extends JPanel {
                 return false;
             }
         }
+        repaint();
         return cardsPlayed.refresh(cardsOnTable,t.getCurrentHand());
     }
 }

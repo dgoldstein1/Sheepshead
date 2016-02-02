@@ -7,5 +7,8 @@ import Model.Card;
  */
 public interface GameObserver {
 
+    public boolean refreshView();
+    public String yOrN(String prompt);
+    public Card getPlayerCard(String prompt);
 
 }

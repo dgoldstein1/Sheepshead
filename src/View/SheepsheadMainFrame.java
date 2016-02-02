@@ -1,7 +1,9 @@
 package View;
 
+import Model.Card;
 import Model.Game;
 import Model.ScoreBoard;
+import Model.Value;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,7 +39,7 @@ public class SheepsheadMainFrame extends JFrame {
         standardSize = new Dimension(1000,730);
         setPreferredSize(standardSize);
         setMinimumSize(standardSize);
-        setContentPane(new JLabel(new StretchIcon("Textures/wood.JPG", false)));
+        setContentPane(new JLabel(new StretchIcon("Textures/wood.jpg", false)));
         setLayout(new BorderLayout());
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -83,12 +85,33 @@ public class SheepsheadMainFrame extends JFrame {
      * @return success
      */
     public boolean refresh(Game g) {
+        repaint();
         return table.refresh(g);
+
     }
 
 
     /* in from notifier*/
 
+    /**
+     * creates Jdialog for player to choose yes or no prompt
+     * @param prompt message displayed to user
+     * @return String (testing done in game to assert 'y' or 'no')
+     */
+    public String yOrN(String prompt){
+        int n = JOptionPane.showConfirmDialog(
+                this,
+                prompt,
+                "",
+                JOptionPane.YES_NO_OPTION
+        );
+        if(n==0)
+            return "y";
+        return "n";
+    }
+    public Card getPlayerCard(String prompt){
+        return table.getPlayerCard(prompt);
+    }
 
     /*out to options*/
     public void helpPushed() {

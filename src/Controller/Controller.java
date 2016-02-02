@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Card;
 import Model.Game;
 import View.SheepsheadMainFrame;
 
@@ -18,6 +19,7 @@ public class Controller {
     private GameNotifier gameNotifier;
     private Timer refreshTimer;
 
+
     /**
      * takes in Game and matching GUI
      * creates corresponding gameNotifier
@@ -25,16 +27,28 @@ public class Controller {
     public Controller(){
         gameNotifier = new GameNotifier(this);
         g = new Game(true,gameNotifier);
-        frame = new SheepsheadMainFrame(g,gameNotifier);
 
-        refreshTimer = new Timer(10, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.refresh(g);
+        //run GUI from EDT
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                frame = new SheepsheadMainFrame(g,gameNotifier);
+
+                int FPS = 30;
+                refreshTimer = new Timer( 1000 / FPS, new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        frame.refresh(g);
+                    }
+                });
+                refreshTimer.start();
             }
-        });
-        refreshTimer.start();
-        this.play();
+        } );
+
+
+
+        while(true){
+            g.playRound();
+        }
     }
 
     /*in from View out to Game*/
@@ -43,18 +57,17 @@ public class Controller {
         g.playerCardPushed(cardID);
     }
 
-    /**
-     * plays sheepshead games indefinitely
-     */
-    public void play(){
-        while(true){
-            g.playRound();
-        }
-    }
 
     /*in from Game out to View*/
-
-
+    public String yOrN(String prompt){
+        return frame.yOrN(prompt);
+    }
+    public boolean refreshView() {
+        return frame.refresh(g);
+    }
+    public Card getPlayerCard(String prompt) {
+        return frame.getPlayerCard(prompt);
+    }
     public void newRound(){
         //frame.newRound
     }
@@ -68,6 +81,7 @@ public class Controller {
     }
 
     public void newGamePushed(){
+
         /*
         frame.dispose();
         g = new Game(true,gameNotifier);
@@ -76,5 +90,7 @@ public class Controller {
  */
     }
 
-
 }
+
+
+

@@ -72,6 +72,7 @@ public class Table {
      * @param player name of player
      */
     public void playCard(Card c, Player player) {
+        System.out.print("" + player.getUsername() + " played "); c.printCard();
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
 

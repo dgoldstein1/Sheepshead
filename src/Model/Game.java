@@ -2,10 +2,8 @@ package Model;
 
 import Controller.GameObserver;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Timer;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by Dave on 9/16/2015.
@@ -249,7 +247,6 @@ public class Game {
     }
 
     /**
-     * internal class
      * reads  input from player
      *
      * @param prompt  prompt to be displayed before player input
@@ -259,8 +256,13 @@ public class Game {
     private String getPlayerInput(String prompt, boolean yesOrNo) {
         String input = null;
         try {
-            System.out.print(prompt);
-            input = bufferedReader.readLine();
+            if(yesOrNo){
+                input = obs.yOrN(prompt);
+            }
+            else{
+                input = bufferedReader.readLine();
+            }
+            System.out.println("read : " + input);
         } catch (IOException e) {
             System.out.println("ERROR READING INPUT");
             e.printStackTrace();
@@ -291,21 +293,15 @@ public class Game {
      * @return card played
      */
     private Card askPlayerCard(Player p, String prompt, boolean buryCard) {
-        String in = getPlayerInput(prompt, false);
-        Card toPlay = dealer.getCardID(in);
+        Card toPlay = obs.getPlayerCard(prompt);
         try {
-            if (toPlay.id() == -1) {//no card found
-                throw new IOException("ILLEGAL INPUT / NO CARD FOUND");
-            } else if (!p.getHand().contains(toPlay)) //card not in hand
-                throw new IOException("Card not in hand");
-
-            else if (!buryCard) {//card played in game
+            if (!buryCard) {//card played in game
                 if (!table.validMove(toPlay, p.getHand()))
                     throw new IOException("illegal move");
             }
         } catch (IOException e) {
             if (e.getMessage() != null)
-                System.out.println("\t" + e.getMessage() + " for input " + in);
+                System.out.println("\t" + e.getMessage() + " for input " + toPlay.id());
             return askPlayerCard(p, prompt, buryCard);
         }
         return toPlay;

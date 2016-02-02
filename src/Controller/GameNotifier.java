@@ -23,13 +23,19 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
     }
 
     /*in from game*/
-
+    public String yOrN(String prompt){
+        return control.yOrN(prompt);
+    }
+    public boolean refreshView() {
+        return control.refreshView();
+    }
+    public Card getPlayerCard(String prompt){
+        return control.getPlayerCard(prompt);
+    }
 
     /*in from view*/
     @Override
     public void mousePressed(MouseEvent e) {
-
-
 
         if (e.getButton() == MouseEvent.BUTTON1) {
             TableButton button = (TableButton) e.getComponent();

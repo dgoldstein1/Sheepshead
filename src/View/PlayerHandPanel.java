@@ -69,6 +69,7 @@ class PlayerHandPanel extends JPanel {
             pointsDisplayer.setText("| Points: " + points);
             pointsDisplayed = points;
         }
+        repaint();
         return true;
     }
 
@@ -101,6 +102,25 @@ class PlayerHandPanel extends JPanel {
             }
         }
         throw new IndexOutOfBoundsException("ADDING CARD TO FULL PLAYER HAND");
+    }
+
+    /**
+     * in from model
+     * @param prompt displayed to ask for Card
+     * @return Card
+     */
+    public Card getPlayerCard(String prompt){
+        ArrayList<String> buttons = new ArrayList<String>();
+        for(TableButton tb : cardsDisplayed){
+            if(tb.card()!=null)
+                buttons.add(tb.card().toString());
+        }
+
+        int rc = JOptionPane.showOptionDialog(null, prompt, "Play Card",
+                JOptionPane.WARNING_MESSAGE, 0, null, buttons.toArray(),"...");
+
+
+        return cardsDisplayed.get(rc).card();
     }
 
 

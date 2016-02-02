@@ -48,7 +48,7 @@ public class Deck {
 
         deckSize = deck.size();
 
-        orderList = deck;
+        orderList = new ArrayList<Card>(deck); //local copy
     }
 
 

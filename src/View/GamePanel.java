@@ -1,5 +1,6 @@
 package View;
 
+import Model.Card;
 import Model.Game;
 
 import javax.swing.*;
@@ -36,9 +37,15 @@ public class GamePanel extends JPanel {
      * @return true if success, false otherwise
      */
     public boolean refresh(Game g) {
+        repaint();
         playerHand.refresh(g.getNonAiPlayer().getHand().getHand(),g.getNonAiPlayer().getPoints());
         tableView.refresh((g.table.getCurrentHand().getCardsInHand()),g.getStaticPlayers(),g.table);
         return true;
+    }
+
+    //in from model
+    public Card getPlayerCard(String prompt){
+        return playerHand.getPlayerCard(prompt);
     }
 
 }

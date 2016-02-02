@@ -62,4 +62,9 @@ public class Card {
         return value == Value.QUEEN || value == Value.JACK || suit == Suit.DIAMONDS;
     }
 
+    @Override
+    public String toString(){
+        return ("" + value + " of " + suit);
+    }
+
 }

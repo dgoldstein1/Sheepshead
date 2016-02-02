@@ -141,6 +141,7 @@ class CardsOnTable extends JPanel {
             }
         }
 
+        repaint();
         return true;
 
     }
