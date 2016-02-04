@@ -47,5 +47,8 @@ public class GamePanel extends JPanel {
     public Card getPlayerCard(String prompt){
         return playerHand.getPlayerCard(prompt);
     }
+    public void playerCardPushed(Card card){
+        playerHand.setSelectedCard(card);
+    }
 
 }

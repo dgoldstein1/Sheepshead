@@ -25,36 +25,41 @@ public class Controller {
      * creates corresponding gameNotifier
      */
     public Controller(){
+        setup();
+        playRound();
+    }
+
+    /**
+     * sets up Sheapshead game
+     */
+    private void setup(){
         gameNotifier = new GameNotifier(this);
         g = new Game(true,gameNotifier);
 
+
         //run GUI from EDT
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                frame = new SheepsheadMainFrame(g,gameNotifier);
-
-                int FPS = 30;
-                refreshTimer = new Timer( 1000 / FPS, new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        frame.refresh(g);
-                    }
-                });
-                refreshTimer.start();
+        frame = new SheepsheadMainFrame(g, gameNotifier);
+        int FPS = 30;
+        refreshTimer = new Timer(1000 / FPS, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.refresh(g);
             }
-        } );
+        });
+        refreshTimer.start();
+    }
 
-
-
-        while(true){
-            g.playRound();
-        }
+    /**
+     * plays one round of Sheapshead
+     */
+    private void playRound(){
+        g.playRound();
     }
 
     /*in from View out to Game*/
 
-    public void playerCardPushed(int cardID){
-        g.playerCardPushed(cardID);
+    public void playerCardPushed(Card card){
+        frame.playerCardPushed(card);
     }
 
 
@@ -68,9 +73,6 @@ public class Controller {
     public Card getPlayerCard(String prompt) {
         return frame.getPlayerCard(prompt);
     }
-    public void newRound(){
-        //frame.newRound
-    }
 
     /*in from View out to View*/
     public void helpPushed(){
@@ -81,13 +83,9 @@ public class Controller {
     }
 
     public void newGamePushed(){
-
-        /*
         frame.dispose();
-        g = new Game(true,gameNotifier);
-        frame = new SheepsheadMainFrame(g,gameNotifier);
- //       this.play();
- */
+        setup();
+        playRound();
     }
 
 }

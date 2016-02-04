@@ -117,7 +117,7 @@ class StatsFrame extends JFrame {
         }
         setPreferredSize(size);
         this.windowSize = size;
-        setContentPane(new JLabel(new StretchIcon("Textures/wood.JPG", false)));
+        setContentPane(new JLabel(new StretchIcon("Textures/wood.jpg", false)));
 
         //add in scroll bars
         initScrollWindow(scoreboard);

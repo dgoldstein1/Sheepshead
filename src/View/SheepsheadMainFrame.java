@@ -112,6 +112,9 @@ public class SheepsheadMainFrame extends JFrame {
     public Card getPlayerCard(String prompt){
         return table.getPlayerCard(prompt);
     }
+    public void playerCardPushed(Card card){
+        table.playerCardPushed(card);
+    }
 
     /*out to options*/
     public void helpPushed() {

@@ -52,7 +52,7 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
 
             } else if (buttonType.equals(ButtonType.PLAYERCARD)) {
                 if(button.cardID() != -1)
-                    control.playerCardPushed(button.cardID());
+                    control.playerCardPushed(button.card());
             }
 
 
