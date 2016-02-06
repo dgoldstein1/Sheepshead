@@ -125,23 +125,23 @@ public class Game {
      * @return true if picks up, false otherwise
      */
     private boolean askPlayerToPickUp(Player p) {
-        if (getPlayerInput("--> pick up blind? y/n: \n", true).equals("y")) {//player chooses to pick up
+        if (getPlayerInput(" pick up blind? y/n: \n", true).equals("y")) {//player chooses to pick up
             p.pickUpBlind();
 
             if (p.getHand().contains(24)) {//picked up and contains j of d
                 p.incrAbleToPlayAlone();
-                if (getPlayerInput("--> would you like to call up? y/n \n", true).equals("y")) {//call up
+                if (getPlayerInput(" would you like to call up? y/n \n", true).equals("y")) {//call up
                     p.setNotPlayAlone();
                 } else { //not calling up
                     p.setPlayAlone();
                 }
             }
 
-            Card c1 = askPlayerCard(p, "--> Choose first card to bury: \n", true);
+            Card c1 = askPlayerCard(p, " Choose first card to bury: \n", true);
             p.getHand().remove(c1);
             System.out.print("\t buried card: ");
             c1.printCard();
-            Card c2 = askPlayerCard(p, "--> Choose second card to bury: \n", true);
+            Card c2 = askPlayerCard(p, " Choose second card to bury: \n", true);
             p.getHand().remove(c2);
             System.out.print("\t buried card: ");
             c2.printCard();
@@ -210,7 +210,7 @@ public class Game {
             currPlayerTurn = i;
             Player p = players[i];
             if (p.isPlayer()) {//ask non-AI to play card until valid
-                p.playCard(askPlayerCard(p, "--> Choose card to play: \n", false));
+                p.playCard(askPlayerCard(p, " Choose card to play: \n", false));
             } else{
                 //wait before playing card (emulate thinking)
                 playerPause(0);
