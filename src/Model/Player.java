@@ -16,7 +16,7 @@ public class Player {
     private Table table;
     private Card[] blind;
     private Card[] buried;
-    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone;
+    private int points,displayablePoints, score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone;
     private boolean pickedUp,onPartnerTeam, isPlayer ,playAlone, isNonAIPlayer;
     private int playerID;
     private PlayerBrain brain;
@@ -24,7 +24,7 @@ public class Player {
     public Player(String username, int playerID, Table table, boolean isPlayer, Trait trait1) {
         this.username = username;
         this.table = table;
-        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone= 0;
+        points=displayablePoints=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone= 0;
         onPartnerTeam = false;
         blind = null;
         pickedUp = false;
@@ -137,8 +137,8 @@ public class Player {
         buried = blind; //copes over cards in blind to buried cards
 
         //adds to player points
-        this.addPoints(blind[0].getPointValue());
-        this.addPoints(blind[1].getPointValue());
+        this.addNonDisplayablePoints(blind[0].getPointValue());
+        this.addNonDisplayablePoints(blind[1].getPointValue());
 
         //returns buried cards to table
         table.returnBlind(blind);
@@ -206,6 +206,7 @@ public class Player {
         hand.getHand().clear();
         totalPoints+=points;
         points = 0;
+        displayablePoints = 0;
         buried = null;
     }
 
@@ -242,12 +243,23 @@ public class Player {
         return score;
     }
 
+    //adds points internally
+    private void addNonDisplayablePoints(int points){
+        this.points += points;
+    }
+
     public void addPoints(int points) {
         this.points += points;
+        displayablePoints += points;
     }
 
     public int getPoints() {
         return points;
+    }
+
+    //points without those burried
+    public int getDisplayablePoints(){
+        return displayablePoints;
     }
 
     public boolean pickedUp() {

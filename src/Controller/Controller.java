@@ -73,6 +73,9 @@ public class Controller {
     public Card getPlayerCard(String prompt) {
         return frame.getPlayerCard(prompt);
     }
+    public int displayMessage(String prompt) {
+        return frame.displayMessage(prompt);
+    }
 
     /*in from View out to View*/
     public void helpPushed(){

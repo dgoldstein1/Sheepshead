@@ -3,7 +3,7 @@ package Model;
 import Controller.GameObserver;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.util.Observer;
 
 /**
  * Created by Dave on 9/16/2015.
@@ -18,7 +18,6 @@ public class Game {
     private BufferedReader bufferedReader;
     private Player startRound;
     private GameObserver obs;
-    private int currPlayerTurn;
 
     /**
      * initializes game by setting up scoreboard, dealer, and table
@@ -28,7 +27,7 @@ public class Game {
      */
     public Game(boolean printAll, GameObserver obs) {
         handSize = 6;
-        table = new Table(printAll);
+        table = new Table(printAll,obs);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         initPlayers();
         scoreboard = new ScoreBoard(players);
@@ -207,7 +206,6 @@ public class Game {
      */
     private Player playHand() {
         for (int i = 0 ; i < 5 ; i++) {
-            currPlayerTurn = i;
             Player p = players[i];
             if (p.isPlayer()) {//ask non-AI to play card until valid
                 p.playCard(askPlayerCard(p, " Choose card to play: \n", false));
@@ -300,8 +298,6 @@ public class Game {
                     throw new IOException("illegal move");
             }
         } catch (IOException e) {
-            if (e.getMessage() != null)
-                System.out.println("\t" + e.getMessage() + " for input " + toPlay.id());
             return askPlayerCard(p, prompt, buryCard);
         }
         return toPlay;

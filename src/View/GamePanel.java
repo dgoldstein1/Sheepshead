@@ -38,7 +38,7 @@ public class GamePanel extends JPanel {
      */
     public boolean refresh(Game g) {
         repaint();
-        playerHand.refresh(g.getNonAiPlayer().getHand().getHand(),g.getNonAiPlayer().getPoints());
+        playerHand.refresh(g.getNonAiPlayer().getHand().getHand(),g.getNonAiPlayer().getDisplayablePoints());
         tableView.refresh((g.table.getCurrentHand().getCardsInHand()),g.getStaticPlayers(),g.table);
         return true;
     }

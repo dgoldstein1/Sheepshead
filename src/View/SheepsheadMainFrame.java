@@ -4,6 +4,7 @@ import Model.Card;
 import Model.Game;
 import Model.ScoreBoard;
 import Model.Value;
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 import java.awt.*;
@@ -99,15 +100,27 @@ public class SheepsheadMainFrame extends JFrame {
      * @return String (testing done in game to assert 'y' or 'no')
      */
     public String yOrN(String prompt){
-        int n = JOptionPane.showConfirmDialog(
-                this,
-                prompt,
-                "",
-                JOptionPane.YES_NO_OPTION
-        );
+        int n = JOptionPane.showConfirmDialog(this,prompt,"",JOptionPane.YES_NO_OPTION);
         if(n==0)
             return "y";
         return "n";
+    }
+
+    /**
+     * displays "ok" prompt
+     * @param prompt
+     * @return success n
+     */
+    public int displayMessage(String prompt){
+        Object[] options = {"baa'ah"};
+        int n = JOptionPane.showOptionDialog(this,
+                prompt,"",
+                JOptionPane.PLAIN_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+        return n;
     }
     public Card getPlayerCard(String prompt){
         return table.getPlayerCard(prompt);

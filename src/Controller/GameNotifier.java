@@ -14,11 +14,9 @@ import java.awt.event.MouseListener;
  */
 public class GameNotifier extends MouseAdapter implements GameObserver {
     private Controller control;
-    private Card playerCardToPlay;
 
     public GameNotifier(final Controller control) {
         this.control = control;
-        playerCardToPlay = null;
 
     }
 
@@ -31,6 +29,9 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
     }
     public Card getPlayerCard(String prompt){
         return control.getPlayerCard(prompt);
+    }
+    public int displayMessage(String s){
+        return control.displayMessage(s);
     }
 
     /*in from view*/

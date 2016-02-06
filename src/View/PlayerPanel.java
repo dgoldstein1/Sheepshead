@@ -34,7 +34,6 @@ public class PlayerPanel extends JPanel {
         pointDisplayer.setHorizontalAlignment(allign);
         add(pointDisplayer, BorderLayout.SOUTH);
         setOpaque(false);
-        //setBorder(BorderFactory.createLineBorder(Color.black));
     }
 
     /**
@@ -58,8 +57,8 @@ public class PlayerPanel extends JPanel {
 
         //update player points
         if(p.getPoints()!=pointsDisplayed){
-            pointDisplayer.setText("Points: " + p.getPoints());
-            pointsDisplayed = p.getPoints();
+            pointDisplayer.setText("Points: " + p.getDisplayablePoints());
+            pointsDisplayed = p.getDisplayablePoints();
         }
 
         return true;

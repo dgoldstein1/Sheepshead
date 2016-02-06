@@ -1,8 +1,11 @@
 package Model;
 
+import Controller.GameObserver;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Observer;
 
 /**
  * Created by Dave on 9/16/2015.
@@ -20,8 +23,10 @@ public class Table {
     private boolean printAll, leaster;
     private Player partner;
     private List<Card> cardsPlayed;
+    private GameObserver obs;
 
-    public Table(boolean printAll) {
+    public Table(boolean printAl, GameObserver obs) {
+        this.obs = obs;
         currHandNumber = 0;
         table = new ArrayList<Card>();
         cardsPlayed = new ArrayList<Card>();
@@ -84,7 +89,7 @@ public class Table {
             cardLed = c;
         }
         if (leaster && c.id() == 24) { //J of D played
-            if(printAll)System.out.println("\t\tblind revealed:");
+            if(printAll)obs.displayMessage("\t\tblind revealed:");
             for (Card card : blind) {
                 if(printAll){
                     System.out.print("\t\t");
@@ -172,9 +177,7 @@ public class Table {
     public void callUp(String username,Hand h) {
         partnerCard = intToCard(callUpHelper(h));
         if (printAll) {
-            System.out.print("\t" + username + " calling up to ");
-            partnerCard.printCard();
-            System.out.println("");
+            obs.displayMessage("\t" + username + " calling up to " + partnerCard.toString());
         }
     }
 
@@ -210,11 +213,16 @@ public class Table {
         if (cardToPlay.isTrump())
             suitPlayed = Suit.DIAMONDS; //make suit diamonds if card is trump
 
-        if (!h.contains(cardToPlay)) return false; //not in hand
+        if (!h.contains(cardToPlay)){
+                obs.displayMessage("Error: Current card is not registered as part of current hand");
+            return false; //not in hand
+        }
 
-        if (h.contains(suitLed) && suitPlayed != suitLed) //suit in hand but different suit played
+        if (h.contains(suitLed) && suitPlayed != suitLed) { //suit in hand but different suit played
+            obs.displayMessage("Illegal move: " + suitLed.name() + " led but " + suitPlayed + " played. The sheep knows" +
+                    " that " + suitLed + " is in your hand!");
             return false; //not of same suit
-
+        }
 
         return true;
     }
