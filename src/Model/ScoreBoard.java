@@ -1,5 +1,9 @@
 package Model;
 
+import Controller.GameObserver;
+import View.LogType;
+import sun.rmi.runtime.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +20,10 @@ public class ScoreBoard {
     private int roundNumber;
     private boolean blitzers;
     private int leasterCount;
+    private GameObserver obs;
 
-    public ScoreBoard(Player[] players) {
+    public ScoreBoard(Player[] players, GameObserver obs) {
+        this.obs = obs;
         scoreboard = new ArrayList<Round>();
         this.players = players;
         roundNumber = 0;
@@ -49,7 +55,7 @@ public class ScoreBoard {
             if (winner.equals(p)) {
                 p.addPoints(hand.getPoints());
                 if (printAll)
-                    System.out.print("\t" + p.getUsername() + " won this hand for " + hand.getPoints() + " points \n");
+                    obs.log(this.getClass(),LogType.INFO,p.getUsername() + " won this hand for " + hand.getPoints() + " points");
             }
         }
     }
@@ -118,7 +124,7 @@ public class ScoreBoard {
     private void awardLeasterPoints(int basePoint,boolean printAll){
         Player winner = currRound.getLeasterWinner();
         winner.incrGameWon();
-        if(printAll)System.out.println("Player " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
+        if(printAll) obs.log(this.getClass(),LogType.INFO,"Player " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
         for(Player p : players){
             if(winner == p) {
                 p.addScore(basePoint * 4);
@@ -136,8 +142,7 @@ public class ScoreBoard {
             score+=p.getScore();
         }
         if (score != 0) {
-            System.out.println("GAME SCORES DO NOT BALANCE OUT TO ZERO:" + score);
-            printScores();
+            obs.log(this.getClass(),LogType.ERROR,"GAME SCORES DO NOT BALANCE OUT TO ZERO:" + score);
             throw new IllegalStateException();
         }
         int points = 0;
@@ -145,8 +150,7 @@ public class ScoreBoard {
             points += p.getPoints();
         }
         if (points != 120 && !currRound.isLeaster()) {//leaster is dumb
-            System.out.println("TOTAL NOT EQUAL TO 120 POINTS" + points);
-            printPoints();
+            obs.log(this.getClass(),LogType.ERROR,"TOTAL NOT EQUAL TO 120 POINTS" + points);
             throw new IllegalStateException();
         }
 
@@ -160,9 +164,10 @@ public class ScoreBoard {
      * prints points for each player in current round
      */
     public void printPoints() {
+        String toLog = null;
         for (Player p : players)
-            System.out.print(" | " + p.getUsername() + ": " + p.getPoints());
-        System.out.println("\n");
+            toLog += " | " + p.getUsername() + ": " + p.getPoints();
+        obs.log(this.getClass(), LogType.INFO,toLog);
     }
 
     //double checks round points for round total to 120
@@ -174,12 +179,11 @@ public class ScoreBoard {
      * total game points do not balance to zero
      */
     public void printScores() {
-        System.out.println("\nplayer scores: \n");
+        String toLog ="player scores: \n";
         for (Player p : players) {
-            System.out.print(" | " + p.getUsername() + ": " + p.getScore());
+            toLog += " | " + p.getUsername() + ": " + p.getScore();
         }
-
-        System.out.println("");
+        obs.log(this.getClass(),LogType.INFO,toLog);
     }
 
     /**
@@ -188,28 +192,32 @@ public class ScoreBoard {
 
     public void printRoundDetails(){
         if(!currRound.isLeaster()){
-            System.out.println("round stats:");
-            System.out.println("\n\tshnider reached? " + currRound.shniderReached());
-            System.out.println("\tbitz & punish? " + blitzers);
-            System.out.println("\ttrickless? " + currRound.trickless() + "\n");
+            String toLog = "round stats" +
+            "\n\tshnider reached? " + currRound.shniderReached() +
+            "\tbitz & punish? " + blitzers +
+            "\ttrickless? " + currRound.trickless() + "\n";
+            obs.log(this.getClass(),LogType.INFO,toLog);
         }
+
     }
 
     /**
      * prints player teams. Used at end of the game, called by printScores()
      */
     public void printTeams(){
+        String toLog;
         if(currRound.isLeaster()) return; //no teams for leaster
-        System.out.print("\tpartner team:  \t ");
+        toLog = "partner team: \t";
         for(Player p : players){
-            if(p.isOnPartnerTeam()) System.out.print(" " + p.getUsername() + " | ");
+            if(p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
         }
-        System.out.println("");
-        System.out.print("\tnon-partner team: ");
+        toLog += "\n";
+        toLog += "\tnon-partner team: ";
         for(Player p: players){
-            if(!p.isOnPartnerTeam()) System.out.print(" " + p.getUsername() + " | ");
+            if(!p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
         }
-        System.out.println("");
+        toLog += "\n";
+        obs.log(this.getClass(), LogType.INFO,toLog);
 
     }
 

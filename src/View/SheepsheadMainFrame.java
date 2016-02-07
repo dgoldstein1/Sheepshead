@@ -3,14 +3,13 @@ package View;
 import Model.Card;
 import Model.Game;
 import Model.ScoreBoard;
-import Model.Value;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 /**
  * Created by Dave on 11/2/2015.
@@ -21,11 +20,14 @@ public class SheepsheadMainFrame extends JFrame {
     private Container contentPane;
     private GamePanel table;
     private OptionsPanel options;
+    private GameLogFrame gameLog;
+    private boolean gameLogShowing;
     private MainSound sounds;
     private Dimension standardSize;
+    private ArrayList<LogEntry> logEntries;
 
     public SheepsheadMainFrame(Game g, final MouseListener listener) {
-        super("Sheaphead");
+        super("Sheepshead");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
@@ -65,6 +67,9 @@ public class SheepsheadMainFrame extends JFrame {
      * @return success
      */
     private boolean initPanels(MouseListener listener, Game g) {
+        gameLog = new GameLogFrame(null);
+        gameLogShowing = true;
+        logEntries = new ArrayList<LogEntry>();
         Font standardFont = new Font("Helvetica",Font.PLAIN,12);
 
         UIManager.put("Button.font", standardFont);
@@ -87,6 +92,11 @@ public class SheepsheadMainFrame extends JFrame {
      */
     public boolean refresh(Game g) {
         repaint();
+        if(gameLog!=null)
+            gameLog.refresh(logEntries);
+        if(options.statsDisplayed()){
+            options.refesh();
+        }
         return table.refresh(g);
 
     }
@@ -120,21 +130,28 @@ public class SheepsheadMainFrame extends JFrame {
                 null,
                 options,
                 options[0]);
+        this.log(this.getClass(),LogType.ERROR,prompt);
         return n;
     }
     public Card getPlayerCard(String prompt){
+        this.log(this.getClass(),LogType.SYSTEM,prompt);
         return table.getPlayerCard(prompt);
     }
     public void playerCardPushed(Card card){
         table.playerCardPushed(card);
     }
+    public void log(Class c, LogType type, String s){
+        logEntries.add(new LogEntry(c,type,s));
+    }
 
     /*out to options*/
     public void helpPushed() {
+        logEntries.add(new LogEntry(this.getClass(),LogType.PLAYER_INPUT,"help panel opened"));
         options.helpPushed();
     }
 
     public void statsPushed(ScoreBoard s) {
+        logEntries.add(new LogEntry(this.getClass(),LogType.PLAYER_INPUT,"stats panel opened"));
         options.statsPushed(s);
     }
 

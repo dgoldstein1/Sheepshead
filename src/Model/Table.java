@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.GameObserver;
+import View.LogType;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +33,6 @@ public class Table {
         cardsPlayed = new ArrayList<Card>();
         currentHand = new HandHistory();
         blind = new Card[2];
-        this.printAll = printAll;
         leaster = false;
         partner=null;
         partnerCard = new Card(Value.JACK, Suit.DIAMONDS, 24); //init to j of d
@@ -47,7 +47,7 @@ public class Table {
     public Card[] pickUpBlind(String username) {
         Card[] temp = blind;
         blind = null;
-        System.out.println("\t" + username + " picked up \n");
+        obs.log(this.getClass(), LogType.INFO, username + " picked up ");
         return temp;
     }
 
@@ -77,7 +77,7 @@ public class Table {
      * @param player name of player
      */
     public void playCard(Card c, Player player) {
-        System.out.print("" + player.getUsername() + " played "); c.printCard();
+        obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString());
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
 
@@ -89,12 +89,12 @@ public class Table {
             cardLed = c;
         }
         if (leaster && c.id() == 24) { //J of D played
-            if(printAll)obs.displayMessage("\t\tblind revealed:");
+            String blindMessage = null;
             for (Card card : blind) {
                 if(printAll){
-                    System.out.print("\t\t");
-                    card.printCard();
+                    blindMessage += " " +card.toString();;
                 }
+                obs.displayMessage("blind revealed" + blindMessage);
                 currentHand.add(new CardHistory(card, player));
                 table.add(card);
             }
@@ -177,7 +177,7 @@ public class Table {
     public void callUp(String username,Hand h) {
         partnerCard = intToCard(callUpHelper(h));
         if (printAll) {
-            obs.displayMessage("\t" + username + " calling up to " + partnerCard.toString());
+            obs.displayMessage(username + " calling up to " + partnerCard.toString());
         }
     }
 
@@ -220,7 +220,7 @@ public class Table {
 
         if (h.contains(suitLed) && suitPlayed != suitLed) { //suit in hand but different suit played
             obs.displayMessage("Illegal move: " + suitLed.name() + " led but " + suitPlayed + " played. The sheep knows" +
-                    " that " + suitLed + " is in your hand!");
+                    " that " + suitLed + " are in your hand!");
             return false; //not of same suit
         }
 

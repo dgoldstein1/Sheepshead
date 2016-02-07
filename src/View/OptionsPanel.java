@@ -14,6 +14,8 @@ public class OptionsPanel extends JPanel {
     private ArrayList<TableButton> optionsButtons;
     private MainSound sounds;
     private Dimension standardWindowSize;
+    private StatsFrame statsFrame;
+    private HelpFrame helpFrame;
 
     public OptionsPanel(final MouseListener listener, MainSound sounds) {
         setLayout(new GridLayout(1, 3));
@@ -25,6 +27,7 @@ public class OptionsPanel extends JPanel {
         this.addButton(new TableButton(ButtonType.NEW_GAME, "NEW GAME"), listener);
         this.addButton(new TableButton(ButtonType.HELP, "HELP"), listener);
         this.addButton(new TableButton(ButtonType.SCOREBOARD, "SCORES"), listener);
+
 
     }
 
@@ -40,19 +43,38 @@ public class OptionsPanel extends JPanel {
         this.add(tb);
     }
 
+    public boolean refesh(){
+        if(statsFrame!= null){
+            statsFrame.refresh();
+        }
+        return true;
+
+    }
+
+
 
     //called by notifiers
 
     public void newGamePushed() {
+
     }
 
     public void helpPushed() {
-        new HelpFrame(standardWindowSize);
+        helpFrame  = new HelpFrame(standardWindowSize);
     }
 
     public void statsPushed(ScoreBoard scoreBoard) {
-        new StatsFrame(scoreBoard, standardWindowSize);
+        statsFrame = new StatsFrame(scoreBoard, standardWindowSize);
     }
+
+    //getters / setters
+    public boolean statsDisplayed(){
+        return statsFrame!=null;
+    }
+    public boolean helpDisplayed(){
+        return helpFrame!=null;
+    }
+
 }
 
 
@@ -179,20 +201,23 @@ class StatsFrame extends JFrame {
         int[] roundPlayerPoints;
 
         for (int round = 0; round < sb.roundsPlayed(); round++) {
-
             data[round][0] = round + 1 + ""; //set column number
-
             roundPlayerPoints = sb.getListOfRound().get(sb.roundsPlayed() - round - 1).getPlayerScores();
-
             for (int playerId = 1; playerId < 6; playerId++) {
-
                 data[round][playerId] = roundPlayerPoints[playerId - 1] + "";
-               // System.out.print(data[round][playerId] + " - ");
             }
-            System.out.println("");
         }
 
         return data;
+    }
+
+    /**
+     * called by frame to refresh stats
+     * @return success
+     */
+    public boolean refresh(){
+     //todo
+        return true;
     }
 
 

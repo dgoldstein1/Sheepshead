@@ -3,6 +3,7 @@ package Controller;
 import Model.Card;
 import Model.Game;
 import View.ButtonType;
+import View.LogType;
 import View.TableButton;
 
 import java.awt.event.MouseAdapter;
@@ -32,6 +33,9 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
     }
     public int displayMessage(String s){
         return control.displayMessage(s);
+    }
+    public void log(Class c, LogType type, String s){
+        control.log(c,type,s);
     }
 
     /*in from view*/

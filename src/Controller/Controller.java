@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Card;
 import Model.Game;
+import View.LogType;
 import View.SheepsheadMainFrame;
 
 import javax.swing.*;
@@ -75,6 +76,9 @@ public class Controller {
     }
     public int displayMessage(String prompt) {
         return frame.displayMessage(prompt);
+    }
+    public void log(Class c, LogType type, String s){
+        frame.log(c,type,s);
     }
 
     /*in from View out to View*/

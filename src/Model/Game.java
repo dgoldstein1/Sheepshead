@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.GameObserver;
+import View.LogType;
 
 import java.io.*;
 import java.util.Observer;
@@ -30,7 +31,7 @@ public class Game {
         table = new Table(printAll,obs);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         initPlayers();
-        scoreboard = new ScoreBoard(players);
+        scoreboard = new ScoreBoard(players,obs);
         dealer = new Dealer(players, table);
         this.printAll = printAll;
         this.obs = obs;
@@ -67,7 +68,7 @@ public class Game {
      * called by run
      */
     public void playRound() {
-        if (printAll) System.out.println("---start round---");
+        obs.log(this.getClass(), LogType.SYSTEM,"---start round---");
         scoreboard.newRound();
         dealer.dealCards(handSize);
         setTeams();
@@ -81,7 +82,7 @@ public class Game {
         }
         endRound();
         dealer.collectCards();
-        if (printAll) System.out.println("---end round---\n");
+        if (printAll) obs.log(this.getClass(),LogType.SYSTEM,"--end round---");
     }
 
 
@@ -101,7 +102,7 @@ public class Game {
             }
         }
         //blind not picked up by any player
-        System.out.println("Blind not picked up: Leaster will be played!!");
+        obs.displayMessage("Blind not picked up: Leaster will be played!!");
         scoreboard.setLeaster();
         table.setLeaster();
     }
@@ -136,14 +137,12 @@ public class Game {
                 }
             }
 
-            Card c1 = askPlayerCard(p, " Choose first card to bury: \n", true);
+            Card c1 = askPlayerCard(p, " Choose first card to bury:", true);
             p.getHand().remove(c1);
-            System.out.print("\t buried card: ");
-            c1.printCard();
-            Card c2 = askPlayerCard(p, " Choose second card to bury: \n", true);
+            obs.log(this.getClass(),LogType.INFO,"buried card: " + c1.toString());
+            Card c2 = askPlayerCard(p, " Choose second card to bury:", true);
             p.getHand().remove(c2);
-            System.out.print("\t buried card: ");
-            c2.printCard();
+            obs.log(this.getClass(),LogType.INFO, "buried card: " + c2.toString());
             p.buryCards(c1, c2);
             return true;
         }
@@ -208,7 +207,7 @@ public class Game {
         for (int i = 0 ; i < 5 ; i++) {
             Player p = players[i];
             if (p.isPlayer()) {//ask non-AI to play card until valid
-                p.playCard(askPlayerCard(p, " Choose card to play: \n", false));
+                p.playCard(askPlayerCard(p, " Choose card to play:", false));
             } else{
                 //wait before playing card (emulate thinking)
                 playerPause(0);
@@ -239,7 +238,7 @@ public class Game {
         try{
             Thread.sleep(700);
         } catch (Exception e){
-            System.out.println("PROBLEM WITH PLAYER PAUSE");
+            obs.log(this.getClass(),LogType.ERROR,"PROBLEM WITH PLAYER PAUSE, SYSTEM EXIT");
             System.exit(1);
         }
     }
@@ -260,23 +259,11 @@ public class Game {
             else{
                 input = bufferedReader.readLine();
             }
-            System.out.println("read : " + input);
+            obs.log(this.getClass(),LogType.PLAYER_INPUT,"read : " + input);
         } catch (IOException e) {
-            System.out.println("ERROR READING INPUT");
+            obs.log(this.getClass(),LogType.ERROR,"ERROR READING INPUT, SYSTEM EXIT");
             e.printStackTrace();
             System.exit(1);
-        }
-        if (input == null) {//no string entered
-            System.out.println("NO STRING ENTERED");
-            return getPlayerInput(prompt, yesOrNo);
-        }
-        if (yesOrNo) {//y/n prompt
-            if (!input.equals("y") && !input.equals("n")) {
-                System.out.println(input);
-                System.out.println("INVALID STRING (not 'y' or 'n')");
-                return getPlayerInput(prompt, false);
-            }
-
         }
         return input;
     }
@@ -311,11 +298,10 @@ public class Game {
      */
     private void printPlayerCards() {
         for (Player p : players) {
-            System.out.print("---" + p.getUsername() + "---\n");
-            if (p.isOnPartnerTeam()) System.out.println(p.getUsername() + " is partner");
-            if (p.pickedUp()) System.out.println(p.getUsername() + " picked up");
+            obs.log(this.getClass(),LogType.INFO,"---" + p.getUsername() + "---");
+            if (p.isOnPartnerTeam()) obs.log(this.getClass(),LogType.INFO,p.getUsername() + " is partner");
+            if (p.pickedUp()) obs.log(this.getClass(),LogType.INFO,p.getUsername() + " picked up");
             p.printHand(true);
-            System.out.println("");
         }
     }
 
@@ -324,14 +310,14 @@ public class Game {
      * called by run
      */
     public void stats() {
-        System.out.println("overall stats: \n");
-        System.out.println("\t| rounds played: " + scoreboard.roundsPlayed());
-        System.out.println("\t| leaster games played: " + scoreboard.getLeasterCount());
-        System.out.println("\t| leaster percentage: " + (float) scoreboard.getLeasterCount() / scoreboard.roundsPlayed() * 100 + "%\n");
-        System.out.println("player specific stats: \n" + "\t-----");
+        obs.log(this.getClass(),LogType.INFO,"overall stats: \n");
+        obs.log(this.getClass(),LogType.INFO,"\t| rounds played: " + scoreboard.roundsPlayed());
+        obs.log(this.getClass(),LogType.INFO,"\t| leaster games played: " + scoreboard.getLeasterCount());
+        obs.log(this.getClass(),LogType.INFO,"\t| leaster percentage: " + (float) scoreboard.getLeasterCount() / scoreboard.roundsPlayed() * 100 + "%\n");
+        obs.log(this.getClass(),LogType.INFO,"player specific stats: \n" + "\t-----");
         for (Player p : players) {
             p.printDetailedStats(scoreboard.roundsPlayed());
-            System.out.println("\t-----");
+            obs.log(this.getClass(),LogType.INFO,"\t-----");
         }
 
     }
@@ -367,18 +353,7 @@ public class Game {
 
     }
 
-    /*in from view*/
 
-    public void playerCardPushed(int cardID){
-/* todo
-        //check if real player turn?
-        if(!players[currPlayerTurn].isNonAIPlayer())
-            return;
-
-        Card c = dealer.getCard(cardID);
-*/
-
-    }
 
 
 

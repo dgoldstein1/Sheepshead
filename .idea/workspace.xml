@@ -2,22 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf21470-676c-4a61-9796-3072011e374f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/GameLogFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/LogType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/Controller$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/Controller.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/Controller.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/GameNotifier.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/GameNotifier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/GameObserver.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/GameObserver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Model/Game.class" afterPath="$PROJECT_DIR$/out/production/Project/Model/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Model/Player.class" afterPath="$PROJECT_DIR$/out/production/Project/Model/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Model/Table.class" afterPath="$PROJECT_DIR$/out/production/Project/Model/Table.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/GamePanel.class" afterPath="$PROJECT_DIR$/out/production/Project/View/GamePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/HelpFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Project/View/HelpFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/HelpFrame$2.class" afterPath="$PROJECT_DIR$/out/production/Project/View/HelpFrame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/HelpFrame.class" afterPath="$PROJECT_DIR$/out/production/Project/View/HelpFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/OptionsPanel.class" afterPath="$PROJECT_DIR$/out/production/Project/View/OptionsPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/PlayerPanel$AIPlayerHandDisplay.class" afterPath="$PROJECT_DIR$/out/production/Project/View/PlayerPanel$AIPlayerHandDisplay.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/PlayerPanel.class" afterPath="$PROJECT_DIR$/out/production/Project/View/PlayerPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame.class" afterPath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Project/View/StatsFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsFrame.class" afterPath="$PROJECT_DIR$/out/production/Project/View/StatsFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Controller.java" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/GameNotifier.java" afterPath="$PROJECT_DIR$/src/Controller/GameNotifier.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/GameObserver.java" afterPath="$PROJECT_DIR$/src/Controller/GameObserver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Game.java" afterPath="$PROJECT_DIR$/src/Model/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Player.java" afterPath="$PROJECT_DIR$/src/Model/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ScoreBoard.java" afterPath="$PROJECT_DIR$/src/Model/ScoreBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table.java" afterPath="$PROJECT_DIR$/src/Model/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/GamePanel.java" afterPath="$PROJECT_DIR$/src/View/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/View/PlayerPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/OptionsPanel.java" afterPath="$PROJECT_DIR$/src/View/OptionsPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" afterPath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
     </list>
     <ignored path="Sheepshead.iws" />
@@ -39,13 +51,15 @@
     <favorites_list name="Sheepshead" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PlayerHandPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/PlayerHandPanel.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-              <folding />
+            <state vertical-scroll-proportion="43.533333">
+              <caret line="142" column="68" selection-start-line="142" selection-start-column="68" selection-end-line="142" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,34 +68,56 @@
         <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding>
                 <element signature="method#yOrN#0;class#SheepsheadMainFrame#0" expanded="false" />
                 <element signature="method#displayMessage#0;class#SheepsheadMainFrame#0" expanded="false" />
+                <element signature="method#getPlayerCard#0;class#SheepsheadMainFrame#0" expanded="false" />
+                <element signature="method#helpPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
+                <element signature="method#statsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Table.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
+      <file leaf-file-name="GameLogFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/GameLogFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14610389">
-              <caret line="221" column="119" selection-start-line="221" selection-start-column="119" selection-end-line="221" selection-end-column="119" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScoreBoard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ScoreBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-26.933332">
+              <caret line="209" column="33" selection-start-line="209" selection-start-column="33" selection-end-line="209" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
+      <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="245" column="28" selection-start-line="245" selection-start-column="28" selection-end-line="245" selection-end-column="28" />
-              <folding>
-                <element signature="e#6759#6760#0" expanded="true" />
-                <element signature="e#6796#6797#0" expanded="true" />
-              </folding>
+              <caret line="222" column="46" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptionsPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/OptionsPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.6004184">
+              <caret line="207" column="13" selection-start-line="207" selection-start-column="13" selection-end-line="207" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,7 +137,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,8 +150,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -158,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/View/UISettings.java" />
         <option value="$PROJECT_DIR$/src/View/SheepsheadTextPanel.java" />
         <option value="$PROJECT_DIR$/src/View/SheepsheadTextPane.java" />
-        <option value="$PROJECT_DIR$/src/Model/ScoreBoard.java" />
         <option value="$PROJECT_DIR$/project_documentation/bugs" />
         <option value="$PROJECT_DIR$/src/Model/Round.java" />
         <option value="$PROJECT_DIR$/src/View/SheepsheadStatsTable.java" />
@@ -172,17 +209,21 @@
         <option value="$PROJECT_DIR$/src/View/CardsOnTable.java" />
         <option value="$PROJECT_DIR$/src/Model/Card.java" />
         <option value="$PROJECT_DIR$/src/View/StretchIcon.java" />
-        <option value="$PROJECT_DIR$/src/View/OptionsPanel.java" />
         <option value="$PROJECT_DIR$/src/View/PlayerHandPanel.java" />
-        <option value="$PROJECT_DIR$/src/Controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/Controller/GameObserver.java" />
-        <option value="$PROJECT_DIR$/src/Controller/GameNotifier.java" />
-        <option value="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
-        <option value="$PROJECT_DIR$/src/Model/Game.java" />
         <option value="$PROJECT_DIR$/src/View/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/View/PlayerPanel.java" />
         <option value="$PROJECT_DIR$/src/Model/Player.java" />
+        <option value="$PROJECT_DIR$/src/View/GameLogPanel.java" />
+        <option value="$PROJECT_DIR$/src/View/LogType.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Controller/GameNotifier.java" />
+        <option value="$PROJECT_DIR$/src/Controller/GameObserver.java" />
+        <option value="$PROJECT_DIR$/src/Model/ScoreBoard.java" />
         <option value="$PROJECT_DIR$/src/Model/Table.java" />
+        <option value="$PROJECT_DIR$/src/Model/Game.java" />
+        <option value="$PROJECT_DIR$/src/View/GameLogFrame.java" />
+        <option value="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
+        <option value="$PROJECT_DIR$/src/View/OptionsPanel.java" />
       </list>
     </option>
   </component>
@@ -227,7 +268,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -319,6 +360,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PlayerHandPanel.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sheepshead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sheepshead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OptionsPanel.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sheepshead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sheepshead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameLogFrame.java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -683,7 +768,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454794963020</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="--display messages through gui&#10;--burried points not displayed by gui">
+      <created>1454797065346</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1454797065346</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -695,25 +786,25 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3255814" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51771957" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="99" y="100" width="1168" height="543" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8868217" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2139535" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18887262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20278184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="99" y="100" width="1168" height="543" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -730,11 +821,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added prompt displayer animations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added prompt displayer animations" />
+    <MESSAGE value="--display messages through gui&#10;--burried points not displayed by gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="--display messages through gui&#10;--burried points not displayed by gui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -749,24 +841,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#yOrN#0;class#SheepsheadMainFrame#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PlayerHandPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#yOrN#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#displayMessage#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#getPlayerCard#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#helpPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#statsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -775,7 +853,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="298" column="58" selection-start-line="298" selection-start-column="58" selection-end-line="298" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -783,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,7 +870,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-          <folding />
+          <folding>
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -799,9 +881,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding>
-            <element signature="e#921#1080#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -809,10 +889,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#1407#1408#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -934,13 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ScoreBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33182845">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/SheepsheadStatsTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06422018">
@@ -1014,7 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325688">
           <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,15 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45412844">
           <caret line="113" column="8" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/OptionsPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,42 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024350649">
           <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <element signature="e#921#1080#0" expanded="false" />
-            <element signature="e#1079#1080#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/GameObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/GameNotifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="296" column="56" selection-start-line="296" selection-start-column="56" selection-end-line="296" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,19 +1117,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PlayerHandPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/PlayerPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,8 +1132,86 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="245" column="28" selection-start-line="245" selection-start-column="28" selection-end-line="245" selection-end-column="28" />
           <folding>
-            <element signature="e#6759#6760#0" expanded="true" />
-            <element signature="e#6796#6797#0" expanded="true" />
+            <element signature="e#6759#6760#0" expanded="false" />
+            <element signature="e#6796#6797#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4659091">
+          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GameNotifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46266234">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GameObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3409091">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/PlayerHandPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.0584416">
+          <caret line="189" column="6" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/LogType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18828452">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ScoreBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.933332">
+          <caret line="209" column="33" selection-start-line="209" selection-start-column="33" selection-end-line="209" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="222" column="46" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="43.533333">
+          <caret line="142" column="68" selection-start-line="142" selection-start-column="68" selection-end-line="142" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/GameLogFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1123,18 +1219,21 @@
     <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="method#yOrN#0;class#SheepsheadMainFrame#0" expanded="false" />
             <element signature="method#displayMessage#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#getPlayerCard#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#helpPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#statsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
+    <entry file="file://$PROJECT_DIR$/src/View/OptionsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14610389">
-          <caret line="221" column="119" selection-start-line="221" selection-start-column="119" selection-end-line="221" selection-end-column="119" />
+        <state vertical-scroll-proportion="1.6004184">
+          <caret line="207" column="13" selection-start-line="207" selection-start-column="13" selection-end-line="207" selection-end-column="13" />
           <folding />
         </state>
       </provider>
