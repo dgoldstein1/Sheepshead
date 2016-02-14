@@ -1,5 +1,7 @@
 package View;
 
+import Model.Game;
+
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
@@ -16,8 +18,8 @@ public class GameLogFrame extends JFrame {
     private JTextPane logDisplay;
     private JScrollPane scroller;
 
-    public GameLogFrame(ArrayList<LogEntry> previousLog){
-        super("Sheepshead Debugger");
+    public GameLogFrame(ArrayList<LogEntry> previousLog, final Game g){
+        super("Sheepshead Log");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
@@ -55,6 +57,7 @@ public class GameLogFrame extends JFrame {
             public void windowClosing(WindowEvent e) {
                 setVisible(false);
                 dispose();
+                g.setDebuggerRunning(false);
             }
         });
         pack();
@@ -101,7 +104,6 @@ public class GameLogFrame extends JFrame {
         appendToPane(logDisplay, toEnter.type + "/> ",Color.BLACK);
         appendToPane(logDisplay, toEnter.message + "\n",typeColor);
 
-
     }
 
     private void appendToPane(JTextPane tp, String msg, Color c)
@@ -116,6 +118,7 @@ public class GameLogFrame extends JFrame {
             exc.printStackTrace();
         }
     }
+
 }
 
 class LogEntry{

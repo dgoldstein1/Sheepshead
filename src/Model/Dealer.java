@@ -1,6 +1,7 @@
 package Model;
 
-import java.util.List;
+
+import java.util.ArrayList;
 
 /**
  * Created by Dave on 9/17/2015.
@@ -70,5 +71,7 @@ public class Dealer {
     public Card getCard(int ID){
         return deck.getCard(ID);
     }
+
+
 
 }

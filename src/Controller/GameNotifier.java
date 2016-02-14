@@ -1,14 +1,12 @@
 package Controller;
 
 import Model.Card;
-import Model.Game;
 import View.ButtonType;
 import View.LogType;
 import View.TableButton;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Created by Dave on 11/2/2015.
@@ -22,20 +20,32 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
     }
 
     /*in from game*/
-    public String yOrN(String prompt){
+    public String yOrN(String prompt) {
         return control.yOrN(prompt);
     }
+
     public boolean refreshView() {
         return control.refreshView();
     }
-    public Card getPlayerCard(String prompt){
+
+    public Card getPlayerCard(String prompt) {
         return control.getPlayerCard(prompt);
     }
-    public int displayMessage(String s){
+
+    public int displayMessage(String s) {
         return control.displayMessage(s);
     }
-    public void log(Class c, LogType type, String s){
-        control.log(c,type,s);
+
+    public void log(Class c, LogType type, String s) {
+        control.log(c, type, s);
+    }
+
+    public void startDebugger(){
+        control.startDebugger();
+    }
+
+    public void closeDebugger(){
+        control.closeDebugger();
     }
 
     /*in from view*/
@@ -52,12 +62,13 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
             } else if (buttonType.equals(ButtonType.SCOREBOARD)) {
                 control.statsPushed();
 
-            } else if (buttonType.equals(ButtonType.NEW_GAME)) {
-                control.newGamePushed();
+            } else if (buttonType.equals(ButtonType.SETTINGS)) {
+                control.settingsPushed();
 
             } else if (buttonType.equals(ButtonType.PLAYERCARD)) {
-                if(button.cardID() != -1)
+                if (button.cardID() != -1)
                     control.playerCardPushed(button.card());
+
             }
 
 

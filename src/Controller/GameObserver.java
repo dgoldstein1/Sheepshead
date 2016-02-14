@@ -13,5 +13,7 @@ public interface GameObserver {
     public Card getPlayerCard(String prompt);
     public int displayMessage(String s);
     public void log(Class c, LogType type, String s);
+    public void startDebugger();
+    public void closeDebugger();
 
 }

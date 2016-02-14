@@ -4,7 +4,7 @@ import Controller.GameObserver;
 import View.LogType;
 
 import java.io.*;
-import java.util.Observer;
+import java.util.ArrayList;
 
 /**
  * Created by Dave on 9/16/2015.
@@ -15,10 +15,13 @@ public class Game {
     public Table table;
     private Dealer dealer;
     private ScoreBoard scoreboard;
-    private boolean printAll;
+    private boolean printAll, debuggerRunning;
     private BufferedReader bufferedReader;
     private Player startRound;
     private GameObserver obs;
+    private int gameSpeed;
+    protected ArrayList<String> namesTaken;
+    private String[] names;
 
     /**
      * initializes game by setting up scoreboard, dealer, and table
@@ -26,14 +29,16 @@ public class Game {
      *
      * @param printAll   should the actions of this game be printed to console?
      */
-    public Game(boolean printAll, GameObserver obs) {
+    public Game(boolean printAll, GameObserver obs, String playerName) {
+        gameSpeed = 50;
         handSize = 6;
         table = new Table(printAll,obs);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        initPlayers();
+        initPlayers(playerName);
         scoreboard = new ScoreBoard(players,obs);
         dealer = new Dealer(players, table);
         this.printAll = printAll;
+        debuggerRunning = false;
         this.obs = obs;
     }
 
@@ -41,10 +46,35 @@ public class Game {
      * initializes players into players[]
      *
      */
-    private void initPlayers() {
+    private void initPlayers(String playerName) {
+        namesTaken = new ArrayList<String>(5);
+        names = new String[]{
+                "Rose",
+                "Dave",
+                "Sarah",
+                "Rich",
+                "John",
+                "Jolena",
+                "Carmen",
+                "Paul",
+                "Chloe",
+                "Evan",
+                "Jim",
+                "Beth",
+                "Tyler",
+                "Zach",
+                "Kevin",
+                "Joanne",
+                "Erin",
+                "Tim",
+                "Elizabeth",
+                "Natalie",
+                "Kathrine",
+                "Darlene",
+        };
+
         Player[] players = new Player[5];;
         //initialize non-AI player. Always first in array
-        String playerName = "David";
         players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
         players[0].setNonAIPlayer();
 
@@ -56,10 +86,25 @@ public class Game {
         for (int playersCreated = 1; playersCreated < 5; playersCreated++) {
             i = (int) ((Math.random()) * (Trait.values().length));
             t = traits[i];
-            players[playersCreated] = new Player(t.toString() + " " + playersCreated, playersCreated, table, false, t);
+            players[playersCreated] = new Player(getRandomPlayerName(), playersCreated, table, false, t);
         }
         this.players = players;
         startRound = players[0];
+    }
+
+    /**
+     * for those who can't decide..
+     * @return playername
+     */
+    private String getRandomPlayerName(){
+        int loc = (int) (Math.random() * names.length);
+        String toReturn = names[loc];
+        if(namesTaken.contains(toReturn)){
+            return getRandomPlayerName();
+        }
+        else
+            namesTaken.add(toReturn);
+        return toReturn;
     }
 
 
@@ -136,7 +181,6 @@ public class Game {
                     p.setPlayAlone();
                 }
             }
-
             Card c1 = askPlayerCard(p, " Choose first card to bury:", true);
             p.getHand().remove(c1);
             obs.log(this.getClass(),LogType.INFO,"buried card: " + c1.toString());
@@ -210,33 +254,26 @@ public class Game {
                 p.playCard(askPlayerCard(p, " Choose card to play:", false));
             } else{
                 //wait before playing card (emulate thinking)
-                playerPause(0);
+                playerPause(); 
                 p.playCard();
-                playerPause(0);
+                playerPause(); 
             }
         }
         Player winner = table.getWinner();
         HandHistory hand = table.endHand();
         scoreboard.addHand(hand, printAll); //adds hand including points
-        playerPause(0);//pause so player can see cards played
+        playerPause(); //pause so player can see cards played
         return winner;
     }
 
-    /**
-     * used after game has stopped and is expecting user input
-     * @param toBePlayed card to be played by user on return
-     */
-    private void finishHand(Card toBePlayed){
-
-    }
 
     /**
      * internal method used to make game pause to make card player visible
      */
-    private void playerPause(int time){
-        if(time < 0) throw new IndexOutOfBoundsException("negative time set in PLAYER PAUSE");
+    private void playerPause(){
+        if(gameSpeed < 0) throw new IndexOutOfBoundsException("negative time set in PLAYER PAUSE");
         try{
-            Thread.sleep(700);
+            Thread.sleep(1001 - gameSpeed * 10);
         } catch (Exception e){
             obs.log(this.getClass(),LogType.ERROR,"PROBLEM WITH PLAYER PAUSE, SYSTEM EXIT");
             System.exit(1);
@@ -305,27 +342,6 @@ public class Game {
         }
     }
 
-    /**
-     * prints out stats of game
-     * called by run
-     */
-    public void stats() {
-        obs.log(this.getClass(),LogType.INFO,"overall stats: \n");
-        obs.log(this.getClass(),LogType.INFO,"\t| rounds played: " + scoreboard.roundsPlayed());
-        obs.log(this.getClass(),LogType.INFO,"\t| leaster games played: " + scoreboard.getLeasterCount());
-        obs.log(this.getClass(),LogType.INFO,"\t| leaster percentage: " + (float) scoreboard.getLeasterCount() / scoreboard.roundsPlayed() * 100 + "%\n");
-        obs.log(this.getClass(),LogType.INFO,"player specific stats: \n" + "\t-----");
-        for (Player p : players) {
-            p.printDetailedStats(scoreboard.roundsPlayed());
-            obs.log(this.getClass(),LogType.INFO,"\t-----");
-        }
-
-    }
-
-    public void printResults() {
-        scoreboard.printScores();
-    }
-
     /*getters */
 
     public ScoreBoard getScoreboard() {
@@ -353,7 +369,38 @@ public class Game {
 
     }
 
+    /**
+     * sets default pause time in game
+     * @param newSpeed from slide (0-99)
+     */
+    public void setGameSpeed(int newSpeed){
+        if(newSpeed < 1 || newSpeed > 100){
+            obs.displayMessage(newSpeed + " not in valid range");
+            gameSpeed = 75;
+            return;
+        }
+        gameSpeed = newSpeed;
+    }
 
+    public int getGameSpeed(){
+        return gameSpeed;
+    }
+
+    public boolean debuggerRunning(){
+        return debuggerRunning;
+    }
+
+    public void setDebuggerRunning(boolean setDeubggerOn){
+        if(setDeubggerOn && !debuggerRunning){
+            obs.startDebugger();
+            debuggerRunning = true;
+        }
+        else if(!setDeubggerOn && debuggerRunning){
+            obs.closeDebugger();
+            debuggerRunning = false;
+        }
+
+    }
 
 
 

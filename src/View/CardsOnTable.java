@@ -25,7 +25,7 @@ class CardsOnTable extends JPanel {
         }
         setLayout();
         setBorder(BorderFactory.createLineBorder(Color.black));
-        background = iconToImage(new StretchIcon("Textures/green_felt.JPG", false));
+        background = iconToImage(new StretchIcon("Textures/green_felt.jpg", false));
         setMinimumSize(new Dimension(230,230));
         setOpaque(false);
 

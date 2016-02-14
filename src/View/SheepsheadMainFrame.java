@@ -21,10 +21,10 @@ public class SheepsheadMainFrame extends JFrame {
     private GamePanel table;
     private OptionsPanel options;
     private GameLogFrame gameLog;
-    private boolean gameLogShowing;
     private MainSound sounds;
     private Dimension standardSize;
     private ArrayList<LogEntry> logEntries;
+    private Game g;
 
     public SheepsheadMainFrame(Game g, final MouseListener listener) {
         super("Sheepshead");
@@ -52,6 +52,7 @@ public class SheepsheadMainFrame extends JFrame {
             }
         });
 
+        this.g = g;
         contentPane = getContentPane();
         sounds = new MainSound();
         initPanels(listener, g);
@@ -67,9 +68,8 @@ public class SheepsheadMainFrame extends JFrame {
      * @return success
      */
     private boolean initPanels(MouseListener listener, Game g) {
-        gameLog = new GameLogFrame(null);
-        gameLogShowing = true;
         logEntries = new ArrayList<LogEntry>();
+        gameLog = null;
         Font standardFont = new Font("Helvetica",Font.PLAIN,12);
 
         UIManager.put("Button.font", standardFont);
@@ -94,8 +94,11 @@ public class SheepsheadMainFrame extends JFrame {
         repaint();
         if(gameLog!=null)
             gameLog.refresh(logEntries);
+        if(gameLog == null && g.debuggerRunning()){ //discrep between model + view
+            g.setDebuggerRunning(false);
+        }
         if(options.statsDisplayed()){
-            options.refesh();
+            options.refesh(g.getScoreboard());
         }
         return table.refresh(g);
 
@@ -149,13 +152,25 @@ public class SheepsheadMainFrame extends JFrame {
         logEntries.add(new LogEntry(this.getClass(),LogType.PLAYER_INPUT,"help panel opened"));
         options.helpPushed();
     }
-
     public void statsPushed(ScoreBoard s) {
         logEntries.add(new LogEntry(this.getClass(),LogType.PLAYER_INPUT,"stats panel opened"));
         options.statsPushed(s);
     }
-
-    /*out to table*/
+    public void settingsPushed(Game g){
+        logEntries.add(new LogEntry(this.getClass(),LogType.PLAYER_INPUT,"settings panel opened"));
+        options.optionsPushed(g);
+    }
+    public void launchDebugger(){
+        if(gameLog==null){
+            gameLog = new GameLogFrame(logEntries,g);
+        }
+    }
+    public void closeDebugger(){
+        if(gameLog!=null){
+            gameLog.dispose();
+            gameLog = null;
+        }
+    }
 
 
 }

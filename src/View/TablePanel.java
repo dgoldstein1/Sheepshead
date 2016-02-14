@@ -31,7 +31,6 @@ class TablePanel extends JPanel {
 
         setOpaque(false);
         setupLayout();
-       // setBorder(BorderFactory.createLineBorder(Color.black));
 
     }
 

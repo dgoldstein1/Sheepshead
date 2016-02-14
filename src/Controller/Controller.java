@@ -27,7 +27,9 @@ public class Controller {
      */
     public Controller(){
         setup();
-        playRound();
+        while(true){
+            playRound();
+        }
     }
 
     /**
@@ -35,7 +37,7 @@ public class Controller {
      */
     private void setup(){
         gameNotifier = new GameNotifier(this);
-        g = new Game(true,gameNotifier);
+        g = new Game(true,gameNotifier, "David");
 
 
         //run GUI from EDT
@@ -88,11 +90,14 @@ public class Controller {
     public void statsPushed(){
         frame.statsPushed(g.getScoreboard());
     }
-
-    public void newGamePushed(){
-        frame.dispose();
-        setup();
-        playRound();
+    public void settingsPushed(){
+        frame.settingsPushed(g);
+    }
+    public void startDebugger(){
+        frame.launchDebugger();
+    }
+    public void closeDebugger(){
+        frame.closeDebugger();
     }
 
 }

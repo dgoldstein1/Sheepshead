@@ -55,7 +55,7 @@ public class ScoreBoard {
             if (winner.equals(p)) {
                 p.addPoints(hand.getPoints());
                 if (printAll)
-                    obs.log(this.getClass(),LogType.INFO,p.getUsername() + " won this hand for " + hand.getPoints() + " points");
+                    obs.log(this.getClass(), LogType.INFO, p.getUsername() + " won this hand for " + hand.getPoints() + " points");
             }
         }
     }
@@ -69,10 +69,9 @@ public class ScoreBoard {
     public void awardPoints(boolean printAll) {
         int basePoint = 1;
 
-        if(currRound.isLeaster()){
-            awardLeasterPoints(basePoint,printAll);
-        }
-        else{
+        if (currRound.isLeaster()) {
+            awardLeasterPoints(basePoint, printAll);
+        } else {
             awardNormalPoints(basePoint);
         }
         checkScoresBalance();
@@ -81,33 +80,31 @@ public class ScoreBoard {
 
     /**
      * award points for non-leaster round
+     *
      * @param basePoint lowest pointvalue. 1 by default
      */
-    private void awardNormalPoints(int basePoint){
+    private void awardNormalPoints(int basePoint) {
         if (!currRound.shniderReached()) basePoint *= 2;
         if (blitzers) basePoint *= 2;
         if (currRound.trickless()) basePoint *= 2;
         if (currRound.getPartnerTeamPoints() >= 60) { //partner team wins
             for (Player p : players) {
-                if (p.pickedUp()){
+                if (p.pickedUp()) {
                     p.incrGameWon();
                     p.addScore(basePoint * 2);//picked up
-                    if(currRound.partner == currRound.picker) p.addScore(basePoint * 2); //played alone
-                }
-                else if (p.isOnPartnerTeam()){
+                    if (currRound.partner == currRound.picker) p.addScore(basePoint * 2); //played alone
+                } else if (p.isOnPartnerTeam()) {
                     p.incrGameWon();
                     p.addScore(basePoint);//partner
-                }
-                else p.addScore(basePoint * -1);                   //non-partner team (minus score)
+                } else p.addScore(basePoint * -1);                   //non-partner team (minus score)
             }
         } else { //majority team won
             for (Player p : players) {
-                if (p.pickedUp()){ //picked up
+                if (p.pickedUp()) { //picked up
                     p.addScore(basePoint * -2);
-                    if(currRound.partner == currRound.picker) p.addScore(basePoint * -2); //played alone
-                }
-                else if (p.isOnPartnerTeam()) p.addScore(basePoint * -1);//partner
-                else{
+                    if (currRound.partner == currRound.picker) p.addScore(basePoint * -2); //played alone
+                } else if (p.isOnPartnerTeam()) p.addScore(basePoint * -1);//partner
+                else {
                     p.incrGameWon();
                     p.addScore(basePoint);                             //non-partner team
                 }
@@ -119,30 +116,31 @@ public class ScoreBoard {
      * special case when no one picks up blind
      * winner is player with lowest score where score != 0
      * shneider / trickless / playalone do not factor in
+     *
      * @param basePoint lowester point value. 1 by default.
      */
-    private void awardLeasterPoints(int basePoint,boolean printAll){
+    private void awardLeasterPoints(int basePoint, boolean printAll) {
         Player winner = currRound.getLeasterWinner();
         winner.incrGameWon();
-        if(printAll) obs.log(this.getClass(),LogType.INFO,"Player " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
-        for(Player p : players){
-            if(winner == p) {
+        if (printAll)
+            obs.log(this.getClass(), LogType.INFO, "Player " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
+        for (Player p : players) {
+            if (winner == p) {
                 p.addScore(basePoint * 4);
-            }
-            else{
-                p.addScore(basePoint*-1);
+            } else {
+                p.addScore(basePoint * -1);
             }
         }
     }
 
-    private void checkScoresBalance(){
+    private void checkScoresBalance() {
         //checks that scores are balanced
         int score = 0;
-        for(Player p : players){
-            score+=p.getScore();
+        for (Player p : players) {
+            score += p.getScore();
         }
         if (score != 0) {
-            obs.log(this.getClass(),LogType.ERROR,"GAME SCORES DO NOT BALANCE OUT TO ZERO:" + score);
+            obs.log(this.getClass(), LogType.ERROR, "GAME SCORES DO NOT BALANCE OUT TO ZERO:" + score);
             throw new IllegalStateException();
         }
         int points = 0;
@@ -150,7 +148,7 @@ public class ScoreBoard {
             points += p.getPoints();
         }
         if (points != 120 && !currRound.isLeaster()) {//leaster is dumb
-            obs.log(this.getClass(),LogType.ERROR,"TOTAL NOT EQUAL TO 120 POINTS" + points);
+            obs.log(this.getClass(), LogType.ERROR, "TOTAL NOT EQUAL TO 120 POINTS" + points);
             throw new IllegalStateException();
         }
 
@@ -167,7 +165,7 @@ public class ScoreBoard {
         String toLog = null;
         for (Player p : players)
             toLog += " | " + p.getUsername() + ": " + p.getPoints();
-        obs.log(this.getClass(), LogType.INFO,toLog);
+        obs.log(this.getClass(), LogType.INFO, toLog);
     }
 
     //double checks round points for round total to 120
@@ -179,24 +177,24 @@ public class ScoreBoard {
      * total game points do not balance to zero
      */
     public void printScores() {
-        String toLog ="player scores: \n";
+        String toLog = "player scores: \n";
         for (Player p : players) {
             toLog += " | " + p.getUsername() + ": " + p.getScore();
         }
-        obs.log(this.getClass(),LogType.INFO,toLog);
+        obs.log(this.getClass(), LogType.INFO, toLog);
     }
 
     /**
      * prints out details of round
      */
 
-    public void printRoundDetails(){
-        if(!currRound.isLeaster()){
+    public void printRoundDetails() {
+        if (!currRound.isLeaster()) {
             String toLog = "round stats" +
-            "\n\tshnider reached? " + currRound.shniderReached() +
-            "\tbitz & punish? " + blitzers +
-            "\ttrickless? " + currRound.trickless() + "\n";
-            obs.log(this.getClass(),LogType.INFO,toLog);
+                    "\n\tshnider reached? " + currRound.shniderReached() +
+                    "\tbitz & punish? " + blitzers +
+                    "\ttrickless? " + currRound.trickless() + "\n";
+            obs.log(this.getClass(), LogType.INFO, toLog);
         }
 
     }
@@ -204,20 +202,20 @@ public class ScoreBoard {
     /**
      * prints player teams. Used at end of the game, called by printScores()
      */
-    public void printTeams(){
+    public void printTeams() {
         String toLog;
-        if(currRound.isLeaster()) return; //no teams for leaster
+        if (currRound.isLeaster()) return; //no teams for leaster
         toLog = "partner team: \t";
-        for(Player p : players){
-            if(p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
+        for (Player p : players) {
+            if (p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
         }
         toLog += "\n";
         toLog += "\tnon-partner team: ";
-        for(Player p: players){
-            if(!p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
+        for (Player p : players) {
+            if (!p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
         }
         toLog += "\n";
-        obs.log(this.getClass(), LogType.INFO,toLog);
+        obs.log(this.getClass(), LogType.INFO, toLog);
 
     }
 
@@ -225,7 +223,7 @@ public class ScoreBoard {
     /*getters and setters*/
 
 
-    public void setLeaster(){
+    public void setLeaster() {
         leasterCount++;
         currRound.setLeaster();
     }
@@ -242,15 +240,85 @@ public class ScoreBoard {
         currRound.setPartner(p);
     }
 
-    public int getLeasterCount(){return leasterCount;}
+    public int getLeasterCount() {
+        return leasterCount;
+    }
 
-    public int roundsPlayed(){return scoreboard.size();}
+    public int roundsPlayed() {
+        return scoreboard.size();
+    }
 
-    public Player[] getNonStaticPlayers(){
+    public Player[] getNonStaticPlayers() {
         return players;
     }
 
-    public List<Round> getListOfRound() {return scoreboard;}
+    public List<Round> getListOfRound() {
+        return scoreboard;
+    }
+
+    /**
+     * @return playerStats of user in format {{name,stat}{name2,stat2}...}
+     */
+    public String[][] getPlayerStats() {
+
+        String[] categories = {
+                "Total Rounds Played",
+                "Total Leaster Games Played",
+                "Percentage of Games Played Leaster",
+                "Overall Score",
+                "Win Percentage",
+                "Percentage Picked Up",
+                "Percentage Played Alone",
+                "Total Points"
+
+        };
+
+        Player user = null;
+        for (Player p : players) {
+            if (p.isNonAIPlayer()) {
+                user = p;
+                break;
+            }
+        }
+        if (user == null) {
+            obs.log(this.getClass(), LogType.ERROR, "Could not find non-aid player " +
+                    "in retrieving player statistics");
+            return new String[][]{{""}, {""}}; //return empty stats
+
+        }
+
+        //stats
+        int roundsPlayed = roundsPlayed() - 1;
+        String[] stats = {
+                roundsPlayed + 1 + "",
+                this.getLeasterCount() + "",
+                (float) getLeasterCount() / roundsPlayed * 100 + "%",
+                user.getScore() + "",
+                (float) user.getGamesWon() / roundsPlayed * 100 + "%",
+                (float) user.getNumberPickedUp() / roundsPlayed * 100 + "%",
+                (float) user.getNPlayAlone() / user.getNAbleToPlayerAlone() * 100 + "%",
+                user.getTotalPoints() + ""
+
+        };
+
+        if(categories.length != stats.length){
+            obs.log(this.getClass(), LogType.ERROR, "Size of Player Stats and Categories not equal," +
+                    "initializing empty array..");
+            return new String[][]{{""}, {""}}; //return empty stats
+        }
+
+        String[][] toReturn = new String[categories.length][stats.length];
+        for(int i = 0;i< categories.length;i++){
+            toReturn[i] = new String[]{categories[i],stats[i]};
+        }
+
+        return toReturn;
+
+    }
+
+    public int currRound(){
+        return roundNumber;
+    }
 
 
 }

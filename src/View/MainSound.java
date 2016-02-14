@@ -20,12 +20,12 @@ public class MainSound {
     private final int maxThreads = 10;
     private boolean muted;
     private List<Clip> currSounds;
+    private boolean effectsMuted, musicMuted;
 
     public MainSound() {
         pool = Executors.newFixedThreadPool(maxThreads);
         currSounds = new ArrayList<Clip>();
-        muted = false;
-
+        effectsMuted = musicMuted = muted = false;
     }
 
     /**
@@ -101,9 +101,20 @@ public class MainSound {
     public void unmute() {
         muted = false;
     }
-
     public boolean isMuted() {
         return muted;
+    }
+    public void setEffectsMuted(boolean b){
+        effectsMuted = b;
+    }
+    public void setMusicMuted(boolean b){
+        musicMuted = b;
+    }
+    public boolean effectsMuted(){
+        return effectsMuted;
+    }
+    public boolean musicMuted(){
+        return musicMuted;
     }
 
 

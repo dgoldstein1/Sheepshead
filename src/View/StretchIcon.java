@@ -34,6 +34,13 @@ import javax.swing.ImageIcon;
  */
 public class StretchIcon extends ImageIcon {
 
+    public int getWidth(){
+        return this.getIconWidth();
+    }
+    public int getHeight(){
+        return this.getIconHeight();
+    }
+
     /**
      * Determines whether the aspect ratio of the image is maintained.
      * Set to <code>false</code> to allow th image to distort to fill the component.

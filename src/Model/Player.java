@@ -310,16 +310,24 @@ public class Player {
         gamesWon++;
     }
 
-    public void printDetailedStats(int gamesPlayed){
-        System.out.println(" | Player Name : " + username);
-        System.out.println(" | score: " + score);
-        System.out.println(" | winning percentage:  " + (float) gamesWon / gamesPlayed * 100 + "%");
-        System.out.println(" | percentage picked up: " + (float) numberPickedUp / gamesPlayed * 100 + "%");
-        System.out.println(" | percentage played alone: " + (float) numberPlayAlone / ableToPlayAlone * 100 + "%");
-        System.out.println(" | total points: " + totalPoints + "\n");
+    public int getGamesWon(){
+        return gamesWon;
     }
 
     public int getNCards(){
         return hand.numberCardinHand();
+    }
+
+    public int getNumberPickedUp(){
+        return numberPickedUp;
+    }
+    public int getNPlayAlone(){
+        return numberPlayAlone;
+    }
+    public int getNAbleToPlayerAlone(){
+        return ableToPlayAlone;
+    }
+    public int getTotalPoints(){
+        return totalPoints;
     }
 }

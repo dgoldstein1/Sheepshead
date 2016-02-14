@@ -50,9 +50,9 @@ class PlayerHandPanel extends JPanel {
      * @return new JLabel made
      */
     private FadeLabel addLabel(String startingText, String layout){
-        FadeLabel label = new FadeLabel(null,startingText);
+        FadeLabel label = new FadeLabel(startingText);
         label.setForeground(Color.WHITE);
-        label.setFont(new Font("Helvetica",Font.BOLD,18));
+        label.setFont(new Font("Helvetica",Font.ITALIC,18));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         add(label,layout);
         return label;
@@ -236,12 +236,7 @@ class FadeLabel extends JLabel {
      * image which fades in an out using Alpha
      * taken from : http://stackoverflow.com/questions/13203415/how-to-add-fade-fade-out-effects-to-a-jlabel
      */
-    public FadeLabel(String backgroundLocation, String text) {
-        try {
-            if(backgroundLocation!=null)
-                background = ImageIO.read(getClass().getResource(backgroundLocation));
-        } catch (Exception e) {
-        }
+    public FadeLabel(String text) {
         setText(text);
         setHorizontalAlignment(CENTER);
         setVerticalAlignment(CENTER);
