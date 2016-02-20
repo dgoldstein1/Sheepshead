@@ -170,12 +170,12 @@ public class Game {
      * @return true if picks up, false otherwise
      */
     private boolean askPlayerToPickUp(Player p) {
-        if (getPlayerInput(" pick up blind? y/n: \n", true).equals("y")) {//player chooses to pick up
+        if (getPlayerInput(" Pick up blind? \n", true).equals("y")) {//player chooses to pick up
             p.pickUpBlind();
 
             if (p.getHand().contains(24)) {//picked up and contains j of d
                 p.incrAbleToPlayAlone();
-                if (getPlayerInput(" would you like to call up? y/n \n", true).equals("y")) {//call up
+                if (getPlayerInput(" Would you like to call up? \n", true).equals("y")) {//call up
                     p.setNotPlayAlone();
                 } else { //not calling up
                     p.setPlayAlone();

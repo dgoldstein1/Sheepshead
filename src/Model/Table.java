@@ -89,15 +89,14 @@ public class Table {
             cardLed = c;
         }
         if (leaster && c.id() == 24) { //J of D played
-            String blindMessage = null;
+            String blindMessage = "";
             for (Card card : blind) {
-                if(printAll){
-                    blindMessage += " " +card.toString();;
-                }
-                obs.displayMessage("blind revealed" + blindMessage);
+                blindMessage += card.toString();
+                blindMessage += " and ";
                 currentHand.add(new CardHistory(card, player));
                 table.add(card);
             }
+            obs.displayMessage(" " + blindMessage + " were not picked up in the blind and are now revealed.");
             blind = null;
         }
     }

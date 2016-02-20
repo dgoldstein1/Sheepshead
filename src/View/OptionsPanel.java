@@ -30,9 +30,9 @@ public class OptionsPanel extends JPanel {
 
         optionsButtons = new ArrayList<TableButton>();
 
-        initButton(ButtonType.SETTINGS, "Settings", listener);
-        initButton(ButtonType.HELP, "About", listener);
-        initButton(ButtonType.SCOREBOARD, "Stats", listener);
+        initButton(ButtonType.SETTINGS, " ", listener);
+        initButton(ButtonType.HELP, " ", listener);
+        initButton(ButtonType.SCOREBOARD, " ", listener);
     }
 
     /**
@@ -43,12 +43,15 @@ public class OptionsPanel extends JPanel {
      */
     private void initButton(ButtonType type, String name, MouseListener listener){
         TableButton tb = new TableButton(type, name);
-        tb.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //do nothing..just look good <3
-            }
-        });
+        if(type.equals(ButtonType.SETTINGS)){
+            tb.setIcon(new StretchIcon("Icons/settings.png", true));
+        }
+        else if(type.equals(ButtonType.HELP)){
+            tb.setIcon(new StretchIcon("Icons/about.png",true));
+        }
+        else if(type.equals(ButtonType.SCOREBOARD)){
+            tb.setIcon(new StretchIcon("Icons/stats.png",true));
+        }
         tb.addMouseListener(listener);
         optionsButtons.add(tb);
         this.add(tb);
@@ -108,7 +111,7 @@ class HelpFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        setContentPane(new JLabel(new StretchIcon("Textures/green_felt.jpg", false)));
+        setContentPane(new JLabel(new StretchIcon("Sheep_Photos/rolling_hills.jpg", false)));
         setPreferredSize(size);
         setLayout(new BorderLayout());
 
@@ -150,14 +153,10 @@ class HelpFrame extends JFrame {
         copyright.setEditable(false);
         copyright.setOpaque(false);
 
-
-        JLabel image = new JLabel();
-        image.setIcon(new StretchIcon("CardImages/FACE_DOWN.JPG", false));
         JPanel infoHolder = new JPanel(new GridLayout(3,1));
         infoHolder.setOpaque(false);
 
         infoHolder.add(about);
-        infoHolder.add(image);
         infoHolder.add(copyright);
 
         infoHolder.setOpaque(false);
@@ -194,7 +193,7 @@ class StatsFrame extends JFrame {
 
         this.windowSize = size;
         this.tableSize = new Dimension(windowSize.width, windowSize.height / 3);
-        setContentPane(new JLabel(new StretchIcon("Textures/wood.jpg", false)));
+        setContentPane(new JLabel(new StretchIcon("Sheep_Photos/rolling_hills2.jpg", false)));
         gameStats = playerStats = null;
         setLayout(new FlowLayout());
 
@@ -204,7 +203,7 @@ class StatsFrame extends JFrame {
         initGameStats(scoreboard);
         initPlayerStats(scoreboard);
         jpanel.add(gameStats, BorderLayout.NORTH);
-        jpanel.add(playerStats, BorderLayout.CENTER);
+        jpanel.add(playerStats, BorderLayout.SOUTH);
         this.add(jpanel);
         setPreferredSize(size);
 
@@ -340,7 +339,7 @@ class SettingsFrame extends JFrame {
         playMusic = new JCheckBox("");
         playMusic.setHorizontalAlignment(JCheckBox.CENTER);
         playMusic.setSelected(!sounds.musicMuted());
-        gameSpeed = new JSlider(1,100,g.getGameSpeed());
+        gameSpeed = new JSlider(1,70,g.getGameSpeed());
         launchDebugger = new JCheckBox("");
         launchDebugger.setHorizontalAlignment(JCheckBox.CENTER);
         launchDebugger.setSelected(g.debuggerRunning());
