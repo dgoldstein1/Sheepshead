@@ -37,7 +37,7 @@ public class Controller {
      */
     private void setup(){
         gameNotifier = new GameNotifier(this);
-        g = new Game(true,gameNotifier, "David");
+        g = new Game(gameNotifier, "David");
 
 
         //run GUI from EDT

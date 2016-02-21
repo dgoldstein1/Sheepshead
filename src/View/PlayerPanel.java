@@ -1,6 +1,7 @@
 package View;
 
 import Model.Player;
+import Model.Table;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,25 +16,35 @@ public class PlayerPanel extends JPanel {
     private AIPlayerHandDisplay aiHandDisplay;
     private int numberFaceDownCards;
     private int pointsDisplayed;
-    private JLabel pointDisplayer, name;
+    private JLabel pointDisplayer, nameLabel;
+    private boolean partnerDisplayed, pickerDislayed;
 
     //stores cards for each AI Player
     PlayerPanel(String playerName) {
         setLayout(new BorderLayout());
-        int allign = (int) JPanel.CENTER_ALIGNMENT;
-        name = new JLabel(playerName);
-        name.setHorizontalAlignment(allign);
-        name.setForeground(Color.WHITE);
-        add(name,BorderLayout.NORTH);
         displayedCards = new ArrayList<TableButton>(8);
         numberFaceDownCards = 0;
         aiHandDisplay = new AIPlayerHandDisplay();
         this.add(aiHandDisplay,BorderLayout.CENTER);
-        pointDisplayer = new JLabel("Points: " + pointsDisplayed);
-        pointDisplayer.setForeground(Color.WHITE);
-        pointDisplayer.setHorizontalAlignment(allign);
-        add(pointDisplayer, BorderLayout.SOUTH);
+
+        //add labels
+        nameLabel = createAddLabel(playerName, Color.WHITE,BorderLayout.NORTH);
+        pointDisplayer = createAddLabel("Points: " + pointsDisplayed,Color.WHITE,BorderLayout.SOUTH);
+
+    }
+
+    /**
+     * creates JLabel and adds to panel
+     * @param startingText
+     * @param color
+     */
+    private JLabel createAddLabel(String startingText, Color color, String layout){
+        JLabel label = new JLabel(startingText);
+        label.setForeground(color);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        add(label, layout);
         setOpaque(false);
+        return label;
     }
 
     /**
@@ -44,9 +55,6 @@ public class PlayerPanel extends JPanel {
      * @return true if success, false otherwise
      */
     public boolean refresh(Player p) {
-        if(!p.getUsername().equals(name.getText())){
-            name.setText(p.getUsername());
-        }
 
         while (p.getNCards() > numberFaceDownCards) {//more cards in hand than displayed
             aiHandDisplay.addCard();
@@ -60,6 +68,28 @@ public class PlayerPanel extends JPanel {
             pointDisplayer.setText("Points: " + p.getDisplayablePoints());
             pointsDisplayed = p.getDisplayablePoints();
         }
+
+        //update partner + picker displayed
+        if(p.isKnownPartner() && !partnerDisplayed){//partner not displayed
+            nameLabel.setFont(new Font("Helvetica",Font.ITALIC,12));
+            nameLabel.setForeground(Color.orange);
+            nameLabel.setText(nameLabel.getText() + "  (PARTNER) ");
+            partnerDisplayed = true;
+        }
+        if(p.pickedUp() && !pickerDislayed){//picker not displayed
+            nameLabel.setFont(new Font("Helvetica",Font.ITALIC,12));
+            nameLabel.setForeground(Color.MAGENTA);
+            nameLabel.setText(nameLabel.getText() + "  (PICKER) ");
+            pickerDislayed = true;
+        }
+        else if((!p.isKnownPartner() && partnerDisplayed) ||
+                 !p.pickedUp() && pickerDislayed){//partner or picker should not be displayed (reset)
+            nameLabel.setText(p.getUsername());
+            partnerDisplayed = pickerDislayed = false;
+            nameLabel.setFont(new Font("Helvetica",Font.PLAIN,12));
+            nameLabel.setForeground(Color.WHITE);
+        }
+
 
         return true;
     }

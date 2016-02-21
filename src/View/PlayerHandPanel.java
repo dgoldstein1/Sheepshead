@@ -5,6 +5,7 @@ package View;
  */
 
 import Model.Card;
+import Model.Player;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -19,7 +20,7 @@ import java.util.*;
  */
 class PlayerHandPanel extends JPanel {
     private CardBox cardsDisplayed; //buttons of numberFaceDownCards in hand
-    private boolean readyForPlayerInput;
+    private boolean readyForPlayerInput, partnerDisplayed, pickerDislayed;;
     private Card playerCardEntered;
     private FadeLabel promptDisplayer;
     private float direction = -0.05f;
@@ -64,7 +65,9 @@ class PlayerHandPanel extends JPanel {
      *
      * @return true if success, else return false
      */
-    public boolean refresh(java.util.List<Card> cardsInHand,int points) {
+    public boolean refresh(Player p) {
+        java.util.List<Card> cardsInHand =   p.getHand().getHand();
+        int points = p.getDisplayablePoints();
         //remove numberFaceDownCards not in hand
         for (TableButton tb : cardsDisplayed.cards) {
             if (!cardsInHand.contains(tb.card())) { //table button not in card model
@@ -83,6 +86,21 @@ class PlayerHandPanel extends JPanel {
         }
 
         runPromptAnimations();
+
+        //update partner + picker displayed
+        if(p.isKnownPartner() && !partnerDisplayed){//partner not displayed
+            cardsDisplayed.getPickerPartnerLabel().setText(cardsDisplayed.getPickerPartnerLabel().getText() + "-PARTNER-");
+            partnerDisplayed = true;
+        }
+        if(p.pickedUp() && !pickerDislayed){//picker not displayed
+            cardsDisplayed.getPickerPartnerLabel().setText(cardsDisplayed.getPickerPartnerLabel().getText() + "-PICKER-");
+            pickerDislayed = true;
+        }
+        else if((!p.isKnownPartner() && partnerDisplayed) ||
+                !p.pickedUp() && pickerDislayed){//partner or picker should not be displayed
+            cardsDisplayed.getPickerPartnerLabel().setText("            ");
+            partnerDisplayed = pickerDislayed = false;
+        }
 
         repaint();
 
@@ -189,11 +207,15 @@ class PlayerHandPanel extends JPanel {
 
 class CardBox extends JPanel{
     public ArrayList<TableButton> cards;
-    public JLabel pointsDisplayer;
+    public JLabel pointsDisplayer, pickerPartnerLabel;
     public int pointsDisplayed;
 
     public CardBox( MouseListener listener, String playerName){
         cards = new ArrayList<TableButton>(8);
+
+        pickerPartnerLabel = addLabel("          ");
+        pickerPartnerLabel.setForeground(Color.YELLOW);
+        pickerPartnerLabel.setFont(new Font("Helvetica",Font.ITALIC,12));
 
         addLabel(playerName);
         pointsDisplayed = 0;
@@ -221,6 +243,10 @@ class CardBox extends JPanel{
         label.setHorizontalAlignment(SwingConstants.CENTER);
         add(label);
         return label;
+    }
+
+    public JLabel getPickerPartnerLabel(){
+        return pickerPartnerLabel;
     }
 
 

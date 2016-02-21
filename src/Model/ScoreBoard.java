@@ -46,16 +46,14 @@ public class ScoreBoard {
      * called by game after hand is over
      *
      * @param hand     Hand played
-     * @param printAll should this hand be printed?
      */
-    public void addHand(HandHistory hand, boolean printAll) {
+    public void addHand(HandHistory hand) {
         currRound.hands.add(hand);
         Player winner = hand.topPlayer();
         for (Player p : players) { //adds hand points to winner
             if (winner.equals(p)) {
                 p.addPoints(hand.getPoints());
-                if (printAll)
-                    obs.log(this.getClass(), LogType.INFO, p.getUsername() + " won this hand for " + hand.getPoints() + " points");
+                obs.log(this.getClass(), LogType.INFO, p.getUsername() + " won this hand for " + hand.getPoints() + " points");
             }
         }
     }
@@ -64,13 +62,12 @@ public class ScoreBoard {
      * talles up points and end of round
      * called by game after each round
      *
-     * @param printAll should details be printed?
      */
-    public void awardPoints(boolean printAll) {
+    public void awardPoints() {
         int basePoint = 1;
 
         if (currRound.isLeaster()) {
-            awardLeasterPoints(basePoint, printAll);
+            awardLeasterPoints(basePoint);
         } else {
             awardNormalPoints(basePoint);
         }
@@ -119,11 +116,10 @@ public class ScoreBoard {
      *
      * @param basePoint lowester point value. 1 by default.
      */
-    private void awardLeasterPoints(int basePoint, boolean printAll) {
+    private void awardLeasterPoints(int basePoint) {
         Player winner = currRound.getLeasterWinner();
         winner.incrGameWon();
-        if (printAll)
-            obs.log(this.getClass(), LogType.INFO, "Player " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
+        obs.log(this.getClass(), LogType.INFO, "Player " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
         for (Player p : players) {
             if (winner == p) {
                 p.addScore(basePoint * 4);
@@ -162,7 +158,7 @@ public class ScoreBoard {
      * prints points for each player in current round
      */
     public void printPoints() {
-        String toLog = null;
+        String toLog = "";
         for (Player p : players)
             toLog += " | " + p.getUsername() + ": " + p.getPoints();
         obs.log(this.getClass(), LogType.INFO, toLog);

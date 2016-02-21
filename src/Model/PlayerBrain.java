@@ -25,8 +25,6 @@ public class PlayerBrain {
      * @return true if want to pick up, false otherwise
      */
     public boolean chooseToPickUp(Hand h) {
-        return false;
-        /*
         int n = 0; //n is a mix of points and power to get total hand value
         for (Card c : h.getHand()) {
             n += c.id() * c.getPointValue();
@@ -35,7 +33,6 @@ public class PlayerBrain {
             return false; //does not pick if not greater than scale * threshold
         if (n > pickUpThreshold && traits.is(Trait.MAUER)) return false; //mauer does not pick up even if good hand
         return (traits.is(Trait.STICKY_FINGERS) && n > pickUpThreshold / 2) || (n > pickUpThreshold);
-        */
     }
 
     /**

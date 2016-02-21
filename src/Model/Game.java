@@ -15,7 +15,7 @@ public class Game {
     public Table table;
     private Dealer dealer;
     private ScoreBoard scoreboard;
-    private boolean printAll, debuggerRunning;
+    private boolean debuggerRunning;
     private BufferedReader bufferedReader;
     private Player startRound;
     private GameObserver obs;
@@ -27,17 +27,15 @@ public class Game {
      * initializes game by setting up scoreboard, dealer, and table
      * automatically set to have real player
      *
-     * @param printAll   should the actions of this game be printed to console?
      */
-    public Game(boolean printAll, GameObserver obs, String playerName) {
+    public Game(GameObserver obs, String playerName) {
         gameSpeed = 50;
         handSize = 6;
-        table = new Table(printAll,obs);
+        table = new Table(obs);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         initPlayers(playerName);
         scoreboard = new ScoreBoard(players,obs);
         dealer = new Dealer(players, table);
-        this.printAll = printAll;
         debuggerRunning = false;
         this.obs = obs;
     }
@@ -73,7 +71,7 @@ public class Game {
                 "Darlene",
         };
 
-        Player[] players = new Player[5];;
+        Player[] players = new Player[5];
         //initialize non-AI player. Always first in array
         players[0] = new Player(playerName, 0, table, true, Trait.Normal_Player);
         players[0].setNonAIPlayer();
@@ -123,11 +121,11 @@ public class Game {
         for (int hand = 0; hand < 6; hand++) {
             Player winner = playHand();
             shiftPlayers(winner);//sets winner as new leader
-            if (printAll) scoreboard.printPoints();
+            scoreboard.printPoints();
         }
         endRound();
         dealer.collectCards();
-        if (printAll) obs.log(this.getClass(),LogType.SYSTEM,"--end round---");
+        obs.log(this.getClass(),LogType.SYSTEM,"--end round---");
     }
 
 
@@ -199,12 +197,12 @@ public class Game {
      */
     private void endRound() {
         shiftPlayers(null);
-        scoreboard.awardPoints(printAll); //tallies scores and ends round
-        if (printAll) {
-            scoreboard.printRoundDetails();
-            scoreboard.printTeams();
-            scoreboard.printScores();
-        }
+        scoreboard.awardPoints(); //tallies scores and ends round
+
+        scoreboard.printRoundDetails();
+        scoreboard.printTeams();
+        scoreboard.printScores();
+
         for (Player p : players) {
             p.endRound();
         }
@@ -261,7 +259,7 @@ public class Game {
         }
         Player winner = table.getWinner();
         HandHistory hand = table.endHand();
-        scoreboard.addHand(hand, printAll); //adds hand including points
+        scoreboard.addHand(hand); //adds hand including points
         playerPause(); //pause so player can see cards played
         return winner;
     }
@@ -328,19 +326,6 @@ public class Game {
     }
 
 
-    /*printers*/
-
-    /**
-     * prints out cards held by each player
-     */
-    private void printPlayerCards() {
-        for (Player p : players) {
-            obs.log(this.getClass(),LogType.INFO,"---" + p.getUsername() + "---");
-            if (p.isOnPartnerTeam()) obs.log(this.getClass(),LogType.INFO,p.getUsername() + " is partner");
-            if (p.pickedUp()) obs.log(this.getClass(),LogType.INFO,p.getUsername() + " picked up");
-            p.printHand(true);
-        }
-    }
 
     /*getters */
 

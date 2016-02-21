@@ -21,12 +21,12 @@ public class Table {
     private Card[] blind;
     private Card partnerCard, cardLed;
     private int currHandNumber;
-    private boolean printAll, leaster;
+    private boolean leaster;
     private Player partner;
     private List<Card> cardsPlayed;
     private GameObserver obs;
 
-    public Table(boolean printAl, GameObserver obs) {
+    public Table(GameObserver obs) {
         this.obs = obs;
         currHandNumber = 0;
         table = new ArrayList<Card>();
@@ -47,7 +47,7 @@ public class Table {
     public Card[] pickUpBlind(String username) {
         Card[] temp = blind;
         blind = null;
-        obs.log(this.getClass(), LogType.INFO, username + " picked up ");
+        obs.displayMessage(username + " picked up.");
         return temp;
     }
 
@@ -81,8 +81,9 @@ public class Table {
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
 
-        if(c.equals(partnerCard)){//played partner card
+        if(c.equals(partnerCard) && leaster){//played partner card
             partner = player;
+            obs.displayMessage(player.getUsername() + " is partner.");
         }
         currentHand.add(new CardHistory(c, player));
         if (cardLed == null) {//first card played
@@ -114,6 +115,7 @@ public class Table {
         }
         table.clear();
         leaster = false;
+        partner = null;
         return temp;
     }
 
@@ -129,7 +131,6 @@ public class Table {
         cardLed = null;
         HandHistory temp = currentHand;
         currentHand = new HandHistory();
-        partner = null;
         cardsPlayed.clear();
         return temp;
 
@@ -150,12 +151,9 @@ public class Table {
     }
 
     /**
-     returns card led for each hand
-     called by players to determine which card to play
-     returns new card with id -1 if no cards have been played
-     */
-
-    /**
+     * returns card led for each hand
+     * called by players to determine which card to play
+     * returns new card with id -1 if no cards have been played
      * called by players to determine which card to play
      *
      * @return card player, or new card with id -1 if no cards have been played
@@ -175,9 +173,8 @@ public class Table {
      */
     public void callUp(String username,Hand h) {
         partnerCard = intToCard(callUpHelper(h));
-        if (printAll) {
-            obs.displayMessage(username + " calling up to " + partnerCard.toString());
-        }
+        obs.displayMessage(username + " calling up to " + partnerCard.toString());
+
     }
 
     /**
@@ -314,6 +311,7 @@ public class Table {
     public Player currPartner(){
        return partner;
     }
+
 
     /**
      * gets curr list of hand histories of round

@@ -56,7 +56,7 @@ public class Player {
     }
 
     /**
-     * called by non-player in Game when chooses to pick up
+     * called by non-ai player in Game when chooses to pick up
      * also called internally as a helper
      *
      * @return success
@@ -264,6 +264,17 @@ public class Player {
 
     public boolean pickedUp() {
         return pickedUp;
+    }
+
+    /**
+     * is known partner to all players
+     * @return boolean
+     */
+    public boolean isKnownPartner(){
+        if(table.currPartner()!=null){
+            return table.currPartner().equals(this);
+        }
+        return false;
     }
 
     public void dealHand(Hand h) {
