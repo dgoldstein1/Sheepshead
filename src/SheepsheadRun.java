@@ -1,10 +1,12 @@
-import Controller.Controller;
+import Controller.*;
 
 /**
  * Created by Dave on 9/16/2015.
  */
 public class SheepsheadRun {
     public static void main(String[] args) {
-        new Controller();
+        // Throw a nice little title page up on the screen first
+        new SheepsheadSplashScreen(3000);
+
     }
 }

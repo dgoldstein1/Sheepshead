@@ -146,6 +146,13 @@ public class Player {
     }
 
 
+
+
+
+
+
+
+
     /**
      * called by game for AI player
      * chooses a card to play from Decider
@@ -287,6 +294,10 @@ public class Player {
 
     public String getUsername() {
         return username;
+    }
+
+    public void setUserName(String s){
+        username = s;
     }
 
     public Hand getHand(){

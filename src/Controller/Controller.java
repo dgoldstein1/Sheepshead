@@ -25,19 +25,29 @@ public class Controller {
      * takes in Game and matching GUI
      * creates corresponding gameNotifier
      */
-    public Controller(){
-        setup();
-        while(true){
+    public Controller(String playerName){
+        setup(playerName);
+        playRound();
+        playGameLoop();
+    }
+
+    /**
+     * continuous loop keeping the game going
+     */
+    private void playGameLoop(){
+        while(gameNotifier.yOrN("Play another round?").equals("y")){
             playRound();
         }
+        gameNotifier.log(this.getClass(),LogType.SYSTEM,"shutting down");
+        System.exit(0);
     }
 
     /**
      * sets up Sheapshead game
      */
-    private void setup(){
+    private void setup(String playerName){
         gameNotifier = new GameNotifier(this);
-        g = new Game(gameNotifier, "David");
+        g = new Game(gameNotifier, playerName);
 
 
         //run GUI from EDT
@@ -50,6 +60,8 @@ public class Controller {
             }
         });
         refreshTimer.start();
+
+
     }
 
     /**

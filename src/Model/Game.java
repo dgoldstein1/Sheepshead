@@ -46,6 +46,7 @@ public class Game {
      */
     private void initPlayers(String playerName) {
         namesTaken = new ArrayList<String>(5);
+        namesTaken.add(playerName);
         names = new String[]{
                 "Rose",
                 "Dave",
@@ -385,6 +386,14 @@ public class Game {
             debuggerRunning = false;
         }
 
+    }
+
+    /**
+     * sets the name of non-ai player
+     * @param s
+     */
+    public void setPlayerName(String s){
+        getNonAiPlayer().setUserName(s);
     }
 
 

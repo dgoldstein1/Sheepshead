@@ -66,7 +66,7 @@ class PlayerHandPanel extends JPanel {
      * @return true if success, else return false
      */
     public boolean refresh(Player p) {
-        java.util.List<Card> cardsInHand =   p.getHand().getHand();
+        java.util.List<Card> cardsInHand = p.getHand().getHand();
         int points = p.getDisplayablePoints();
         //remove numberFaceDownCards not in hand
         for (TableButton tb : cardsDisplayed.cards) {
