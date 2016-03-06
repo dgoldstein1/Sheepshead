@@ -173,11 +173,11 @@ public class ScoreBoard {
      * total game points do not balance to zero
      */
     public void printScores() {
-        String toLog = "player scores: \n";
+        String toLog = "";
         for (Player p : players) {
             toLog += " | " + p.getUsername() + ": " + p.getScore();
         }
-        obs.log(this.getClass(), LogType.INFO, toLog);
+        obs.displayMessage(toLog, "player scores");
     }
 
     /**
@@ -185,23 +185,14 @@ public class ScoreBoard {
      */
 
     public void printRoundDetails() {
+        String toLog = "";
         if (!currRound.isLeaster()) {
-            String toLog = "round stats" +
-                    "\n\tshnider reached? " + currRound.shniderReached() +
-                    "\tbitz & punish? " + blitzers +
-                    "\ttrickless? " + currRound.trickless() + "\n";
-            obs.log(this.getClass(), LogType.INFO, toLog);
+            toLog = "Shnider: \t" + currRound.shniderReached() + "\n" +
+                    "Bitz & Punish: \t" + blitzers + "\n" +
+                    "Trickless: \t" + currRound.trickless() + "\n";
         }
-
-    }
-
-    /**
-     * prints player teams. Used at end of the game, called by printScores()
-     */
-    public void printTeams() {
-        String toLog;
         if (currRound.isLeaster()) return; //no teams for leaster
-        toLog = "partner team: \t";
+        toLog += "partner team: \t";
         for (Player p : players) {
             if (p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
         }
@@ -211,8 +202,7 @@ public class ScoreBoard {
             if (!p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
         }
         toLog += "\n";
-        obs.log(this.getClass(), LogType.INFO, toLog);
-
+        obs.displayMessage(toLog, "round stats");
     }
 
 

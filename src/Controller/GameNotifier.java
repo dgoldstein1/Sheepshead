@@ -32,8 +32,8 @@ public class GameNotifier extends MouseAdapter implements GameObserver {
         return control.getPlayerCard(prompt);
     }
 
-    public int displayMessage(String s) {
-        return control.displayMessage(s);
+    public int displayMessage(String s, String title) {
+        return control.displayMessage(s, title);
     }
 
     public void log(Class c, LogType type, String s) {

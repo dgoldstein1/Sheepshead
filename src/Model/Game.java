@@ -146,7 +146,7 @@ public class Game {
             }
         }
         //blind not picked up by any player
-        obs.displayMessage("Blind not picked up: Leaster will be played!!");
+        obs.displayMessage("Blind not picked up: Leaster will be played!!", "");
         scoreboard.setLeaster();
         table.setLeaster();
     }
@@ -201,7 +201,6 @@ public class Game {
         scoreboard.awardPoints(); //tallies scores and ends round
 
         scoreboard.printRoundDetails();
-        scoreboard.printTeams();
         scoreboard.printScores();
 
         for (Player p : players) {
@@ -361,7 +360,7 @@ public class Game {
      */
     public void setGameSpeed(int newSpeed){
         if(newSpeed < 1 || newSpeed > 100){
-            obs.displayMessage(newSpeed + " not in valid range");
+            obs.displayMessage(newSpeed + " not in valid range", "error");
             gameSpeed = 75;
             return;
         }

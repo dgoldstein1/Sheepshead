@@ -125,10 +125,10 @@ public class SheepsheadMainFrame extends JFrame {
      * @param prompt
      * @return success n
      */
-    public int displayMessage(String prompt){
+    public int displayMessage(String prompt, String title){
         Object[] options = {"baa'ah"};
         int n = JOptionPane.showOptionDialog(this,
-                prompt,"",
+                prompt,title,
                 JOptionPane.PLAIN_MESSAGE,
                 JOptionPane.QUESTION_MESSAGE,
                 null,

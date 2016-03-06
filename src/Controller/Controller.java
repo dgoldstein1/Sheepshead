@@ -35,11 +35,7 @@ public class Controller {
      * continuous loop keeping the game going
      */
     private void playGameLoop(){
-        while(gameNotifier.yOrN("Play another round?").equals("y")){
-            playRound();
-        }
-        gameNotifier.log(this.getClass(),LogType.SYSTEM,"shutting down");
-        System.exit(0);
+        while(true)  playRound();
     }
 
     /**
@@ -88,8 +84,8 @@ public class Controller {
     public Card getPlayerCard(String prompt) {
         return frame.getPlayerCard(prompt);
     }
-    public int displayMessage(String prompt) {
-        return frame.displayMessage(prompt);
+    public int displayMessage(String prompt, String title) {
+        return frame.displayMessage(prompt, title);
     }
     public void log(Class c, LogType type, String s){
         frame.log(c,type,s);

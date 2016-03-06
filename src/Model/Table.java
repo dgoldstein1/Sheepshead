@@ -47,7 +47,7 @@ public class Table {
     public Card[] pickUpBlind(String username) {
         Card[] temp = blind;
         blind = null;
-        obs.displayMessage(username + " picked up.");
+        obs.displayMessage(username + " picked up.", "");
         return temp;
     }
 
@@ -83,7 +83,7 @@ public class Table {
 
         if(c.equals(partnerCard) && leaster){//played partner card
             partner = player;
-            obs.displayMessage(player.getUsername() + " is partner.");
+            obs.displayMessage(player.getUsername() + " is partner.", "");
         }
         currentHand.add(new CardHistory(c, player));
         if (cardLed == null) {//first card played
@@ -97,7 +97,7 @@ public class Table {
                 currentHand.add(new CardHistory(card, player));
                 table.add(card);
             }
-            obs.displayMessage(" " + blindMessage + " were not picked up in the blind and are now revealed.");
+            obs.displayMessage(" " + blindMessage + " were not picked up in the blind and are now revealed.", "");
             blind = null;
         }
     }
@@ -173,7 +173,7 @@ public class Table {
      */
     public void callUp(String username,Hand h) {
         partnerCard = intToCard(callUpHelper(h));
-        obs.displayMessage(username + " calling up to " + partnerCard.toString());
+        obs.displayMessage(username + " calling up to " + partnerCard.toString(), "");
 
     }
 
@@ -210,13 +210,13 @@ public class Table {
             suitPlayed = Suit.DIAMONDS; //make suit diamonds if card is trump
 
         if (!h.contains(cardToPlay)){
-                obs.displayMessage("Error: Current card is not registered as part of current hand");
+                obs.displayMessage("Error: Current card is not registered as part of current hand", "");
             return false; //not in hand
         }
 
         if (h.contains(suitLed) && suitPlayed != suitLed) { //suit in hand but different suit played
             obs.displayMessage("Illegal move: " + suitLed.name() + " led but " + suitPlayed + " played. The sheep knows" +
-                    " that " + suitLed + " are in your hand!");
+                    " that " + suitLed + " are in your hand!", "");
             return false; //not of same suit
         }
 

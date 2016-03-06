@@ -11,7 +11,7 @@ public interface GameObserver {
     public boolean refreshView();
     public String yOrN(String prompt);
     public Card getPlayerCard(String prompt);
-    public int displayMessage(String s);
+    public int displayMessage(String s, String title);
     public void log(Class c, LogType type, String s);
     public void startDebugger();
     public void closeDebugger();
