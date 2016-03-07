@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Sheepshead" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf21470-676c-4a61-9796-3072011e374f" name="Default" comment="--splash screen&#10;--username entry">
+    <list default="true" id="bbf21470-676c-4a61-9796-3072011e374f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/Sheepshead.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Project.iml" afterPath="$PROJECT_DIR$/Sheepshead.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/Controller$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/Controller.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/GameNotifier.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/GameNotifier.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/GameObserver.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/GameObserver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Controller/SheepsheadSplashScreen.class" afterPath="$PROJECT_DIR$/out/production/Project/Controller/SheepsheadSplashScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Model/Game.class" afterPath="$PROJECT_DIR$/out/production/Project/Model/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Model/ScoreBoard.class" afterPath="$PROJECT_DIR$/out/production/Project/Model/ScoreBoard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/Model/Table.class" afterPath="$PROJECT_DIR$/out/production/Project/Model/Table.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame.class" afterPath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Controller.java" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/GameNotifier.java" afterPath="$PROJECT_DIR$/src/Controller/GameNotifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/GameObserver.java" afterPath="$PROJECT_DIR$/src/Controller/GameObserver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Game.java" afterPath="$PROJECT_DIR$/src/Model/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ScoreBoard.java" afterPath="$PROJECT_DIR$/src/Model/ScoreBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table.java" afterPath="$PROJECT_DIR$/src/Model/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" afterPath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
     </list>
     <ignored path="Sheepshead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -322,9 +333,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="Sc&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Frame&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Scoreb&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Controller&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/Controller.java&#10;Stretch&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/StretchIcon.java&#10;Main&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Player&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/Player.java&#10;Splash&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;GameOb&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/GameObserver.java&#10;Sheep&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Score&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Table&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/Table.java&#10;PlayerPan&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/PlayerHandPanel.java&#10;Game&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/Game.java&#10;PlayerH&#9;PSI&#9;JAVA://View.PlayerHandPanel&#10;Setting&#9;PSI&#9;JAVA://View.SettingsFrame&#10;PlayerBra&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/PlayerBrain.java&#10;Help&#9;PSI&#9;JAVA://View.HelpFrame&#10;Stats&#9;PSI&#9;JAVA://View.StatsFrame&#10;frame&#9;PSI&#9;JAVA://View.HelpFrame&#10;MAin&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;TableBu&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/TableButton.java&#10;Log&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/GameLogFrame.java&#10;hELP&#9;PSI&#9;JAVA://View.HelpFrame&#10;HelpF&#9;PSI&#9;JAVA://View.HelpFrame&#10;options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java&#10;Options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java" />
@@ -668,12 +679,18 @@
       <option name="project" value="LOCAL" />
       <updated>1456115242736</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="--added screen at end of round">
+      <created>1457296872376</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1457296872377</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -682,7 +699,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51771957" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21283256" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21283256" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19765739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -721,7 +738,8 @@
     <MESSAGE value="-leaster NULL bug&#10;-icon images&#10;-Options panel backgrounds" />
     <MESSAGE value="--fixed logic and gui bugs with partner and picker display" />
     <MESSAGE value="--splash screen&#10;--username entry" />
-    <option name="LAST_COMMIT_MESSAGE" value="--splash screen&#10;--username entry" />
+    <MESSAGE value="--added screen at end of round" />
+    <option name="LAST_COMMIT_MESSAGE" value="--added screen at end of round" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1122,10 +1140,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Sheepshead</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1168,11 +1188,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Project</last-edited>
+          <last-edited>Sheepshead</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
