@@ -15,7 +15,7 @@ if [[ "$_java" ]]; then
     echo version "$version"
     if [[ "$version" > "1.7" ]]; then
         #run app
-		java -cp  Sheepshead.jar SheepsheadRun
+		java -cp Sheepshead.jar SheepsheadRun
     else         
         echo java not up to date
     fi
