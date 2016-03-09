@@ -4,6 +4,7 @@ import Model.Card;
 import Model.Game;
 import View.LogType;
 import View.SheepsheadMainFrame;
+import View.SoundEffect;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ import java.awt.event.ActionListener;
 public class Controller {
     private Game g;
     private SheepsheadMainFrame frame;
-    private GameNotifier gameNotifier;
+    private ModelNotifier gameNotifier;
     private Timer refreshTimer;
 
 
@@ -42,7 +43,7 @@ public class Controller {
      * sets up Sheapshead game
      */
     private void setup(String playerName){
-        gameNotifier = new GameNotifier(this);
+        gameNotifier = new ModelNotifier(this);
         g = new Game(gameNotifier, playerName);
 
 
@@ -89,6 +90,9 @@ public class Controller {
     }
     public void log(Class c, LogType type, String s){
         frame.log(c,type,s);
+    }
+    public void playSound(SoundEffect ef){
+        frame.playSound(ef);
     }
 
     /*in from View out to View*/

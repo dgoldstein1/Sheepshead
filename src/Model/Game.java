@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.GameObserver;
+import Controller.ModelObserver;
 import View.LogType;
 
 import java.io.*;
@@ -18,7 +18,7 @@ public class Game {
     private boolean debuggerRunning;
     private BufferedReader bufferedReader;
     private Player startRound;
-    private GameObserver obs;
+    private ModelObserver obs;
     private int gameSpeed;
     protected ArrayList<String> namesTaken;
     private String[] names;
@@ -28,7 +28,7 @@ public class Game {
      * automatically set to have real player
      *
      */
-    public Game(GameObserver obs, String playerName) {
+    public Game(ModelObserver obs, String playerName) {
         gameSpeed = 50;
         handSize = 6;
         table = new Table(obs);

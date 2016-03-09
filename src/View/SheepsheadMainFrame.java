@@ -3,7 +3,6 @@ package View;
 import Model.Card;
 import Model.Game;
 import Model.ScoreBoard;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 import java.awt.*;
@@ -56,6 +55,7 @@ public class SheepsheadMainFrame extends JFrame {
         this.g = g;
         contentPane = getContentPane();
         sounds = new MainSound();
+        sounds.playMusic("Sounds/Music/CCRmix.wav");
         initPanels(listener, g);
         pack();
         setVisible(true);
@@ -107,6 +107,9 @@ public class SheepsheadMainFrame extends JFrame {
 
 
     /* in from notifier*/
+    public void playSound(SoundEffect ef){
+        sounds.playEffect("Sounds/Effects/" + ef.toString());
+    }
 
     /**
      * creates Jdialog for player to choose yes or no prompt

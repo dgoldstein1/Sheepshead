@@ -68,6 +68,12 @@ class PlayerHandPanel extends JPanel {
     public boolean refresh(Player p) {
         java.util.List<Card> cardsInHand = p.getHand().getHand();
         int points = p.getDisplayablePoints();
+
+        //refresh username
+        if(!p.getUsername().equals(cardsDisplayed.playerUsernameLabel.getText())){
+            cardsDisplayed.playerUsernameLabel.setText(p.getUsername());
+        }
+
         //remove numberFaceDownCards not in hand
         for (TableButton tb : cardsDisplayed.cards) {
             if (!cardsInHand.contains(tb.card())) { //table button not in card model
@@ -208,7 +214,9 @@ class PlayerHandPanel extends JPanel {
 class CardBox extends JPanel{
     public ArrayList<TableButton> cards;
     public JLabel pointsDisplayer, pickerPartnerLabel;
+    public JLabel playerUsernameLabel;
     public int pointsDisplayed;
+
 
     public CardBox( MouseListener listener, String playerName){
         cards = new ArrayList<TableButton>(8);
@@ -217,7 +225,7 @@ class CardBox extends JPanel{
         pickerPartnerLabel.setForeground(Color.YELLOW);
         pickerPartnerLabel.setFont(new Font("Helvetica",Font.ITALIC,12));
 
-        addLabel(playerName);
+        playerUsernameLabel =  addLabel(playerName);
         pointsDisplayed = 0;
         pointsDisplayer = addLabel("| Points: " + pointsDisplayed);
 

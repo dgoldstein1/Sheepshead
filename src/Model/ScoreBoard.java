@@ -1,8 +1,7 @@
 package Model;
 
-import Controller.GameObserver;
+import Controller.ModelObserver;
 import View.LogType;
-import sun.rmi.runtime.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +19,9 @@ public class ScoreBoard {
     private int roundNumber;
     private boolean blitzers;
     private int leasterCount;
-    private GameObserver obs;
+    private ModelObserver obs;
 
-    public ScoreBoard(Player[] players, GameObserver obs) {
+    public ScoreBoard(Player[] players, ModelObserver obs) {
         this.obs = obs;
         scoreboard = new ArrayList<Round>();
         this.players = players;

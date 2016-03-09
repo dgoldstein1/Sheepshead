@@ -17,15 +17,16 @@ import java.util.concurrent.Executors;
 
 public class MainSound {
     private ExecutorService pool;
-    private final int maxThreads = 10;
-    private boolean muted;
-    private List<Clip> currSounds;
+    private ArrayList<Clip> currEffects, currMusic;
+    private ArrayList<String> loopedDirs;
     private boolean effectsMuted, musicMuted;
 
     public MainSound() {
-        pool = Executors.newFixedThreadPool(maxThreads);
-        currSounds = new ArrayList<Clip>();
-        effectsMuted = musicMuted = muted = false;
+        pool = Executors.newFixedThreadPool(10);
+        currEffects = new ArrayList<Clip>();
+        currMusic = new ArrayList<Clip>();
+        loopedDirs = new ArrayList<String>(10);
+        effectsMuted = musicMuted = false;
     }
 
     /**
@@ -35,15 +36,16 @@ public class MainSound {
      * @param dir
      */
     public void playEffect(final String dir) {
-        if (muted) return;
-        try {
-            Clip clip = createClip(dir);
-            currSounds.add(clip);
-            Runnable sound = new SoundThread(clip, false);
-            pool.execute(sound);
-        } catch (Exception e) {
-            new PopUpFrame("could not initialize " + dir + " in MainSound.java");
-            e.printStackTrace();
+        if (!effectsMuted){
+            try {
+                Clip clip = createClip(dir);
+                currEffects.add(clip);
+                Runnable sound = new SoundThread(clip, false);
+                pool.execute(sound);
+            } catch (Exception e) {
+                new PopUpFrame("could not initialize " + dir + " in MainSound.java");
+                e.printStackTrace();
+            }
         }
     }
 
@@ -52,17 +54,19 @@ public class MainSound {
      *
      * @param dir sound file
      */
-    public void loopSound(final String dir) {
-        if (muted) return;
-        try {
-            Clip clip = createClip(dir);
-            currSounds.add(clip);
-            Runnable sound = new SoundThread(clip, true);
-            pool.execute(sound);
-        } catch (Exception e) {
-            new PopUpFrame("could not initialize " + dir + " in MainSound.java");
-            e.printStackTrace();
+    public void playMusic(String dir) {
+        if (!musicMuted){
+            try {
+                Clip clip = createClip(dir);
+                Runnable sound = new SoundThread(clip, true);
+                pool.execute(sound);
+                currMusic.add(clip);
+            } catch (Exception e) {
+                new PopUpFrame("could not initialize " + dir + " in MainSound.java");
+                e.printStackTrace();
+            }
         }
+
     }
 
     /**
@@ -82,32 +86,41 @@ public class MainSound {
     }
 
 
-    /**
-     * mutes all audio
+
+    /*
+        getters and setters
      */
-    public void mute() {
-        muted = true;
-        for (Clip c : currSounds) {
-            if (c.isActive()) {
-                c.close();
+
+    public void setEffectsMuted(boolean b){
+        if(b&&!effectsMuted){ //turn effects off
+            for(Clip c: currEffects){
+                if(c.isActive()) c.close();
+            }
+            currEffects.clear();
+        }
+        effectsMuted = b;
+
+    }
+    public synchronized void setMusicMuted(boolean b){
+        if(b && !musicMuted){//turn off
+            for(Clip c : currMusic){
+                if(c.isActive()) c.close();
             }
         }
-        currSounds.clear();
-    }
+        else if(!b && musicMuted){//turn on
+            musicMuted = false;
+            for(String s : loopedDirs){
+                try {
+                    Clip clip = createClip(s);
+                    Runnable sound = new SoundThread(clip, true);
+                    pool.execute(sound);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            return;//no need to set musicMuted twice
+        }
 
-    /**
-     * unmutes all audio if muted
-     */
-    public void unmute() {
-        muted = false;
-    }
-    public boolean isMuted() {
-        return muted;
-    }
-    public void setEffectsMuted(boolean b){
-        effectsMuted = b;
-    }
-    public void setMusicMuted(boolean b){
         musicMuted = b;
     }
     public boolean effectsMuted(){
@@ -117,6 +130,10 @@ public class MainSound {
         return musicMuted;
     }
 
+
+    /*
+        class for running sound threads
+     */
 
     static class SoundThread implements Runnable {
         private boolean loop;

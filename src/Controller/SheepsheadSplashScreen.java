@@ -60,10 +60,10 @@ public class SheepsheadSplashScreen extends JWindow {
 
         setVisible(false);
 
-        String[] options = {"OK"};
+        String[] options = {"Play!"};
         JPanel panel = new JPanel();
-        JTextField txt = new JTextField(20);
-        panel.add(new JLabel("Enter Username"));
+        panel.setPreferredSize(new Dimension(80,30));
+        JTextField txt = new JTextField(14);
         panel.add(txt);
 
         new Controller(getPlayerInput(panel,txt,options));
@@ -71,7 +71,7 @@ public class SheepsheadSplashScreen extends JWindow {
     }
 
     private String getPlayerInput(JPanel panel,JTextField txt, String[] options) {
-        JOptionPane.showOptionDialog(null, panel, "", JOptionPane.NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        JOptionPane.showOptionDialog(null, panel, "Enter Username", JOptionPane.NO_OPTION, JOptionPane.NO_OPTION, null, options, options[0]);
         if (txt.getText() == null || txt.getText().equals("")) {
             return getPlayerInput(panel, txt, options);
         }

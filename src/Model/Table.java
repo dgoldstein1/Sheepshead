@@ -1,12 +1,12 @@
 package Model;
 
-import Controller.GameObserver;
+import Controller.ModelObserver;
 import View.LogType;
+import View.SoundEffect;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Observer;
 
 /**
  * Created by Dave on 9/16/2015.
@@ -24,9 +24,9 @@ public class Table {
     private boolean leaster;
     private Player partner;
     private List<Card> cardsPlayed;
-    private GameObserver obs;
+    private ModelObserver obs;
 
-    public Table(GameObserver obs) {
+    public Table(ModelObserver obs) {
         this.obs = obs;
         currHandNumber = 0;
         table = new ArrayList<Card>();
@@ -78,6 +78,7 @@ public class Table {
      */
     public void playCard(Card c, Player player) {
         obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString());
+        obs.playSound(SoundEffect.CARD_DRAWN);
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
 
@@ -215,8 +216,7 @@ public class Table {
         }
 
         if (h.contains(suitLed) && suitPlayed != suitLed) { //suit in hand but different suit played
-            obs.displayMessage("Illegal move: " + suitLed.name() + " led but " + suitPlayed + " played. The sheep knows" +
-                    " that " + suitLed + " are in your hand!", "");
+            obs.displayMessage("Does not follow suit.\n" + suitLed.name() + " led but " + suitPlayed + " selected.", "");
             return false; //not of same suit
         }
 

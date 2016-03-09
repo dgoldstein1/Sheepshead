@@ -4,6 +4,9 @@ import Model.Game;
 import Model.ScoreBoard;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.html.HTMLEditorKit;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -97,9 +100,12 @@ public class OptionsPanel extends JPanel {
 
 
 class HelpFrame extends JFrame {
+    private JTextPane textDisplay;
+    private JScrollPane scroller;
+    private String absFilename;
 
     HelpFrame(Dimension size) {
-        super("HELP");
+        super("Info");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
@@ -111,62 +117,81 @@ class HelpFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        setContentPane(new JLabel(new StretchIcon("Sheep_Photos/rolling_hills.jpg", false)));
-        setPreferredSize(size);
-        setLayout(new BorderLayout());
-
-
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                close(true);
                 setVisible(false);
                 dispose();
             }
         });
-        JLabel header = new JLabel("Welcome to Sheepshead!");
-        header.setHorizontalAlignment(SwingConstants.CENTER);
-        JButton ok = new JButton("ok");
-        ok.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                dispose();
-            }
-        });
+        setPreferredSize(size);
 
-        JTextArea about = new JTextArea("" +
-                "Sheapshead is a very complicated game originating in XXX.... \n" +
-                "I learned the game visiting family in the Mid-West.  For more information \n" +
-                "on rules and history, see: \n \n" +
-                "\t https://en.wikipedia.org/wiki/Sheepshead_%28game%29 \n" +
-                "\t https://www.pagat.com/schafk/shep.html \n" +
-                "\t http://www.tc.umn.edu/~jds/games/sheepshead/sheepshead-rules.pdf \n"
-        );
-        about.setFont(new Font("Helvetica",Font.BOLD,12));
-        about.setEditable(false);
-        about.setOpaque(false);
+        textDisplay = new JTextPane();
+        textDisplay.setContentType("text/html");
+        textDisplay.setEditable(false);
+        scroller = new JScrollPane(textDisplay);
+        this.add(scroller);
+        absFilename = System.getProperty("user.dir") + "/lib/Pages/Sheeshead_Wiki.html";
+        loadhtml();
 
-        JTextArea copyright = new JTextArea("" +
-                "This project was completed as part of a culminating capstone project at Macalester College, \n" +
-                "2016.  For more info contact David goldstein at Dgoldstein01@gmail.com"
-        );
-        copyright.setFont(new Font("Helvetica",Font.ITALIC,12));
-        copyright.setEditable(false);
-        copyright.setOpaque(false);
-
-        JPanel infoHolder = new JPanel(new GridLayout(3,1));
-        infoHolder.setOpaque(false);
-
-        infoHolder.add(about);
-        infoHolder.add(copyright);
-
-        infoHolder.setOpaque(false);
-        add(header, BorderLayout.NORTH);
-        add(infoHolder,BorderLayout.CENTER);
 
         pack();
         setVisible(true);
     }
 
+    private void loadhtml(){
+        try{
+            System.out.print("Loading " + absFilename + " ...");
+            File file = new File(absFilename);
+            textDisplay.setPage(file.toURI().toURL());
+            System.out.println("done");
+
+        } catch(NullPointerException e){
+            System.out.println("could not find file: " + absFilename);
+            e.printStackTrace();
+            close(false);
+        } catch(UnsupportedEncodingException e){
+            System.out.println("could not encode " + absFilename);
+            e.printStackTrace();
+            close(false);
+        } catch(IOException e){
+            System.out.println("IO exception");
+            e.printStackTrace();
+            close(false);
+        }
+    }
+
+    private void save(){
+        StyledDocument doc = (StyledDocument) textDisplay.getDocument();
+        HTMLEditorKit kit = new HTMLEditorKit();
+        BufferedOutputStream out;
+        try {
+            out = new BufferedOutputStream(new FileOutputStream(absFilename));
+            kit.write(out, doc, doc.getStartPosition().getOffset(), doc.getLength());
+
+        } catch (IOException e){
+            e.printStackTrace();
+            close(false);
+        } catch (BadLocationException e){
+            e.printStackTrace();
+            close(false);
+        }
+    }
+
+    /**
+     * closes this window
+     * @param saveWork
+     */
+    private void close(boolean saveWork){
+        if (saveWork){
+            save();
+            setVisible(false);
+            dispose();
+        }
+        else{
+            System.exit(1);
+        }
+    }
 }
 
 
@@ -292,15 +317,17 @@ class StatsFrame extends JFrame {
 }
 
 class SettingsFrame extends JFrame {
-    JPanel settings, apply;
+    JPanel settings;
     JCheckBox playEffects, playMusic, launchDebugger;
     JSlider gameSpeed;
     JButton applyChanges;
     MainSound sounds;
     Game g;
+    JTextField enterName;
 
     SettingsFrame(Game g, MainSound sounds) {
         super("Stats");
+        setContentPane(new JLabel(new StretchIcon("Sheep_Photos/rolling_hills.jpg", false)));
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
@@ -312,7 +339,7 @@ class SettingsFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        setPreferredSize(new Dimension(269,275));
+        setPreferredSize(new Dimension(269,325));
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 setVisible(false);
@@ -323,7 +350,6 @@ class SettingsFrame extends JFrame {
         this.g = g;
         this.sounds = sounds;
         init();
-
         pack();
         setVisible(true);
     }
@@ -332,6 +358,7 @@ class SettingsFrame extends JFrame {
      * inits components of this frame
      */
     private void init(){
+
         //initiatlization
         playEffects = new JCheckBox("");
         playEffects.setHorizontalAlignment(JCheckBox.CENTER);
@@ -343,6 +370,8 @@ class SettingsFrame extends JFrame {
         launchDebugger = new JCheckBox("");
         launchDebugger.setHorizontalAlignment(JCheckBox.CENTER);
         launchDebugger.setSelected(g.debuggerRunning());
+        enterName = new JTextField(g.getNonAiPlayer().getUsername());
+
 
         applyChanges = new JButton("apply changes");
 
@@ -354,13 +383,15 @@ class SettingsFrame extends JFrame {
                 sounds.setMusicMuted(!playMusic.isSelected());
                 g.setDebuggerRunning(launchDebugger.isSelected());
                 g.setGameSpeed(gameSpeed.getValue());
+                g.setPlayerName(enterName.getText());
                 setVisible(false);
                 dispose();
             }
         });
 
         //add to JPabels / frame
-        settings = new JPanel(new GridLayout(4,2));
+        settings = new JPanel(new GridLayout(5,2));
+        settings.setOpaque(false);
         addLabel(settings,"Play Sound Effects: ");
         settings.add(playEffects);
         addLabel(settings,"Play Music: ");
@@ -369,6 +400,8 @@ class SettingsFrame extends JFrame {
         settings.add(gameSpeed);
         addLabel(settings,"Run Debugger: ");
         settings.add(launchDebugger);
+        addLabel(settings,"username: ");
+        settings.add(enterName);
 
         add(settings, BorderLayout.CENTER);
         add(applyChanges,BorderLayout.SOUTH);
@@ -377,6 +410,7 @@ class SettingsFrame extends JFrame {
 
     private void addLabel(JPanel jpanel,String s){
         JLabel label = new JLabel(s, SwingConstants.CENTER);
+        label.setOpaque(false);
         jpanel.add(label);
     }
 
