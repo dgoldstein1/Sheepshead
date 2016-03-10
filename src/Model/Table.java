@@ -78,6 +78,7 @@ public class Table {
      */
     public void playCard(Card c, Player player) {
         obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString());
+        obs.playSound(SoundEffect.CARD_PLAYED);
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
 

@@ -2,6 +2,7 @@ package Model;
 
 import Controller.ModelObserver;
 import View.LogType;
+import View.SoundEffect;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -138,6 +139,7 @@ public class Game {
     private void setTeams() {
         for (Player p : players) {
             if (p.isPlayer() && askPlayerToPickUp(p)) {//non ai player and chooses to pick up
+                obs.playSound(SoundEffect.CARD_DRAWN);
                 scoreboard.setPicker(p);
                 return;
             } else if (!p.isNonAIPlayer() && p.chooseToPickUp()) {//ai player and chooses to pick up

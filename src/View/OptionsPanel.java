@@ -245,7 +245,7 @@ class StatsFrame extends JFrame {
         String[][] data = parseData(sb);
         String[] columns = parseColumns(sb);
         if (data[0].length != columns.length) {
-            new PopUpFrame("columns and data not compatible" +
+            JOptionPane.showMessageDialog(this,"columns and data not compatible" +
                     "       colums = " + columns.length + " but data[0]" + data[0].length);
             this.dispose(); //exit
         }

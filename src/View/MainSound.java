@@ -7,7 +7,6 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,17 +17,29 @@ import java.util.concurrent.Executors;
 
 public class MainSound {
     private ExecutorService pool;
-    private ArrayList<Clip> currEffects, currMusic;
-    private ArrayList<String> loopedDirs;
+    private ArrayList<Clip> effectsPlayed, currMusic, bahList;
+    private Clip card_Drawn, card_played;
     private boolean effectsMuted, musicMuted;
-    final int numberOfBahs = 3;
 
     public MainSound() {
         pool = Executors.newFixedThreadPool(10);
-        currEffects = new ArrayList<Clip>();
-        currMusic = new ArrayList<Clip>();
-        loopedDirs = new ArrayList<String>(10);
+        effectsPlayed = new ArrayList<Clip>();
+        currMusic = new ArrayList<Clip>(3);
+        init();
+    }
+
+    /**
+     * inits clips in enum SoundEffect
+     */
+    private void init(){
         effectsMuted = musicMuted = false;
+        bahList = new ArrayList<Clip>(3);
+        for(int i=0;i<3;i++){
+            bahList.add(createClip("Sounds/Effects/Sheep/bah" + i + ".wav"));
+        }
+        card_Drawn = createClip("Sounds/Effects/CARD_DRAWN.wav");
+        card_played = createClip("Sounds/Effects/CARD_PLAYED.wav");
+
     }
 
     /**
@@ -39,14 +50,15 @@ public class MainSound {
      */
     public void playEffect(SoundEffect ef) {
         if (!effectsMuted){
-            String dir = "Sounds/Effects/";
-            if(ef.equals(SoundEffect.BAH)) dir += "Sheep/bah" + (int) (Math.random() * numberOfBahs) + ".wav";
-            else dir += ef.toString() + ".wav";
-
-            Clip clip = createClip(dir);
-            currEffects.add(clip);
-            Runnable sound = new SoundThread(clip, false);
-            pool.execute(sound);
+            Clip c=null;
+            if(ef.equals(SoundEffect.BAH))
+                c = bahList.get((int) (Math.random() * bahList.size()));
+            else if(ef.equals(SoundEffect.CARD_DRAWN))
+                c= card_Drawn;
+            else if(ef.equals(SoundEffect.CARD_PLAYED))
+                c = card_played;
+            assert c != null;
+            pool.execute(new SoundThread(c,false));
         }
     }
 
@@ -82,6 +94,7 @@ public class MainSound {
         } catch (LineUnavailableException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Error reading " + filename);
             e.printStackTrace();
         } catch (UnsupportedAudioFileException e) {
             e.printStackTrace();
@@ -97,10 +110,10 @@ public class MainSound {
 
     public void setEffectsMuted(boolean b){
         if(b&&!effectsMuted){ //turn effects off
-            for(Clip c: currEffects){
+            for(Clip c: effectsPlayed){
                 if(c.isActive()) c.close();
             }
-            currEffects.clear();
+            effectsPlayed.clear();
         }
         effectsMuted = b;
 
@@ -137,14 +150,21 @@ public class MainSound {
         private boolean loop;
         private Clip clip;
 
-        SoundThread(final Clip clip, boolean loop) {
+        SoundThread(Clip clip, boolean loop) {
             this.clip = clip;
             this.loop = loop;
         }
 
         public void run() {
             if (loop) clip.loop(clip.LOOP_CONTINUOUSLY);
-            else clip.start();
+            else {
+                if(clip.isRunning())
+                    clip.stop();
+                clip.setFramePosition(0);
+                clip.start();
+                clip.start();
+            }
+
         }
     }
 }
