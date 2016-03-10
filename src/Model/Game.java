@@ -201,10 +201,7 @@ public class Game {
     private void endRound() {
         shiftPlayers(null);
         scoreboard.awardPoints(); //tallies scores and ends round
-
-        scoreboard.printRoundDetails();
         scoreboard.printScores();
-
         for (Player p : players) {
             p.endRound();
         }
@@ -296,7 +293,7 @@ public class Game {
             else{
                 input = bufferedReader.readLine();
             }
-            obs.log(this.getClass(),LogType.PLAYER_INPUT,"read : " + input);
+            obs.log(this.getClass(),LogType.PLAYER_INPUT,prompt + ": " + input);
         } catch (IOException e) {
             obs.log(this.getClass(),LogType.ERROR,"ERROR READING INPUT, SYSTEM EXIT");
             e.printStackTrace();

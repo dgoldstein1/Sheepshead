@@ -95,11 +95,13 @@ class PlayerHandPanel extends JPanel {
 
         //update partner + picker displayed
         if(p.isKnownPartner() && !partnerDisplayed){//partner not displayed
-            cardsDisplayed.getPickerPartnerLabel().setText(cardsDisplayed.getPickerPartnerLabel().getText() + "-PARTNER-");
+            cardsDisplayed.getPickerPartnerLabel().setText(cardsDisplayed.getPickerPartnerLabel().getText() + "(PARTNER)");
+            cardsDisplayed.getPickerPartnerLabel().setForeground(Color.orange);
             partnerDisplayed = true;
         }
         if(p.pickedUp() && !pickerDislayed){//picker not displayed
-            cardsDisplayed.getPickerPartnerLabel().setText(cardsDisplayed.getPickerPartnerLabel().getText() + "-PICKER-");
+            cardsDisplayed.getPickerPartnerLabel().setText(cardsDisplayed.getPickerPartnerLabel().getText() + "(PICKER)");
+            cardsDisplayed.getPickerPartnerLabel().setForeground(Color.MAGENTA);
             pickerDislayed = true;
         }
         else if((!p.isKnownPartner() && partnerDisplayed) ||

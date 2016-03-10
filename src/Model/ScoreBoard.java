@@ -174,34 +174,37 @@ public class ScoreBoard {
     public void printScores() {
         String toLog = "";
         for (Player p : players) {
-            toLog += " | " + p.getUsername() + ": " + p.getScore();
+            if(p.isNonAIPlayer())
+                toLog += p.getUsername() + ": " + p.getScore(); //do not want "|" on first go around
+            else
+                toLog += " | " + p.getUsername() + ": " + p.getScore();
         }
-        obs.displayMessage(toLog, "player scores");
+        obs.displayMessage(toLog + "\n \n" + getRoundDetails(), "Round Scores");
     }
 
     /**
      * prints out details of round
      */
 
-    public void printRoundDetails() {
+    public String getRoundDetails() {
         String toLog = "";
+        toLog += "Partner team: \t";
+        for (Player p : players) {
+            if (p.isOnPartnerTeam()) toLog += " " + p.getUsername() +  " (" + p.getPoints() + " points) | ";
+        }
+        toLog+="\n";
+        toLog += "Pon-partner team: ";
+        for (Player p : players) {
+            if (!p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " (" + p.getPoints() + " points) | ";
+        }
+        if (currRound.isLeaster()) return toLog; //no teams for leaster
+        toLog += "\n \n";
         if (!currRound.isLeaster()) {
-            toLog = "Shnider: \t" + currRound.shniderReached() + "\n" +
-                    "Bitz & Punish: \t" + blitzers + "\n" +
+            toLog += "Shnider Reached: \t" + currRound.shniderReached() + "\n" +
+                    "Bitz And Punish: \t" + blitzers + "\n" +
                     "Trickless: \t" + currRound.trickless() + "\n";
         }
-        if (currRound.isLeaster()) return; //no teams for leaster
-        toLog += "partner team: \t";
-        for (Player p : players) {
-            if (p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
-        }
-        toLog += "\n";
-        toLog += "\tnon-partner team: ";
-        for (Player p : players) {
-            if (!p.isOnPartnerTeam()) toLog += " " + p.getUsername() + " | ";
-        }
-        toLog += "\n";
-        obs.displayMessage(toLog, "round stats");
+        return toLog;
     }
 
 

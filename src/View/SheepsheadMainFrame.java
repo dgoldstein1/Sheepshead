@@ -56,6 +56,7 @@ public class SheepsheadMainFrame extends JFrame {
         contentPane = getContentPane();
         sounds = new MainSound();
         sounds.setMusicMuted(true);
+        sounds.setEffectsMuted(true);
         sounds.playMusic("Sounds/Music/CCRmix.wav");
         initPanels(listener, g);
         pack();

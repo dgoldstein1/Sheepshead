@@ -77,14 +77,14 @@ public class Table {
      * @param player name of player
      */
     public void playCard(Card c, Player player) {
-        obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString());
+        obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString() + partnerCard.toString());
         obs.playSound(SoundEffect.CARD_PLAYED);
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
 
-        if(c.equals(partnerCard) && leaster){//played partner card
+        if(c.equals(partnerCard) && !leaster){//played partner card
             partner = player;
-            obs.displayMessage(player.getUsername() + " is partner.", "");
+            obs.log(this.getClass(),LogType.INFO,player.getUsername() + " is partner.");
         }
         currentHand.add(new CardHistory(c, player));
         if (cardLed == null) {//first card played
@@ -98,7 +98,9 @@ public class Table {
                 currentHand.add(new CardHistory(card, player));
                 table.add(card);
             }
-            obs.displayMessage(" " + blindMessage + " were not picked up in the blind and are now revealed.", "");
+            obs.displayMessage("Due to Leaster, " + blindMessage + " were not picked up in \n" +
+                    " the blind but will be given to winner of this hand. \n" +
+                    "For more information see 'game rules' on top of screen", "");
             blind = null;
         }
     }

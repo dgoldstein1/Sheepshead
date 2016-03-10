@@ -20,6 +20,7 @@ public class MainSound {
     private ArrayList<Clip> effectsPlayed, currMusic, bahList;
     private Clip card_Drawn, card_played;
     private boolean effectsMuted, musicMuted;
+    private final int number_bahs = 4;
 
     public MainSound() {
         pool = Executors.newFixedThreadPool(10);
@@ -34,7 +35,7 @@ public class MainSound {
     private void init(){
         effectsMuted = musicMuted = false;
         bahList = new ArrayList<Clip>(3);
-        for(int i=0;i<3;i++){
+        for(int i=0;i<number_bahs;i++){
             bahList.add(createClip("Sounds/Effects/Sheep/bah" + i + ".wav"));
         }
         card_Drawn = createClip("Sounds/Effects/CARD_DRAWN.wav");
