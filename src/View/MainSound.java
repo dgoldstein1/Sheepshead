@@ -4,6 +4,7 @@ import sun.tools.jar.Main;
 
 import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ public class MainSound {
     private ArrayList<Clip> currEffects, currMusic;
     private ArrayList<String> loopedDirs;
     private boolean effectsMuted, musicMuted;
+    final int numberOfBahs = 3;
 
     public MainSound() {
         pool = Executors.newFixedThreadPool(10);
@@ -33,38 +35,32 @@ public class MainSound {
      * plays effect from dir
      * if dir is not runnable, throws exception and prints stack trace
      *
-     * @param dir
+     * @param ef
      */
-    public void playEffect(final String dir) {
+    public void playEffect(SoundEffect ef) {
         if (!effectsMuted){
-            try {
-                Clip clip = createClip(dir);
-                currEffects.add(clip);
-                Runnable sound = new SoundThread(clip, false);
-                pool.execute(sound);
-            } catch (Exception e) {
-                new PopUpFrame("could not initialize " + dir + " in MainSound.java");
-                e.printStackTrace();
-            }
+            String dir = "Sounds/Effects/";
+            if(ef.equals(SoundEffect.BAH)) dir += "Sheep/bah" + (int) (Math.random() * numberOfBahs) + ".wav";
+            else dir += ef.toString() + ".wav";
+
+            Clip clip = createClip(dir);
+            currEffects.add(clip);
+            Runnable sound = new SoundThread(clip, false);
+            pool.execute(sound);
         }
     }
 
     /**
      * plays sounds from dir forever, or until stopped
-     *
+     * if currently muted, adds to list to be played when unmuted
      * @param dir sound file
      */
     public void playMusic(String dir) {
-        if (!musicMuted){
-            try {
-                Clip clip = createClip(dir);
-                Runnable sound = new SoundThread(clip, true);
-                pool.execute(sound);
-                currMusic.add(clip);
-            } catch (Exception e) {
-                new PopUpFrame("could not initialize " + dir + " in MainSound.java");
-                e.printStackTrace();
-            }
+        Clip clip = createClip(dir);
+        currMusic.add(clip);
+        if(!musicMuted){
+            Runnable sound = new SoundThread(clip, true);
+            pool.execute(sound);
         }
 
     }
@@ -76,13 +72,21 @@ public class MainSound {
      * @return Clip from sunJava library
      * @throws Exception file not found
      */
-    private Clip createClip(String filename) throws Exception {
-        InputStream is = new BufferedInputStream(
-                Main.class.getResourceAsStream("/" + filename));
-        AudioInputStream ais = AudioSystem.getAudioInputStream(is);
-        Clip clip = AudioSystem.getClip();
-        clip.open(ais);
-        return clip;
+    private Clip createClip(String filename) {
+        try{
+            InputStream is = new BufferedInputStream(Main.class.getResourceAsStream("/" + filename));
+            AudioInputStream ais = AudioSystem.getAudioInputStream(is);
+            Clip clip = AudioSystem.getClip();
+            clip.open(ais);
+            return clip;
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
@@ -104,19 +108,13 @@ public class MainSound {
     public synchronized void setMusicMuted(boolean b){
         if(b && !musicMuted){//turn off
             for(Clip c : currMusic){
-                if(c.isActive()) c.close();
+                c.stop();
             }
         }
         else if(!b && musicMuted){//turn on
             musicMuted = false;
-            for(String s : loopedDirs){
-                try {
-                    Clip clip = createClip(s);
-                    Runnable sound = new SoundThread(clip, true);
-                    pool.execute(sound);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+            for(Clip c : currMusic){
+                c.start();
             }
             return;//no need to set musicMuted twice
         }

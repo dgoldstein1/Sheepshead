@@ -7,43 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf21470-676c-4a61-9796-3072011e374f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ModelObserver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/SoundEffect.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/GameNotifier.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/GameObserver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controller/GameObserver.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controller/GameNotifier.java" afterPath="$PROJECT_DIR$/src/Controller/ModelNotifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Sheepshead/Sheepshead.jar" afterPath="$PROJECT_DIR$/out/artifacts/Sheepshead/Sheepshead.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Controller/Controller$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/Controller.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Controller/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/SheepsheadSplashScreen.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Controller/SheepsheadSplashScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Game.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/ScoreBoard.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/ScoreBoard.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Table.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/Table.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/CardBox.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/CardBox.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/FadeLabel.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/FadeLabel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/MainSound$SoundThread.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/MainSound$SoundThread.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/MainSound.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/MainSound.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/OptionsPanel.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/OptionsPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/PlayerHandPanel.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/PlayerHandPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame$2.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SheepsheadMainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/SheepsheadMainFrame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SheepsheadMainFrame.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/SheepsheadMainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsFrame.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Controller.java" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/SheepsheadSplashScreen.java" afterPath="$PROJECT_DIR$/src/Controller/SheepsheadSplashScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Game.java" afterPath="$PROJECT_DIR$/src/Model/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ScoreBoard.java" afterPath="$PROJECT_DIR$/src/Model/ScoreBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Table.java" afterPath="$PROJECT_DIR$/src/Model/Table.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainSound.java" afterPath="$PROJECT_DIR$/src/View/MainSound.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/OptionsPanel.java" afterPath="$PROJECT_DIR$/src/View/OptionsPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/PlayerHandPanel.java" afterPath="$PROJECT_DIR$/src/View/PlayerHandPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" afterPath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
     </list>
     <ignored path="Sheepshead.iws" />
@@ -80,11 +50,10 @@
         <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="61" selection-start-line="110" selection-start-column="61" selection-end-line="110" selection-end-column="61" />
+              <caret line="139" column="28" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
               <folding>
-                <element signature="e#3207#3208#0" expanded="true" />
-                <element signature="e#3275#3276#0" expanded="true" />
-                <element signature="method#yOrN#0;class#SheepsheadMainFrame#0" expanded="false" />
+                <element signature="e#3243#3244#0" expanded="true" />
+                <element signature="e#3280#3281#0" expanded="true" />
                 <element signature="method#helpPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
                 <element signature="method#statsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
                 <element signature="method#settingsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
@@ -95,14 +64,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Table.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
+      <file leaf-file-name="MainSound.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/MainSound.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6032907">
-              <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
-              <folding>
-                <element signature="method#intToCard#0;class#Table#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.3478261">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Deck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="102" column="58" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,7 +128,6 @@
         <option value="$PROJECT_DIR$/src/View/SheepsheadTextPane.java" />
         <option value="$PROJECT_DIR$/project_documentation/bugs" />
         <option value="$PROJECT_DIR$/src/Model/Round.java" />
-        <option value="$PROJECT_DIR$/src/Model/Deck.java" />
         <option value="$PROJECT_DIR$/src/View/SheepsheadJDialog.java" />
         <option value="$PROJECT_DIR$/src/View/MyJDialog.java" />
         <option value="$PROJECT_DIR$/src/Model/PlayerTimer.java" />
@@ -181,15 +157,16 @@
         <option value="$PROJECT_DIR$/lib/Pages/Sheeshead_Wiki.html" />
         <option value="$PROJECT_DIR$/src/View/OptionsPanel.java" />
         <option value="$PROJECT_DIR$/src/View/PlayerHandPanel.java" />
-        <option value="$PROJECT_DIR$/src/View/MainSound.java" />
         <option value="$PROJECT_DIR$/src/View/Effect.java" />
         <option value="$PROJECT_DIR$/src/View/SoundEffect.java" />
         <option value="$PROJECT_DIR$/src/Controller/GameObserver.java" />
         <option value="$PROJECT_DIR$/src/Controller/GameNotifier.java" />
-        <option value="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
         <option value="$PROJECT_DIR$/src/Controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/Controller/ModelNotifier.java" />
         <option value="$PROJECT_DIR$/src/Model/Table.java" />
+        <option value="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" />
+        <option value="$PROJECT_DIR$/src/Model/Deck.java" />
+        <option value="$PROJECT_DIR$/src/View/MainSound.java" />
       </list>
     </option>
   </component>
@@ -201,8 +178,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="159" />
-    <option name="y" value="22" />
+    <option name="x" value="124" />
+    <option name="y" value="29" />
     <option name="width" value="1258" />
     <option name="height" value="814" />
   </component>
@@ -256,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -287,24 +265,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,7 +342,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,7 +360,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Table&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;Player&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/PlayerHandPanel.java&#10;Splash&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Game&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Game.java&#10;Settings&#9;PSI&#9;JAVA://View.SettingsFrame&#10;MainSo&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;SettingsF&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Options&#9;PSI&#9;JAVA://View.OptionsPanel&#10;Help&#9;PSI&#9;JAVA://View.HelpFrame&#10;SplashS&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Sc&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Frame&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Scoreb&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Controller&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/Controller.java&#10;Stretch&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/StretchIcon.java&#10;Main&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;GameOb&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/GameObserver.java&#10;Sheep&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Score&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;PlayerPan&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/PlayerHandPanel.java&#10;PlayerH&#9;PSI&#9;JAVA://View.PlayerHandPanel&#10;Setting&#9;PSI&#9;JAVA://View.SettingsFrame&#10;PlayerBra&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/PlayerBrain.java&#10;Stats&#9;PSI&#9;JAVA://View.StatsFrame&#10;frame&#9;PSI&#9;JAVA://View.HelpFrame&#10;MAin&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;TableBu&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/TableButton.java&#10;Log&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/GameLogFrame.java&#10;hELP&#9;PSI&#9;JAVA://View.HelpFrame&#10;HelpF&#9;PSI&#9;JAVA://View.HelpFrame&#10;options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java" />
+    <property name="SearchEverywhereHistoryKey" value="Deck&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Deck.java&#10;Table&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;Player&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/PlayerHandPanel.java&#10;Splash&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Game&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Game.java&#10;Settings&#9;PSI&#9;JAVA://View.SettingsFrame&#10;MainSo&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;SettingsF&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Options&#9;PSI&#9;JAVA://View.OptionsPanel&#10;Help&#9;PSI&#9;JAVA://View.HelpFrame&#10;SplashS&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Sc&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Frame&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Scoreb&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Controller&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/Controller.java&#10;Stretch&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/StretchIcon.java&#10;Main&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;GameOb&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/GameObserver.java&#10;Sheep&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Score&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;PlayerPan&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/PlayerHandPanel.java&#10;PlayerH&#9;PSI&#9;JAVA://View.PlayerHandPanel&#10;Setting&#9;PSI&#9;JAVA://View.SettingsFrame&#10;PlayerBra&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Model/PlayerBrain.java&#10;Stats&#9;PSI&#9;JAVA://View.StatsFrame&#10;frame&#9;PSI&#9;JAVA://View.HelpFrame&#10;MAin&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;TableBu&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/TableButton.java&#10;Log&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/GameLogFrame.java&#10;hELP&#9;PSI&#9;JAVA://View.HelpFrame&#10;HelpF&#9;PSI&#9;JAVA://View.HelpFrame&#10;options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java" />
   </component>
   <component name="RunManager" selected="Application.Run">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -752,7 +711,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="159" y="22" width="1258" height="814" extended-state="0" />
+    <frame x="124" y="29" width="1258" height="814" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -762,11 +721,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51771957" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1887324" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140845" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29856688" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24888094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20278184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -776,6 +734,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24888094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="99" y="100" width="1168" height="543" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -815,27 +774,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Suit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PopUpFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4380032">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Value.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22576362">
@@ -941,13 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10026738">
           <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1068,11 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20757826">
           <caret line="182" column="7" selection-start-line="182" selection-start-column="7" selection-end-line="182" selection-end-column="7" />
-          <folding>
-            <element signature="e#7097#7098#0" expanded="false" />
-            <element signature="e#9322#9323#0" expanded="false" />
-            <marker date="1457493253025" expanded="true" signature="6597:6603" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1080,7 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-24.916666">
           <caret line="732" column="0" selection-start-line="732" selection-start-column="0" selection-end-line="732" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,36 +1057,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainSound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6179159">
-          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/SoundEffect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11013216">
           <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="61" selection-start-line="110" selection-start-column="61" selection-end-line="110" selection-end-column="61" />
-          <folding>
-            <element signature="e#3207#3208#0" expanded="true" />
-            <element signature="e#3275#3276#0" expanded="true" />
-            <element signature="method#yOrN#0;class#SheepsheadMainFrame#0" expanded="false" />
-            <element signature="method#helpPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
-            <element signature="method#statsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
-            <element signature="method#settingsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
-            <element signature="method#launchDebugger#0;class#SheepsheadMainFrame#0" expanded="false" />
-            <element signature="method#closeDebugger#0;class#SheepsheadMainFrame#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1195,6 +1095,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/sound/sampled/DataLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="16" selection-start-line="133" selection-start-column="16" selection-end-line="133" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/sound/sampled/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5795247">
+          <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1203,13 +1119,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/com/sun/media/sound/DirectAudioDevice.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3593315">
+          <caret line="731" column="0" selection-start-line="731" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6032907">
-          <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.31424376">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="method#intToCard#0;class#Table#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="28" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
+          <folding>
+            <element signature="e#3243#3244#0" expanded="true" />
+            <element signature="e#3280#3281#0" expanded="true" />
+            <element signature="method#helpPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#statsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#settingsPushed#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#launchDebugger#0;class#SheepsheadMainFrame#0" expanded="false" />
+            <element signature="method#closeDebugger#0;class#SheepsheadMainFrame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="58" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainSound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3478261">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

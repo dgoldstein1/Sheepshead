@@ -55,6 +55,7 @@ public class SheepsheadMainFrame extends JFrame {
         this.g = g;
         contentPane = getContentPane();
         sounds = new MainSound();
+        sounds.setMusicMuted(true);
         sounds.playMusic("Sounds/Music/CCRmix.wav");
         initPanels(listener, g);
         pack();
@@ -108,7 +109,7 @@ public class SheepsheadMainFrame extends JFrame {
 
     /* in from notifier*/
     public void playSound(SoundEffect ef){
-        sounds.playEffect("Sounds/Effects/" + ef.toString());
+        sounds.playEffect(ef);
     }
 
     /**
@@ -138,6 +139,7 @@ public class SheepsheadMainFrame extends JFrame {
                 options,
                 options[0]);
         this.log(this.getClass(),LogType.ERROR,prompt);
+        playSound(SoundEffect.BAH);
         return n;
     }
     public Card getPlayerCard(String prompt){
