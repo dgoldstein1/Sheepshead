@@ -27,8 +27,7 @@ public class PlayerBrain {
     public boolean chooseToPickUp(Hand h, int percentagePick) {
         int n = 0; //n is a mix of points and power to get total hand value
         if (traits.is(Trait.TEST)){
-            int returnTrue = (int) (Math.random() * 100);
-            return returnTrue < percentagePick;
+            return true;
         }
         for (Card c : h.getHand()) {
             n += c.id() * c.getPointValue();
@@ -42,17 +41,16 @@ public class PlayerBrain {
 
     /**
      * decides for Player if wise to call up
-     *
+     * based solely on hand power
      * @return false to call up, return true to play alone
      */
     public boolean playAlone(Hand h) {
-        int trumpCount = 0;
-        int handPower = 0;
+        int handPower = 0; //max = 222 (31! / (31 - 8)!)
         for (Card c : h.getHand()) {
-            if (c.isTrump()) trumpCount++;
             handPower += c.id();
         }
         if (traits.is(Trait.LONE_WOLF) && handPower > 160) return true;//about 20% chance
+
         return (handPower > 173); //about 3% chance
     }
 
@@ -66,21 +64,20 @@ public class PlayerBrain {
      */
     public List<Card> toBury(Hand h) { //todo
         List<Card> toBury = new ArrayList<Card>(2);
-        int lowestPower = 0;
         Card lowest = new Card(Value.QUEEN, Suit.CLUBS, -1); //placeholder to initialize
 
-        //removes lowest power card twice
+
+        int lowestPoint = 0;
         for (int i = 0; i < 2; i++) {
             for (Card c : h.getHand()) {
-                if (c.id() <= lowestPower)
-                    lowestPower = c.getPointValue();
+                if (c.getPointValue() <= lowestPoint)
+                    lowestPoint = c.getPointValue();
                 lowest = c;
             }
             toBury.add(lowest);
             h.remove(lowest);
-            lowestPower = 0;
+            lowestPoint = 0;
         }
-
         return toBury;
     }
 
