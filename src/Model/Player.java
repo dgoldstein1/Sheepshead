@@ -16,18 +16,18 @@ public class Player {
     private Table table;
     private Card[] blind;
     private Card[] buried;
-    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone;
+    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone,ableToPickUp;
     private boolean pickedUp;
     private boolean onPartnerTeam;
     private boolean isPlayer;
     private PlayerBrain brain;
-    private int playerID;
+    private int playerID, percentagePickUp;
     private boolean playAlone;
 
     public Player(String username, int playerID, Table table, boolean isPlayer, Trait trait1) {
         this.username = username;
         this.table = table;
-        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone= 0;
+        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone=ableToPickUp= 0;
         onPartnerTeam = false;
         blind = null;
         pickedUp = false;
@@ -35,6 +35,7 @@ public class Player {
         brain = new PlayerBrain(trait1, Trait.Normal_Player);
         this.playerID = playerID;
         playAlone=false;
+        percentagePickUp = 0;
 
     }
 
@@ -47,7 +48,8 @@ public class Player {
      * @return true if blind picked up, otherwise false
      */
     public boolean chooseToPickUp() {
-        if (brain.chooseToPickUp(hand)) {
+        ableToPickUp++;
+        if (brain.chooseToPickUp(hand,percentagePickUp)) {
             pickUpBlind();
             chooseToCallUp();
             buryCards(brain.toBury(hand));
@@ -225,6 +227,10 @@ public class Player {
         getters and setters
      */
 
+    public void setPercentagePickUp(int percentagePickUp){
+        this.percentagePickUp = percentagePickUp;
+    }
+
     public boolean hasBlitzers() {
         return (hand.contains(31) && hand.contains(30));
     }
@@ -297,8 +303,15 @@ public class Player {
         System.out.println(" | Player Name : " + username);
         System.out.println(" | score: " + score);
         System.out.println(" | winning percentage:  " + (float) gamesWon / gamesPlayed * 100 + "%");
-        System.out.println(" | percentage picked up: " + (float) numberPickedUp / gamesPlayed * 100 + "%");
+        System.out.println(" | percentage picked up: " + (float) numberPickedUp / ableToPickUp * 100 + "%");
         System.out.println(" | percentage played alone: " + (float) numberPlayAlone / ableToPlayAlone * 100 + "%");
         System.out.println(" | total points: " + totalPoints + "\n");
+    }
+
+    public void printTestStats(int gamesPlayed){
+        System.out.println((float) numberPickedUp / ableToPickUp * 100 +
+                                "\t" + (float) gamesWon / gamesPlayed * 100 +
+                                "\t" + totalPoints +
+                                "\t" + (float) numberPlayAlone / ableToPlayAlone * 100);
     }
 }

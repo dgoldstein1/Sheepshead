@@ -24,14 +24,19 @@ public class PlayerBrain {
      * @param h current Hand
      * @return true if want to pick up, false otherwise
      */
-    public boolean chooseToPickUp(Hand h) {
+    public boolean chooseToPickUp(Hand h, int percentagePick) {
         int n = 0; //n is a mix of points and power to get total hand value
+        if (traits.is(Trait.TEST)){
+            int returnTrue = (int) (Math.random() * 100);
+            return returnTrue < percentagePick;
+        }
         for (Card c : h.getHand()) {
             n += c.id() * c.getPointValue();
         }
         if (n < pickUpThreshold * 1.3 && traits.is(Trait.GREESY_FINGERS))
             return false; //does not pick if not greater than scale * threshold
-        if (n > pickUpThreshold && traits.is(Trait.MAUER)) return false; //mauer does not pick up even if good hand
+        else if (n > pickUpThreshold && traits.is(Trait.MAUER)) return false; //mauer does not pick up even if good hand
+
         return (traits.is(Trait.STICKY_FINGERS) && n > pickUpThreshold / 2) || (n > pickUpThreshold);
     }
 

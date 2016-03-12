@@ -51,7 +51,7 @@ public class Game {
         }
 
         //initalize AI players
-        Trait t = Trait.LONE_WOLF;
+        Trait t = Trait.TEST;
         players[playersCreated - 1] = new Player(t.toString(),playersCreated,table,false, t);
         playersCreated++;
         while (playersCreated <= 5) {
@@ -69,8 +69,13 @@ public class Game {
      * playes one round (six hands)
      * called by run
      */
-    public void playRound() {
+    public void playRound(int pickUpPercentage) {
         if (printAll) System.out.println("---start round---");
+        Player testPlayer = null;
+        for(Player p : players){
+            if(p.getUsername().equals("TEST"))
+                p.setPercentagePickUp(pickUpPercentage);
+        }
         scoreboard.newRound();
         dealer.dealCards(handSize);
         setTeams();
@@ -317,6 +322,18 @@ public class Game {
             System.out.println("\t-----");
         }
 
+    }
+
+    /**
+     * prints stats of Test player in format:
+     * %pick up, Win %, Total Points, %played Alone
+     */
+    public void pintTestStats(){
+        for(Player p : players){
+            if(p.getUsername().equals("TEST")){
+                p.printTestStats(scoreboard.roundsPlayed());
+            }
+        }
     }
 
     public void printResults(){
