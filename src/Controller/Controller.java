@@ -57,8 +57,6 @@ public class Controller {
             }
         });
         refreshTimer.start();
-
-
     }
 
     /**

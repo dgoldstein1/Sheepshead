@@ -139,7 +139,7 @@ public class SheepsheadMainFrame extends JFrame {
                 null,
                 options,
                 options[0]);
-        this.log(this.getClass(),LogType.ERROR,prompt);
+        this.log(this.getClass(),LogType.SYSTEM,prompt);
         playSound(SoundEffect.BAH);
         return n;
     }

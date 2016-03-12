@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
 public class MainSound {
     private ExecutorService pool;
     private ArrayList<Clip> effectsPlayed, currMusic, bahList;
-    private Clip card_Drawn, card_played;
+    private Clip card_Drawn, card_played, woah;
     private boolean effectsMuted, musicMuted;
     private final int number_bahs = 4;
 
@@ -40,6 +40,7 @@ public class MainSound {
         }
         card_Drawn = createClip("Sounds/Effects/CARD_DRAWN.wav");
         card_played = createClip("Sounds/Effects/CARD_PLAYED.wav");
+        woah = createClip("Sounds/Effects/WOAH.wav");
 
     }
 
@@ -58,6 +59,8 @@ public class MainSound {
                 c= card_Drawn;
             else if(ef.equals(SoundEffect.CARD_PLAYED))
                 c = card_played;
+            else if(ef.equals(SoundEffect.WOAH))
+                c = woah;
             assert c != null;
             pool.execute(new SoundThread(c,false));
         }

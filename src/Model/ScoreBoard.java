@@ -83,7 +83,7 @@ public class ScoreBoard {
         if (!currRound.shniderReached()) basePoint *= 2;
         if (blitzers) basePoint *= 2;
         if (currRound.trickless()) basePoint *= 2;
-        if (currRound.getPartnerTeamPoints() >= 60) { //partner team wins
+        if (currRound.getPartnerTeamPoints() > 60) { //partner team wins
             for (Player p : players) {
                 if (p.pickedUp()) {
                     p.incrGameWon();

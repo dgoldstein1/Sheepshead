@@ -25,6 +25,7 @@ public class Table {
     private Player partner;
     private List<Card> cardsPlayed;
     private ModelObserver obs;
+    private int queensPlayedThisHand;
 
     public Table(ModelObserver obs) {
         this.obs = obs;
@@ -35,6 +36,7 @@ public class Table {
         blind = new Card[2];
         leaster = false;
         partner=null;
+        queensPlayedThisHand = 0;
         partnerCard = new Card(Value.JACK, Suit.DIAMONDS, 24); //init to j of d
     }
 
@@ -77,7 +79,7 @@ public class Table {
      * @param player name of player
      */
     public void playCard(Card c, Player player) {
-        obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString() + partnerCard.toString());
+        obs.log(this.getClass(),LogType.INFO,"" + player.getUsername() + " played " + c.toString());
         obs.playSound(SoundEffect.CARD_PLAYED);
         cardsPlayed.add(c); //add to list of cards played (curr round cards)
         table.add(c);       //add to table (curr hand cards)
@@ -103,6 +105,12 @@ public class Table {
                     "For more information see 'game rules' on top of screen", "");
             blind = null;
         }
+        if(c.id()>28) { //queen played
+            queensPlayedThisHand++;
+            if(queensPlayedThisHand >= 2){
+                obs.playSound(SoundEffect.WOAH);
+            }
+        }
     }
 
     /**
@@ -119,6 +127,7 @@ public class Table {
         table.clear();
         leaster = false;
         partner = null;
+        partnerCard = new Card(Value.JACK, Suit.DIAMONDS, 24); //reset to jack of diamonds
         return temp;
     }
 
@@ -130,11 +139,11 @@ public class Table {
      */
     public HandHistory endHand() {
         currHandNumber = currHandNumber + 1 % 6;
-        partnerCard = new Card(Value.JACK, Suit.DIAMONDS, 24); //reset to jack of diamonds
         cardLed = null;
         HandHistory temp = currentHand;
         currentHand = new HandHistory();
         cardsPlayed.clear();
+        queensPlayedThisHand = 0;
         return temp;
 
     }

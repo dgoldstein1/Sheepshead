@@ -40,7 +40,7 @@ public class SheepsheadSplashScreen extends JWindow {
         setBounds(x,y,width,height);
 
         // Build the splash screen
-        JLabel welcome = new JLabel("Welcome to Dave's Sheepshead!",JLabel.CENTER);
+        JLabel welcome = new JLabel("Welcome to Sheepshead!",JLabel.CENTER);
         JLabel label = new JLabel(new StretchIcon("Pictures/running_sheep.gif", false));
         JLabel loading = new JLabel("Loading...", JLabel.CENTER);
         Font font = new Font("Helvetica", Font.BOLD, 12);
