@@ -29,10 +29,12 @@ public class PlayerBrain {
         for (Card c : h.getHand()) {
             n += c.id() * c.getPointValue();
         }
-        if (n < pickUpThreshold * 1.3 && traits.is(Trait.GREASY_FINGERS))
+        if (n < pickUpThreshold * 1.5 && traits.is(Trait.GREASY_FINGERS))
             return false; //does not pick if not greater than scale * threshold
         if (n > pickUpThreshold && traits.is(Trait.MAUER)) return false; //mauer does not pick up even if good hand
-        return (traits.is(Trait.STICKY_FINGERS) && n > pickUpThreshold / 2) || (n > pickUpThreshold);
+        if (traits.is(Trait.STICKY_FINGERS))
+            return true;
+        return n > pickUpThreshold;
     }
 
     /**
@@ -41,41 +43,38 @@ public class PlayerBrain {
      * @return false to call up, return true to play alone
      */
     public boolean playAlone(Hand h) {
-        int trumpCount = 0;
         int handPower = 0;
         for (Card c : h.getHand()) {
-            if (c.isTrump()) trumpCount++;
             handPower += c.id();
         }
         if (traits.is(Trait.LONE_WOLF) && handPower > 160) return true;//about 20% chance
-        return (handPower > 173); //about 3% chance
+        return (handPower > 175); //about 3% chance
     }
 
 
     /**
      * chooses which cards to bury after looking at blind
-     * currently set to bury cards of two lowest power
+     * currently set to bury cards of two highest points
      *
      * @param h current Hand
      * @return List<Cards> to bury
      */
-    public List<Card> toBury(Hand h) { //todo
+    public List<Card> toBury(Hand h) {
         List<Card> toBury = new ArrayList<Card>(2);
-        int lowestPower = 0;
-        Card lowest = new Card(Value.QUEEN, Suit.CLUBS, -1); //placeholder to initialize
+        int highestPoints = 0;
+        Card higestPoint = null; //placeholder to initialize
 
         //removes lowest power card twice
         for (int i = 0; i < 2; i++) {
             for (Card c : h.getHand()) {
-                if (c.id() <= lowestPower)
-                    lowestPower = c.getPointValue();
-                lowest = c;
+                if (c.getPointValue() >= highestPoints)
+                    highestPoints = c.getPointValue();
+                higestPoint = c;
             }
-            toBury.add(lowest);
-            h.remove(lowest);
-            lowestPower = 0;
+            toBury.add(higestPoint);
+            h.remove(higestPoint);
+            highestPoints = 0;
         }
-
         return toBury;
     }
 
