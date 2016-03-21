@@ -63,23 +63,23 @@ public class Game {
     }
 
 
-
-
     /**
      * playes one round (six hands)
      * called by run
      */
     public void playRound(int pickUpPercentage) {
         if (printAll) System.out.println("---start round---");
-        Player testPlayer = null;
-        for(Player p : players){
-            if(p.getUsername().equals("TEST"))
-                p.setPercentagePickUp(pickUpPercentage);
-        }
         scoreboard.newRound();
         dealer.dealCards(handSize);
         setTeams();
         updateTeams();
+
+        for(Player p : players){
+            if(p.getUsername().equals("TEST")) {
+                p.setPercentagePickUp(pickUpPercentage);
+                p.recordHandStrength();
+            }
+        }
 
         //play hands in round
         for (int hand = 0; hand < 6; hand++) {
@@ -87,6 +87,7 @@ public class Game {
             shiftPlayers(winner);//sets winner as new leader
             if (printAll) scoreboard.printPoints();
         }
+
         endRound();
         dealer.collectCards();
         if (printAll) System.out.println("---end round---\n");
@@ -335,6 +336,7 @@ public class Game {
             }
         }
     }
+
 
     public void printResults(){
         scoreboard.printScores();

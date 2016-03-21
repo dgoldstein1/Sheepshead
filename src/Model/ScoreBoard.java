@@ -91,13 +91,17 @@ public class ScoreBoard {
                     p.incrGameWon();
                     p.addScore(basePoint);//partner
                 }
-                else p.addScore(basePoint * -1);                   //non-partner team (minus score)
+                else {
+                    p.addScore(basePoint * -1);                   //non-partner team (minus score)
+                    p.incrGamesLost();
+                }
             }
         } else { //majority team won
             for (Player p : players) {
                 if (p.pickedUp()){ //picked up
                     p.addScore(basePoint * -2);
                     if(currRound.partner == currRound.picker) p.addScore(basePoint * -2); //played alone
+                    p.incrGamesLost();
                 }
                 else if (p.isOnPartnerTeam()) p.addScore(basePoint * -1);//partner
                 else{
@@ -124,6 +128,7 @@ public class ScoreBoard {
             }
             else{
                 p.addScore(basePoint*-1);
+                p.incrGamesLost();
             }
         }
     }

@@ -16,7 +16,8 @@ public class Player {
     private Table table;
     private Card[] blind;
     private Card[] buried;
-    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone,ableToPickUp;
+    private int points,score,numberPickedUp, numberPlayAlone,totalPoints,gamesWon,ableToPlayAlone,ableToPickUp, startingHandStrength;
+    public int gamesLost = 0;
     private boolean pickedUp;
     private boolean onPartnerTeam;
     private boolean isPlayer;
@@ -27,7 +28,7 @@ public class Player {
     public Player(String username, int playerID, Table table, boolean isPlayer, Trait trait1) {
         this.username = username;
         this.table = table;
-        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone=ableToPickUp= 0;
+        points=score=numberPickedUp=numberPlayAlone = totalPoints=gamesWon=ableToPlayAlone=ableToPickUp= startingHandStrength = 0;
         onPartnerTeam = false;
         blind = null;
         pickedUp = false;
@@ -211,6 +212,7 @@ public class Player {
         totalPoints+=points;
         points = 0;
         buried = null;
+        startingHandStrength = 0;
     }
 
     /**
@@ -297,6 +299,14 @@ public class Player {
 
     public void incrGameWon(){
         gamesWon++;
+
+    }
+
+    public void incrGamesLost(){
+        gamesLost++;
+        if(this.username.equals("TEST"))
+            printHandStrength();
+
     }
 
     public void printDetailedStats(int gamesPlayed){
@@ -314,4 +324,22 @@ public class Player {
                                 "\t" + totalPoints +
                                 "\t" + (float) numberPlayAlone / ableToPlayAlone * 100);
     }
+
+    /**
+     * returns stats of tests of current round of TEST player
+     * @return
+     */
+    public void printHandStrength(){
+        if(username.equals("TEST")) System.out.println(startingHandStrength);
+    }
+
+    public void recordHandStrength(){
+        if(username.equals("TEST")){
+            for (Card c : hand.getHand()) {
+                startingHandStrength += c.id();
+            }
+        }
+    }
+
 }
+
