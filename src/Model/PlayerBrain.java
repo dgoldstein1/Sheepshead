@@ -19,22 +19,25 @@ public class PlayerBrain {
 
     /**
      * called by Player when deciding to pick up before hand
-     * player set to pick up if 1) more than 3 trump and 2) more than 20 points
      *
      * @param h current Hand
      * @return true if want to pick up, false otherwise
      */
     public boolean chooseToPickUp(Hand h) {
-        int n = 0; //n is a mix of points and power to get total hand value
+        int handPower = 0;
         for (Card c : h.getHand()) {
-            n += c.id() * c.getPointValue();
+            handPower += c.id();
         }
-        if (n < pickUpThreshold * 1.5 && traits.is(Trait.GREASY_FINGERS))
-            return false; //does not pick if not greater than scale * threshold
-        if (n > pickUpThreshold && traits.is(Trait.MAUER)) return false; //mauer does not pick up even if good hand
-        if (traits.is(Trait.STICKY_FINGERS))
+        double ratioWinLoss = Math.pow(1.21348711,(0.0257227357 * handPower));
+        h.printHand();
+        System.out.println(handPower + " -- " + ratioWinLoss);
+
+        if (ratioWinLoss < 5 && (traits.is(Trait.GREASY_FINGERS) || traits.is(Trait.MAUER)))
+            return false;
+        if (traits.is(Trait.STICKY_FINGERS) && ratioWinLoss > 1.2)
             return true;
-        return n > pickUpThreshold;
+
+        return ratioWinLoss > 2;
     }
 
     /**
@@ -48,33 +51,34 @@ public class PlayerBrain {
             handPower += c.id();
         }
         if (traits.is(Trait.LONE_WOLF) && handPower > 160) return true;//about 20% chance
-        return (handPower > 175); //about 3% chance
+        return (handPower > 173); //about 3% chance
     }
 
 
     /**
      * chooses which cards to bury after looking at blind
-     * currently set to bury cards of two highest points
+     * currently set to bury cards of two lowest power
      *
      * @param h current Hand
      * @return List<Cards> to bury
      */
-    public List<Card> toBury(Hand h) {
+    public List<Card> toBury(Hand h) { //todo
         List<Card> toBury = new ArrayList<Card>(2);
-        int highestPoints = 0;
-        Card higestPoint = null; //placeholder to initialize
+        int lowestPower = 0;
+        Card lowest = new Card(Value.QUEEN, Suit.CLUBS, -1); //placeholder to initialize
 
         //removes lowest power card twice
         for (int i = 0; i < 2; i++) {
             for (Card c : h.getHand()) {
-                if (c.getPointValue() >= highestPoints)
-                    highestPoints = c.getPointValue();
-                higestPoint = c;
+                if (c.id() <= lowestPower)
+                    lowestPower = c.getPointValue();
+                lowest = c;
             }
-            toBury.add(higestPoint);
-            h.remove(higestPoint);
-            highestPoints = 0;
+            toBury.add(lowest);
+            h.remove(lowest);
+            lowestPower = 0;
         }
+
         return toBury;
     }
 
