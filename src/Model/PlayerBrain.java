@@ -29,8 +29,6 @@ public class PlayerBrain {
             handPower += c.id();
         }
         double ratioWinLoss = Math.pow(1.21348711,(0.0257227357 * handPower));
-        h.printHand();
-        System.out.println(handPower + " -- " + ratioWinLoss);
 
         if (ratioWinLoss < 5 && (traits.is(Trait.GREASY_FINGERS) || traits.is(Trait.MAUER)))
             return false;
