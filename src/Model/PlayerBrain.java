@@ -24,18 +24,22 @@ public class PlayerBrain {
      * @return true if want to pick up, false otherwise
      */
     public boolean chooseToPickUp(Hand h) {
-        int handPower = 0;
+        int x = 0; //hand power
         for (Card c : h.getHand()) {
-            handPower += c.id();
+            x += c.id();
         }
-        double ratioWinLoss = Math.pow(1.21348711,(0.0257227357 * handPower));
+        double ratioWinLoss = (9.53426 * Math.pow(10,-8)) * Math.pow(x,4)
+                -0.0000186422 * Math.pow(x,3)
+                +0.00110236 * Math.pow(x,2)
+                -0.00875964 * x
+                -0.0568146;
 
         if (ratioWinLoss < 5 && (traits.is(Trait.GREASY_FINGERS) || traits.is(Trait.MAUER)))
             return false;
-        if (traits.is(Trait.STICKY_FINGERS) && ratioWinLoss > 1.2)
+        if (traits.is(Trait.STICKY_FINGERS) && ratioWinLoss > 0.8)
             return true;
 
-        return ratioWinLoss > 2;
+        return ratioWinLoss > 1.5;
     }
 
     /**

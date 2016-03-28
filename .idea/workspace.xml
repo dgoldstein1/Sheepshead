@@ -29,6 +29,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -41,21 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Card.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Card.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PlayerBrain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/PlayerBrain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53571427">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7993311">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -66,7 +66,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,9 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,6 +324,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -342,7 +344,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="card&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Card.java&#10;Card&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;PlayerBra&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/PlayerBrain.java&#10;MainSoun&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;Deck&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Deck.java&#10;Table&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;MainSound&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;displayMessage&#9;PSI&#9;JAVA://Controller.Controller#displayMessage&#10;Score&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/ScoreBoard.java&#10;Main&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Game&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Game.java&#10;PlayCard&#9;PSI&#9;JAVA://Model.Player#playCard&#10;PlayerHandPanel&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Sc&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Scor&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;PlayerPane&#9;PSI&#9;JAVA://View.PlayerPanel&#10;bury&#9;PSI&#9;JAVA://Model.Player#buryCards&#10;PopU&#9;PSI&#9;JAVA://View.PopUpFrame&#10;Player&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/PlayerHandPanel.java&#10;Splash&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Settings&#9;PSI&#9;JAVA://View.SettingsFrame&#10;MainSo&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;SettingsF&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Options&#9;PSI&#9;JAVA://View.OptionsPanel&#10;Help&#9;PSI&#9;JAVA://View.HelpFrame&#10;SplashS&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Frame&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Scoreb&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Controller&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/Controller.java&#10;Stretch&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/StretchIcon.java&#10;GameOb&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/GameObserver.java&#10;Sheep&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;PlayerPan&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/PlayerHandPanel.java&#10;PlayerH&#9;PSI&#9;JAVA://View.PlayerHandPanel&#10;Setting&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Stats&#9;PSI&#9;JAVA://View.StatsFrame&#10;frame&#9;PSI&#9;JAVA://View.HelpFrame&#10;MAin&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;TableBu&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/TableButton.java&#10;Log&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/GameLogFrame.java&#10;hELP&#9;PSI&#9;JAVA://View.HelpFrame&#10;HelpF&#9;PSI&#9;JAVA://View.HelpFrame&#10;options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java" />
+    <property name="SearchEverywhereHistoryKey" value="Game&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/Game.java&#10;card&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Card.java&#10;Card&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;PlayerBra&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/PlayerBrain.java&#10;MainSoun&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;Deck&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Deck.java&#10;Table&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;MainSound&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;displayMessage&#9;PSI&#9;JAVA://Controller.Controller#displayMessage&#10;Score&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/ScoreBoard.java&#10;Main&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/SheepsheadMainFrame.java&#10;PlayCard&#9;PSI&#9;JAVA://Model.Player#playCard&#10;PlayerHandPanel&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Sc&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Scor&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;PlayerPane&#9;PSI&#9;JAVA://View.PlayerPanel&#10;bury&#9;PSI&#9;JAVA://Model.Player#buryCards&#10;PopU&#9;PSI&#9;JAVA://View.PopUpFrame&#10;Player&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/PlayerHandPanel.java&#10;Splash&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Settings&#9;PSI&#9;JAVA://View.SettingsFrame&#10;MainSo&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;SettingsF&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Options&#9;PSI&#9;JAVA://View.OptionsPanel&#10;Help&#9;PSI&#9;JAVA://View.HelpFrame&#10;SplashS&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Frame&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Scoreb&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Controller&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/Controller.java&#10;Stretch&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/StretchIcon.java&#10;GameOb&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/GameObserver.java&#10;Sheep&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;PlayerPan&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/PlayerHandPanel.java&#10;PlayerH&#9;PSI&#9;JAVA://View.PlayerHandPanel&#10;Setting&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Stats&#9;PSI&#9;JAVA://View.StatsFrame&#10;frame&#9;PSI&#9;JAVA://View.HelpFrame&#10;MAin&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;TableBu&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/TableButton.java&#10;Log&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/GameLogFrame.java&#10;hELP&#9;PSI&#9;JAVA://View.HelpFrame&#10;HelpF&#9;PSI&#9;JAVA://View.HelpFrame&#10;options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java" />
   </component>
   <component name="RunManager" selected="Application.Run">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -693,33 +695,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="0" width="1192" height="731" extended-state="1" />
-    <editor active="false" />
+    <frame x="67" y="0" width="1192" height="731" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32222223" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51771957" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3943662" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32707354" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26806724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20504202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20278184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24888094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32222223" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="99" y="100" width="1168" height="543" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3255086" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1045,13 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37662336">
-          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/SoundEffect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13914657">
@@ -1092,6 +1087,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6832298">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1106,18 +1111,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Card.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/PlayerBrain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53571427">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7993311">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
           <folding />
         </state>
       </provider>
