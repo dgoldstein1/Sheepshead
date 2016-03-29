@@ -218,7 +218,7 @@ class StatsFrame extends JFrame {
 
         this.windowSize = size;
         this.tableSize = new Dimension(windowSize.width, windowSize.height / 3);
-        setContentPane(new JLabel(new StretchIcon("Sheep_Photos/rolling_hills2.jpg", false)));
+        setContentPane(new JLabel(new StretchIcon("Pictures/old_farm.jpg", false)));
         gameStats = playerStats = null;
         setLayout(new FlowLayout());
 
@@ -327,7 +327,7 @@ class SettingsFrame extends JFrame {
 
     SettingsFrame(Game g, MainSound sounds) {
         super("Stats");
-        setContentPane(new JLabel(new StretchIcon("Sheep_Photos/rolling_hills.jpg", false)));
+        setContentPane(new JLabel(new StretchIcon("Textures/wood.jpg", false)));
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {
@@ -410,6 +410,8 @@ class SettingsFrame extends JFrame {
 
     private void addLabel(JPanel jpanel,String s){
         JLabel label = new JLabel(s, SwingConstants.CENTER);
+        label.setFont(new Font("Helvetica",Font.PLAIN,12));
+        label.setForeground(Color.WHITE);
         label.setOpaque(false);
         jpanel.add(label);
     }
