@@ -217,6 +217,11 @@ public class Player {
         buried = null;
     }
 
+    /*
+        getters and setters
+     */
+
+
     /**
      * @param other player
      * @return true if players are same, false otherwise
@@ -224,11 +229,6 @@ public class Player {
     public boolean equals(Player other) {
         return playerID == other.id();
     }
-
-
-    /*
-        getters and setters
-     */
 
     public boolean hasBlitzers() {
         return (hand.contains(31) && hand.contains(30));

@@ -36,10 +36,10 @@ public class PlayerBrain {
 
         if (ratioWinLoss < 5 && (traits.is(Trait.GREASY_FINGERS) || traits.is(Trait.MAUER)))
             return false;
-        if (traits.is(Trait.STICKY_FINGERS) && ratioWinLoss > 0.8)
+        if (traits.is(Trait.STICKY_FINGERS) && ratioWinLoss > 0.3)
             return true;
 
-        return ratioWinLoss > 1.5;
+        return ratioWinLoss > 1;
     }
 
     /**

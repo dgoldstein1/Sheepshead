@@ -18,7 +18,7 @@ public class Game {
     private ScoreBoard scoreboard;
     private boolean debuggerRunning;
     private BufferedReader bufferedReader;
-    private Player startRound;
+    private Player startRoundPlayer;
     private ModelObserver obs;
     private int gameSpeed;
     protected ArrayList<String> namesTaken;
@@ -30,7 +30,7 @@ public class Game {
      *
      */
     public Game(ModelObserver obs, String playerName) {
-        gameSpeed = 50;
+        gameSpeed = 35;
         handSize = 6;
         table = new Table(obs);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -89,7 +89,7 @@ public class Game {
             players[playersCreated] = new Player(getRandomPlayerName(), playersCreated, table, false, t);
         }
         this.players = players;
-        startRound = players[0];
+        startRoundPlayer = players[0];
     }
 
     /**
@@ -121,6 +121,7 @@ public class Game {
 
         //play hands in round
         for (int hand = 0; hand < 6; hand++) {
+            obs.log(this.getClass(),LogType.ERROR,"started Round: " + startRoundPlayer.getUsername());
             Player winner = playHand();
             shiftPlayers(winner);//sets winner as new leader
             scoreboard.printPoints();
@@ -199,7 +200,13 @@ public class Game {
      * shifts players one seat over for new round
      */
     private void endRound() {
-        shiftPlayers(null);
+        for (int i = 0 ;i < players.length ; i ++){
+            if(startRoundPlayer.equals(players[i])){
+                startRoundPlayer = players[(i + 1) % 5]; //shift players one to left of recent round starter
+                break;
+            }
+        }
+        shiftPlayers(startRoundPlayer); //shift for next player to lead
         scoreboard.awardPoints(); //tallies scores and ends round
         scoreboard.printScores();
         for (Player p : players) {
@@ -216,16 +223,8 @@ public class Game {
      */
     private boolean shiftPlayers(Player firstPlayer) {
         Player[] shift = new Player[5];
-        boolean shiftNewRound = firstPlayer == null;
-        if (shiftNewRound) {
-            firstPlayer = startRound;
-        }
-        for (int j = 0; j < players.length; j++) {//specific shift
+        for (int j = 0; j < players.length; j++) {
             if (players[j].equals(firstPlayer)) { //find target player
-                if (shiftNewRound) {
-                    j = (j + 1) % 5;  //shift one past who started round last time
-                    startRound = players[j]; //set new start round player
-                }
                 for (int i = 0; i < 5; i++) { //shift players based on target j
                     shift[i] = players[j];
                     j = (j + 1) % 5;
@@ -234,7 +233,6 @@ public class Game {
                 return true;
             }
         }
-
         return false; //player not found
     }
 
