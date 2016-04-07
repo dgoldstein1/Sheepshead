@@ -304,8 +304,8 @@ public class Player {
 
     public void incrGamesLost(){
         gamesLost++;
-        if(this.username.equals("TEST"))
-            printHandStrength();
+        //if(this.username.equals("TEST"))
+           // printHandStrength();
 
     }
 

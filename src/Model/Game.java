@@ -55,7 +55,7 @@ public class Game {
         players[playersCreated - 1] = new Player(t.toString(),playersCreated,table,false, t);
         playersCreated++;
         while (playersCreated <= 5) {
-            players[playersCreated - 1] = new Player("Player " + playersCreated, playersCreated, table, false, Trait.Normal_Player);
+            players[playersCreated - 1] = new Player("Normal Player " + playersCreated, playersCreated, table, false, Trait.Normal_Player);
             playersCreated++;
         }
         this.players = players;
