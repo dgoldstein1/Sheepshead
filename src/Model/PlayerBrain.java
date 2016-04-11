@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Dave on 10/1/2015.
  * operates as the brain for the player
- * Player class feeds information into brain and brain makes decisions
+ * Makes decisions based on Player information and situations decisions
  */
 public class PlayerBrain {
     private AIPersonalities traits;

@@ -7,12 +7,11 @@ public class SheepsheadRun {
 
     public static void main(String[] args) {
         Game g;
-        boolean printAll=false,realPlayer=false;
+        boolean printAll=true,realPlayer=true;
         int games = 100000;
 
         //bins: 0-1420 strength
 
-        System.out.print("playing 100000 games...");
         g = new Game(printAll,realPlayer);
         for(int i=0;i<games;i++){
             g.playRound(-1);
