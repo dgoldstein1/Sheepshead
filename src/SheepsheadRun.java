@@ -1,4 +1,4 @@
-import Controller.*;
+import client.SheepsheadSplashScreen;
 
 /**
  * Created by Dave on 9/16/2015.

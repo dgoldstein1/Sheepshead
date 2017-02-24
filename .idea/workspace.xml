@@ -7,16 +7,210 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf21470-676c-4a61-9796-3072011e374f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Game.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/HandHistory.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/HandHistory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Player.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Round.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/Round.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/ScoreBoard.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Model/ScoreBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/CardsOnTable.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/View/CardsOnTable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/Client.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/model/GameState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/model/PlayerData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/options/LogEntry.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Sheepshead/Sheepshead.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Sheepshead/lib/Pages/Sheeshead_Wiki.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Sheepshead/run" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/0.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/1.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/10.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/11.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/12.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/13.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/14.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/15.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/16.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/17.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/18.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/19.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/2.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/20.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/21.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/22.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/23.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/24.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/25.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/26.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/27.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/28.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/29.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/3.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/30.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/31.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/4.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/5.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/6.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/7.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/8.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/9.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/CARD_LIST_ID.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/CardImages/FACE_DOWN.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Controller/Controller$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Controller/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Controller/GameNotifier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Controller/GameObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Controller/SheepsheadSplashScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Icons/about.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Icons/settings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Icons/stats.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/AIPersonalities.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Card.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/CardHistory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Dealer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Deck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Game.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Hand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/HandHistory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Player.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/PlayerBrain.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Round.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/ScoreBoard.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Suit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Table.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Trait.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Model/Value.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Pictures/family_photo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Pictures/running_sheep.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Sheep_Photos/rolling_hills.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Sheep_Photos/rolling_hills2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Sheep_Photos/sheep1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/SheepsheadRun.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Textures/green_felt.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/Textures/wood.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/ButtonType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/CardBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/CardsOnTable$CardPlayedPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/CardsOnTable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/FadeLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/GameLogFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/GameLogFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/GamePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/HelpFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/HelpFrame$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/HelpFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/LogEntry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/LogType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/MainSound$SoundThread.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/MainSound.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/OptionsPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PlayerHandPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PlayerPanel$AIPlayerHandDisplay.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PlayerPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PopUpFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PopUpFrame$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PopUpFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/PopUpPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/SettingsFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/SettingsFrame$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/SettingsFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/SheepsheadMainFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsTablePanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsTablePanel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsTablePanel$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsTablePanel$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StatsTablePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/StretchIcon.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/TableButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project/View/TablePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/Controller$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/ModelNotifier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/ModelObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Controller/SheepsheadSplashScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/AIPersonalities.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Card.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/CardHistory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Dealer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Deck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Game.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Hand.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/HandHistory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Player.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/PlayerBrain.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Round.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/ScoreBoard.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Suit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Table.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Trait.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Model/Value.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/ButtonType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/CardBox.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/CardsOnTable$CardPlayedPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/CardsOnTable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/FadeLabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/GameLogFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/GameLogFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/GamePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/HelpFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/LogEntry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/LogType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/MainSound$SoundThread.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/MainSound.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/OptionsPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/PlayerHandPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/PlayerPanel$AIPlayerHandDisplay.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/PlayerPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SettingsFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SheepsheadMainFrame$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SheepsheadMainFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/SoundEffect.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsTablePanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsTablePanel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsTablePanel$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsTablePanel$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StatsTablePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/StretchIcon.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/TableButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/View/TablePanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project_documentation/Casey-20120617-00037.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project_documentation/bugs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project_documentation/project structure.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controller/Controller.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controller/ModelNotifier.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Controller/ModelObserver.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controller/SheepsheadSplashScreen.java" afterPath="$PROJECT_DIR$/src/client/SheepsheadSplashScreen.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Card.java" afterPath="$PROJECT_DIR$/server/Card.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/CardHistory.java" afterPath="$PROJECT_DIR$/server/CardHistory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Dealer.java" afterPath="$PROJECT_DIR$/server/Dealer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Deck.java" afterPath="$PROJECT_DIR$/server/Deck.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Game.java" afterPath="$PROJECT_DIR$/server/Game.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Hand.java" afterPath="$PROJECT_DIR$/server/Hand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/HandHistory.java" afterPath="$PROJECT_DIR$/server/HandHistory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Player.java" afterPath="$PROJECT_DIR$/server/Player.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/PlayerBrain.java" afterPath="$PROJECT_DIR$/server/PlayerBrain.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Round.java" afterPath="$PROJECT_DIR$/server/Round.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/ScoreBoard.java" afterPath="$PROJECT_DIR$/server/ScoreBoard.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Suit.java" afterPath="$PROJECT_DIR$/server/Suit.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Table.java" afterPath="$PROJECT_DIR$/server/Table.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Trait.java" afterPath="$PROJECT_DIR$/server/Trait.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Value.java" afterPath="$PROJECT_DIR$/server/Value.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/ButtonType.java" afterPath="$PROJECT_DIR$/src/client/components/ButtonType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/CardsOnTable.java" afterPath="$PROJECT_DIR$/src/client/game_display/CardsOnTable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/GameLogFrame.java" afterPath="$PROJECT_DIR$/src/client/options/GameLogFrame.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/GamePanel.java" afterPath="$PROJECT_DIR$/src/client/game_display/GamePanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/LogType.java" afterPath="$PROJECT_DIR$/src/client/options/LogType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/MainSound.java" afterPath="$PROJECT_DIR$/src/client/options/MainSound.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/OptionsPanel.java" afterPath="$PROJECT_DIR$/src/client/options/OptionsPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/PlayerHandPanel.java" afterPath="$PROJECT_DIR$/src/client/game_display/PlayerHandPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/client/game_display/PlayerPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/SheepsheadMainFrame.java" afterPath="$PROJECT_DIR$/src/client/SheepsheadMainFrame.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/SoundEffect.java" afterPath="$PROJECT_DIR$/src/client/options/SoundEffect.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/StatsTablePanel.java" afterPath="$PROJECT_DIR$/src/client/components/StatsTablePanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/StretchIcon.java" afterPath="$PROJECT_DIR$/src/client/components/StretchIcon.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/TableButton.java" afterPath="$PROJECT_DIR$/src/client/components/TableButton.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/TablePanel.java" afterPath="$PROJECT_DIR$/src/client/game_display/TablePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/SheepsheadRun.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/SheepsheadRun.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Game.java" afterPath="$PROJECT_DIR$/src/Model/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Player.java" afterPath="$PROJECT_DIR$/src/Model/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/PlayerBrain.java" afterPath="$PROJECT_DIR$/src/Model/PlayerBrain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SheepsheadRun.java" afterPath="$PROJECT_DIR$/src/SheepsheadRun.java" />
     </list>
     <ignored path="Sheepshead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,65 +231,71 @@
     <favorites_list name="Sheepshead" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.085714">
-              <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-              <folding>
-                <element signature="method#initPlayers#0;class#Game#0" expanded="false" />
-                <element signature="method#getRandomPlayerName#0;class#Game#0" expanded="false" />
-                <element signature="method#playRound#0;class#Game#0" expanded="false" />
-                <element signature="method#setTeams#0;class#Game#0" expanded="false" />
-                <element signature="method#askPlayerToPickUp#0;class#Game#0" expanded="false" />
-                <element signature="method#playHand#0;class#Game#0" expanded="false" />
-                <element signature="method#playerPause#0;class#Game#0" expanded="false" />
-                <element signature="method#getPlayerInput#0;class#Game#0" expanded="false" />
-                <element signature="method#askPlayerCard#0;class#Game#0" expanded="false" />
-                <element signature="method#getNonAiPlayer#0;class#Game#0" expanded="false" />
-                <element signature="method#setGameSpeed#0;class#Game#0" expanded="false" />
-                <element signature="method#setDebuggerRunning#0;class#Game#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
-              <folding>
-                <element signature="e#6292#6293#0" expanded="true" />
-                <element signature="e#6337#6338#0" expanded="true" />
-                <element signature="e#6373#6374#0" expanded="true" />
-                <element signature="e#6436#6437#0" expanded="true" />
-                <element signature="e#6459#6460#0" expanded="true" />
-                <element signature="e#6490#6491#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerBrain.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/PlayerBrain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49712092">
-              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4879938">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="SheepsheadSplashScreen.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/client/SheepsheadSplashScreen.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SheepsheadMainFrame.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/client/SheepsheadMainFrame.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="1.3877918">
+                  <caret line="192" column="9" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="OptionsPanel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/client/options/OptionsPanel.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="307" column="22" selection-start-line="307" selection-start-column="22" selection-end-line="307" selection-end-column="22" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.52064633">
+                  <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#981#982#0" expanded="true" />
+                    <element signature="e#1020#1021#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -120,34 +320,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/View/CardButton.java" />
-        <option value="$PROJECT_DIR$/src/Model/CardOptionPane.java" />
-        <option value="$PROJECT_DIR$/src/View/TODO.java" />
-        <option value="$PROJECT_DIR$/src/Model/CardHistory.java" />
-        <option value="$PROJECT_DIR$/src/Model/HandHistory.java" />
-        <option value="$PROJECT_DIR$/src/Model/Hand.java" />
-        <option value="$PROJECT_DIR$/src/Model/Trait.java" />
-        <option value="$PROJECT_DIR$/src/View/UISettings.java" />
-        <option value="$PROJECT_DIR$/src/View/SheepsheadTextPanel.java" />
-        <option value="$PROJECT_DIR$/src/View/SheepsheadTextPane.java" />
-        <option value="$PROJECT_DIR$/project_documentation/bugs" />
-        <option value="$PROJECT_DIR$/src/View/SheepsheadJDialog.java" />
-        <option value="$PROJECT_DIR$/src/View/MyJDialog.java" />
-        <option value="$PROJECT_DIR$/src/Model/PlayerTimer.java" />
-        <option value="$PROJECT_DIR$/src/View/CardsOnTable.java" />
-        <option value="$PROJECT_DIR$/src/Model/Card.java" />
-        <option value="$PROJECT_DIR$/src/View/GameLogPanel.java" />
-        <option value="$PROJECT_DIR$/src/View/LogType.java" />
-        <option value="$PROJECT_DIR$/src/View/TablePanel.java" />
-        <option value="$PROJECT_DIR$/src/View/StretchIcon.java" />
-        <option value="$PROJECT_DIR$/src/View/SheepsheadStatsTable.java" />
-        <option value="$PROJECT_DIR$/src/View/StatsTablePanel.java" />
-        <option value="$PROJECT_DIR$/src/View/TableButton.java" />
-        <option value="$PROJECT_DIR$/src/View/ButtonType.java" />
-        <option value="$PROJECT_DIR$/src/View/GameLogFrame.java" />
-        <option value="$PROJECT_DIR$/src/Model/Dealer.java" />
-        <option value="$PROJECT_DIR$/src/View/HTMLViewer.java" />
-        <option value="$PROJECT_DIR$/lib/AboutSheepshead" />
         <option value="$PROJECT_DIR$/src/View/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/View/PlayerPanel.java" />
         <option value="$PROJECT_DIR$/src/Controller/SplashScreen.java" />
@@ -171,6 +343,34 @@
         <option value="$PROJECT_DIR$/src/Model/Player.java" />
         <option value="$PROJECT_DIR$/src/Model/Game.java" />
         <option value="$PROJECT_DIR$/src/Model/PlayerBrain.java" />
+        <option value="$PROJECT_DIR$/src/View/CardsOnTable.java" />
+        <option value="$PROJECT_DIR$/src/View/options/OptionsPanel.java" />
+        <option value="$PROJECT_DIR$/src/View/game_display/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/client/model/State.java" />
+        <option value="$PROJECT_DIR$/src/client/controller/ModelNotifier.java" />
+        <option value="$PROJECT_DIR$/src/server/Player.java" />
+        <option value="$PROJECT_DIR$/src/client/model/Player.java" />
+        <option value="$PROJECT_DIR$/src/client/SheepsheadSplashScreen.java" />
+        <option value="$PROJECT_DIR$/src/client/components/TableButton.java" />
+        <option value="$PROJECT_DIR$/src/client/model/PlayerData.java" />
+        <option value="$PROJECT_DIR$/src/client/game_display/PlayerHandPanel.java" />
+        <option value="$PROJECT_DIR$/src/client/game_display/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/client/game_display/PlayerPanel.java" />
+        <option value="$PROJECT_DIR$/src/client/model/GameState.java" />
+        <option value="$PROJECT_DIR$/src/client/game_display/CardsOnTable.java" />
+        <option value="$PROJECT_DIR$/src/client/controller/ServerNotifier.java" />
+        <option value="$PROJECT_DIR$/src/server/Table.java" />
+        <option value="$PROJECT_DIR$/src/server/ScoreBoard.java" />
+        <option value="$PROJECT_DIR$/src/client/game_display/TablePanel.java" />
+        <option value="$PROJECT_DIR$/src/client/GameLogFrame.java" />
+        <option value="$PROJECT_DIR$/src/client/LogEntry.java" />
+        <option value="$PROJECT_DIR$/src/client/options/LogEntry.java" />
+        <option value="$PROJECT_DIR$/src/client/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/client/Controller.java" />
+        <option value="$PROJECT_DIR$/src/client/options/OptionsPanel.java" />
+        <option value="$PROJECT_DIR$/src/client/Client.java" />
+        <option value="$PROJECT_DIR$/src/client/SheepsheadMainFrame.java" />
       </list>
     </option>
   </component>
@@ -182,10 +382,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="186" />
-    <option name="y" value="23" />
-    <option name="width" value="1137" />
-    <option name="height" value="809" />
+    <option name="x" value="58" />
+    <option name="y" value="35" />
+    <option name="width" value="1293" />
+    <option name="height" value="690" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -223,7 +423,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -236,99 +436,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sheepshead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToClass.includeLibraries" value="false" />
@@ -338,7 +446,6 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -348,7 +455,13 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="PlayerB&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/PlayerBrain.java&#10;Splas&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Main&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Settings&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Game&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/Game.java&#10;card&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Card.java&#10;Card&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;PlayerBra&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/PlayerBrain.java&#10;MainSoun&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;Deck&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Deck.java&#10;Table&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/Table.java&#10;MainSound&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;displayMessage&#9;PSI&#9;JAVA://Controller.Controller#displayMessage&#10;Score&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Model/ScoreBoard.java&#10;PlayCard&#9;PSI&#9;JAVA://Model.Player#playCard&#10;PlayerHandPanel&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Sc&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Scor&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;PlayerPane&#9;PSI&#9;JAVA://View.PlayerPanel&#10;bury&#9;PSI&#9;JAVA://Model.Player#buryCards&#10;PopU&#9;PSI&#9;JAVA://View.PopUpFrame&#10;Player&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/PlayerHandPanel.java&#10;Splash&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;MainSo&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/View/MainSound.java&#10;SettingsF&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Options&#9;PSI&#9;JAVA://View.OptionsPanel&#10;Help&#9;PSI&#9;JAVA://View.HelpFrame&#10;SplashS&#9;FILE&#9;file:///home/dave/Documents/Programming/Sheepshead/src/Controller/SheepsheadSplashScreen.java&#10;Frame&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;Scoreb&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Model/ScoreBoard.java&#10;Controller&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/Controller/Controller.java&#10;Stretch&#9;FILE&#9;file:///home/dave/Documents/Programming/Java/Sheepshead/src/View/StretchIcon.java&#10;GameOb&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/Controller/GameObserver.java&#10;Sheep&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;PlayerPan&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/PlayerHandPanel.java&#10;PlayerH&#9;PSI&#9;JAVA://View.PlayerHandPanel&#10;Setting&#9;PSI&#9;JAVA://View.SettingsFrame&#10;Stats&#9;PSI&#9;JAVA://View.StatsFrame&#10;frame&#9;PSI&#9;JAVA://View.HelpFrame&#10;MAin&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/SheepsheadMainFrame.java&#10;TableBu&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/TableButton.java&#10;Log&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/GameLogFrame.java&#10;hELP&#9;PSI&#9;JAVA://View.HelpFrame&#10;HelpF&#9;PSI&#9;JAVA://View.HelpFrame&#10;options&#9;FILE&#9;file:///home/dave/Dropbox/Programming/Java/Sheepshead/src/View/OptionsPanel.java" />
   </component>
-  <component name="RunManager" selected="Application.Run">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.client">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -623,8 +736,24 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="client" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="client.SheepsheadMainFrame" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sheepshead" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Run" />
+      <item index="1" class="java.lang.String" itemvalue="Application.client" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -697,20 +826,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="186" y="23" width="1137" height="809" extended-state="0" />
+    <frame x="58" y="35" width="1293" height="690" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32222223" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35153583" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51771957" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21985815" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22013652" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32695374" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22643171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08006405" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16040955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20278184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -722,9 +852,8 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24888094" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="99" y="100" width="1168" height="543" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="99" y="100" width="1168" height="543" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3255086" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -760,51 +889,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Trait.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22479339">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CardImages/FACE_DOWN.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_documentation/bugs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76605505">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Textures/green_felt.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Hand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024350649">
-          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/LogType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18828452">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/swing/JTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42677826">
@@ -823,34 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1086" column="0" selection-start-line="1086" selection-start-column="0" selection-end-line="1086" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ButtonType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10026738">
-          <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Dealer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/GameLogFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/TablePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.122994654">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -875,13 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/swing/JWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -889,30 +938,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CardsOnTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="82" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Pictures/running_sheep.gif">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StretchIcon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/TableButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="7" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Pages/Sheeshead_Wiki.html">
@@ -922,21 +950,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SheepsheadRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="374" column="20" selection-start-line="374" selection-start-column="20" selection-end-line="374" selection-end-column="20" />
-          <folding>
-            <element signature="e#13541#13542#0" expanded="false" />
-            <element signature="e#13596#13597#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -954,13 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ModelNotifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37974682">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/sound/sampled/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33257404">
@@ -975,74 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PlayerPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4105263">
-          <caret line="80" column="41" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/PlayerHandPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027829314">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SoundEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13914657">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7797357">
-          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.31571218">
-          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ModelObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44526902">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6832298">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainSound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="method#intToCard#0;class#Table#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Pictures/family_photo.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1053,95 +995,293 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StatsTablePanel.java">
+    <entry file="file://$PROJECT_DIR$/server/PlayerBrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/options/LogType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/options/MainSound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/options/SoundEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/ButtonType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/StretchIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/StatsTablePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/SheepsheadMainFrame.java">
+    <entry file="file://$PROJECT_DIR$/server/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SheepsheadRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="64" />
-          <folding />
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/OptionsPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/client/model/PlayerData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="412" column="53" selection-start-line="412" selection-start-column="53" selection-end-line="412" selection-end-column="53" />
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SheepsheadSplashScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/client/model/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026431719">
-          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/game_display/CardsOnTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5209#5210#0" expanded="false" />
+            <element signature="e#5253#5254#0" expanded="false" />
+            <element signature="e#5448#5449#0" expanded="false" />
+            <element signature="e#5487#5488#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/TableButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38235295">
+          <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/game_display/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/game_display/PlayerHandPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/game_display/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Round.java">
+    <entry file="file://$PROJECT_DIR$/server/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Suit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Round.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="87" selection-start-line="42" selection-start-column="87" selection-end-line="42" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ScoreBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322933">
-          <caret line="113" column="27" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Player.java">
+    <entry file="file://$PROJECT_DIR$/server/Table.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
-          <folding>
-            <element signature="e#6292#6293#0" expanded="true" />
-            <element signature="e#6337#6338#0" expanded="true" />
-            <element signature="e#6373#6374#0" expanded="true" />
-            <element signature="e#6436#6437#0" expanded="true" />
-            <element signature="e#6459#6460#0" expanded="true" />
-            <element signature="e#6490#6491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.085714">
-          <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-          <folding>
-            <element signature="method#initPlayers#0;class#Game#0" expanded="false" />
-            <element signature="method#getRandomPlayerName#0;class#Game#0" expanded="false" />
-            <element signature="method#playRound#0;class#Game#0" expanded="false" />
-            <element signature="method#setTeams#0;class#Game#0" expanded="false" />
-            <element signature="method#askPlayerToPickUp#0;class#Game#0" expanded="false" />
-            <element signature="method#playHand#0;class#Game#0" expanded="false" />
-            <element signature="method#playerPause#0;class#Game#0" expanded="false" />
-            <element signature="method#getPlayerInput#0;class#Game#0" expanded="false" />
-            <element signature="method#askPlayerCard#0;class#Game#0" expanded="false" />
-            <element signature="method#getNonAiPlayer#0;class#Game#0" expanded="false" />
-            <element signature="method#setGameSpeed#0;class#Game#0" expanded="false" />
-            <element signature="method#setDebuggerRunning#0;class#Game#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/PlayerBrain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49712092">
-          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Trait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Value.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Dealer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.029411765">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.029411765">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.029411765">
+          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/options/LogEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4979253">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ScoreBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.5">
+          <caret line="272" column="55" selection-start-line="272" selection-start-column="55" selection-end-line="272" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/options/GameLogFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7352941">
+          <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/game_display/TablePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2616823">
+          <caret line="77" column="61" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/options/OptionsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="307" column="22" selection-start-line="307" selection-start-column="22" selection-end-line="307" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/SheepsheadSplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52064633">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#981#982#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/SheepsheadMainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3877918">
+          <caret line="192" column="9" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
