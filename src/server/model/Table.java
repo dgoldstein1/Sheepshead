@@ -1,8 +1,8 @@
 package server.model;
 
-import server.CardHistory;
-import server.HandHistory;
-import server.Player;
+import server.scorekeeper.CardHistory;
+import server.scorekeeper.HandHistory;
+import server.ai.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,8 +11,8 @@ import java.util.List;
 /**
  * Created by Dave on 9/16/2015.
  * remembers only cards played for each hand
- * see scoreboard.class for detailed statistics on card history
- * all players, Game, scoreboard, and dealer have access to table
+ * see scorekeeper.class for detailed statistics on card history
+ * all players, Game, scorekeeper, and dealer have access to table
  * at max, this class keeps track of the cards played for each round
  */
 public class Table {
@@ -155,7 +155,7 @@ public class Table {
      * called at end of round by game
      * returns the winner of the hand
      *
-     * @return PlayerData winner
+     * @return protocols.PlayerData winner
      */
     public Player getWinner() {
         return currentHand.topPlayer();
@@ -316,7 +316,7 @@ public class Table {
 
     /**
      * checks if partner is known to all
-     * @returns PlayerData partner if partner is revlealed, null otherwise
+     * @returns protocols.PlayerData partner if partner is revlealed, null otherwise
      */
     public Player currPartner(){
        return partner;

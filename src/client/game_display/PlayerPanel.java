@@ -1,6 +1,6 @@
 package client.game_display;
 
-import client.model.PlayerData;
+import protocols.PlayerData;
 import client.components.ButtonType;
 import client.components.TableButton;
 
@@ -20,7 +20,7 @@ public class PlayerPanel extends JPanel {
     private JLabel pointDisplayer, nameLabel;
     private boolean partnerDisplayed, pickerDislayed;
 
-    //stores cards for each AI PlayerData
+    //stores cards for each AI protocols.PlayerData
     PlayerPanel(String playerName) {
         setLayout(new BorderLayout());
         displayedCards = new ArrayList<TableButton>(8);
@@ -95,7 +95,7 @@ public class PlayerPanel extends JPanel {
         return true;
     }
 
-    //holder for TableButtons within PlayerData Panel
+    //holder for TableButtons within protocols.PlayerData Panel
     class AIPlayerHandDisplay extends JPanel{
 
         AIPlayerHandDisplay(){

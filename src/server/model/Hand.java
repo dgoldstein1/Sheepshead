@@ -165,7 +165,7 @@ public class Hand {
     }
 
     /**
-     * called by PlayerData after deciding to pick up blind
+     * called by protocols.PlayerData after deciding to pick up blind
      * adds blind to hand to make cards viewable and removes from blind
      *
      * @return success

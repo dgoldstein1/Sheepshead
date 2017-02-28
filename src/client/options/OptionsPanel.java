@@ -220,8 +220,8 @@ class StatsFrame extends JFrame {
 //        //add stats panels to jpanel
 //        jpanel = new JPanel(new BorderLayout());
 //        jpanel.setOpaque(false);
-//        initGameStats(scoreboard);
-//        initPlayerStats(scoreboard);
+//        initGameStats(scorekeeper);
+//        initPlayerStats(scorekeeper);
 //        jpanel.add(gameStats, BorderLayout.NORTH);
 //        jpanel.add(playerStats, BorderLayout.SOUTH);
 //        this.add(jpanel);
@@ -233,7 +233,7 @@ class StatsFrame extends JFrame {
     }
 //
 //    /**
-//     * initializes table with scoreboard values
+//     * initializes table with scorekeeper values
 //     */
 //    private void initGameStats(ScoreBoard sb) {
 //
@@ -256,7 +256,7 @@ class StatsFrame extends JFrame {
 //     */
 //    private void initPlayerStats(ScoreBoard sb) {
 //        String[][] data = sb.getPlayerStats();
-//        playerStats = new StatsTablePanel(tableSize, data, new String[]{"PlayerData Stats", ""});
+//        playerStats = new StatsTablePanel(tableSize, data, new String[]{"protocols.PlayerData Stats", ""});
 //
 //    }
 //

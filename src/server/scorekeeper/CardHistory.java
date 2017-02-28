@@ -1,6 +1,6 @@
 package server.scorekeeper;
 
-import server.Player;
+import server.ai.Player;
 import server.model.Card;
 
 /**

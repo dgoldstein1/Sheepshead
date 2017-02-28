@@ -1,6 +1,6 @@
 package server.scorekeeper;
 
-import server.Player;
+import server.ai.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +117,7 @@ public class ScoreBoard {
     private void awardLeasterPoints(int basePoint) {
         Player winner = currRound.getLeasterWinner();
         winner.incrGameWon();
-//        obs.log(this.getClass(), LogType.INFO, "PlayerData " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
+//        obs.log(this.getClass(), LogType.INFO, "protocols.PlayerData " + winner.getUsername() + " won leaster with " + winner.getPoints() + " points");
         for (Player p : players) {
             if (winner == p) {
                 p.addScore(basePoint * 4);
@@ -289,7 +289,7 @@ public class ScoreBoard {
         };
 
         if(categories.length != stats.length){
-//            obs.log(this.getClass(), LogType.ERROR, "Size of PlayerData Stats and Categories not equal," +
+//            obs.log(this.getClass(), LogType.ERROR, "Size of protocols.PlayerData Stats and Categories not equal," +
 //                    "initializing empty array..");
             return new String[][]{{""}, {""}}; //return empty stats
         }

@@ -1,7 +1,7 @@
 package server.scorekeeper;
 
 
-import server.Player;
+import server.ai.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +62,7 @@ public class Round {
     /**
      * converts player into int in variable player
      *
-     * @param picker PlayerData who picked up
+     * @param picker protocols.PlayerData who picked up
      */
     public void setPicker(Player picker) {
         this.picker = -1;
@@ -81,7 +81,7 @@ public class Round {
     /**
      * sets partner to given player
      *
-     * @param partner PlayerData partner
+     * @param partner protocols.PlayerData partner
      */
     public void setPartner(Player partner) {
         this.partner = -1;
@@ -96,7 +96,7 @@ public class Round {
     /**
      * called by scoreBoard to get lowest non zero player
      *
-     * @return PlayerData winner
+     * @return protocols.PlayerData winner
      * @throws IndexOutOfBoundsException no lowest score found
      */
     public Player getLeasterWinner() {

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Dave on 10/1/2015.
  * operates as the brain for the player
- * PlayerData class feeds information into brain and brain makes decisions
+ * protocols.PlayerData class feeds information into brain and brain makes decisions
  */
 public class PlayerBrain {
     private AIPersonalities traits;
@@ -21,7 +21,7 @@ public class PlayerBrain {
     }
 
     /**
-     * called by PlayerData when deciding to pick up before hand
+     * called by protocols.PlayerData when deciding to pick up before hand
      *
      * @param h current Hand
      * @return true if want to pick up, false otherwise
@@ -46,7 +46,7 @@ public class PlayerBrain {
     }
 
     /**
-     * decides for PlayerData if wise to call up
+     * decides for protocols.PlayerData if wise to call up
      *
      * @return false to call up, return true to play alone
      */
@@ -88,9 +88,9 @@ public class PlayerBrain {
     }
 
     /**
-     * chooses card to play based on PlayerData factors
+     * chooses card to play based on protocols.PlayerData factors
      *
-     * @param playerHand   current PlayerData hand
+     * @param playerHand   current protocols.PlayerData hand
      * @param cardLed      card led in hand. default = QC w/ id of -1
      * @param partner      is player on partner team?
      * @param isLeaster    is curr hand leaster
@@ -249,8 +249,8 @@ class AIPersonalities {
     /**
      * AIPersonalities is a way of holding and using traits in the player brain class
      *
-     * @param trait1 trait associated with PlayerData
-     * @param trait2 trait associated with PlayerData
+     * @param trait1 trait associated with protocols.PlayerData
+     * @param trait2 trait associated with protocols.PlayerData
      */
     public AIPersonalities(Trait trait1, Trait trait2) {
         this.trait1 = trait1;
@@ -258,7 +258,7 @@ class AIPersonalities {
     }
 
     /**
-     * used by PlayerData brain
+     * used by protocols.PlayerData brain
      * checks if this brain is a certain trait
      *
      * @param t trait to check

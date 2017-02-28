@@ -4,8 +4,8 @@ package client.game_display;
  * Created by Dave on 11/12/2015.
  */
 
-import client.model.GameState;
-import client.model.PlayerData;
+import protocols.GameState;
+import protocols.PlayerData;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,6 @@
 package server.scorekeeper;
 
-import server.Player;
+import server.ai.Player;
 import server.model.Card;
 import server.model.Suit;
 
@@ -32,7 +32,7 @@ public class HandHistory {
      * gets player with highest card played in hand
      * returns by value then suit
      *
-     * @return PlayerData winner
+     * @return protocols.PlayerData winner
      * @throws IllegalStateException if asked for top player but no cards played
      */
     public Player topPlayer() {

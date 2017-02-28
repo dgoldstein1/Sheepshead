@@ -6,8 +6,8 @@ package client.game_display;
 
 import client.components.ButtonType;
 import client.components.TableButton;
-import client.model.GameState;
-import client.model.PlayerData;
+import protocols.GameState;
+import protocols.PlayerData;
 
 import javax.swing.*;
 import java.awt.*;

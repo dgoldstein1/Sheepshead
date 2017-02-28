@@ -11,12 +11,19 @@ public class GameState implements Serializable{
 
     public ArrayList<Integer> cardsInHand, cardsOnTable;
     public ArrayList<PlayerData> players;
+    public State state;
+
+    public GameState(){
+
+    }
 
     public GameState(ArrayList<PlayerData> players, ArrayList<Integer> cardsOnTable, ArrayList<Integer> cardsInHand){
         this.cardsInHand = cardsInHand;
         this.cardsOnTable = cardsOnTable;
         this.players = players;
     }
+
+    public enum State {INIT,DEAL,BLIND,ROUND,POST_GAME}
 
 
 }

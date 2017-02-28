@@ -1,6 +1,6 @@
 package client.game_display;
 
-import client.model.GameState;
+import protocols.GameState;
 
 import javax.swing.*;
 import java.awt.*;

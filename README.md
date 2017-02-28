@@ -26,6 +26,8 @@ TODO: Write usage instructions
 -gamespeed in settings
 
 4. Add in server
+-git rid of dealer class
+-put logger in server instead of print()
 
 
 ## Contributing

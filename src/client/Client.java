@@ -1,12 +1,15 @@
 package client;
 
 import client.components.ButtonType;
-import client.model.GameState;
+import client.game_display.SheepsheadMainFrame;
+import protocols.GameState;
+import protocols.PlayerData;
 import client.options.SoundEffect;
 import client.components.TableButton;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 /**
  * Created by Dave on 11/2/2015.
@@ -75,4 +78,28 @@ public class Client extends MouseAdapter {
     public void playSound(SoundEffect ef){
         frame.playSound(ef);
     }
+
+    public static void main(String[] args) {
+
+        ArrayList<PlayerData> players = new ArrayList<PlayerData>();
+        for (int i = 0; i < 5; i++) {
+            players.add(new PlayerData(i + "", 10, 5, i, false, false));
+        }
+
+        ArrayList<Integer> cardsOnTable = new ArrayList<Integer>(6){{
+            add(14); add(15); add(4); add(8); add(13); add(1);
+        }};
+
+        ArrayList<Integer> cardsInHand = new ArrayList<Integer>(6){{
+            add(2); add(5); add(7); add(3); add(9); add(11);
+        }};
+
+        GameState defaultData = new GameState(players, cardsOnTable,cardsInHand);
+
+        new Client(defaultData);
+
+
+
+    }
+
 }

@@ -2,11 +2,8 @@ package server.model;
 
 import client.options.LogType;
 import client.options.SoundEffect;
+import server.SheepHub;
 import server.ai.Player;
-import server.model.Card;
-import server.model.Dealer;
-import server.model.Table;
-import server.model.Trait;
 import server.scorekeeper.HandHistory;
 import server.scorekeeper.ScoreBoard;
 
@@ -25,7 +22,7 @@ public class Game {
     private boolean debuggerRunning;
     private BufferedReader bufferedReader;
     private Player startRoundPlayer;
-    private ModelObserver obs;
+    private SheepHub hub;
     private int gameSpeed;
     protected ArrayList<String> namesTaken;
     private String[] names;
@@ -35,16 +32,16 @@ public class Game {
      * automatically set to have real player
      *
      */
-    public Game(ModelObserver obs, String playerName) {
+    public Game(SheepHub obs, String playerName) {
         gameSpeed = 35;
         handSize = 6;
-        table = new Table(obs);
+        table = new Table(hub);
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         initPlayers(playerName);
-        scoreboard = new ScoreBoard(players,obs);
+        scoreboard = new ScoreBoard(players,hub);
         dealer = new Dealer(players, table);
         debuggerRunning = false;
-        this.obs = obs;
+        this.hub = obs;
     }
 
     /**
@@ -119,7 +116,7 @@ public class Game {
      * called by run
      */
     public void playRound() {
-        obs.log(this.getClass(), LogType.SYSTEM,"---start round---");
+        hub.log(this.getClass(), LogType.SYSTEM,"---start round---");
         scoreboard.newRound();
         dealer.dealCards(handSize);
         setTeams();
@@ -127,14 +124,14 @@ public class Game {
 
         //play hands in round
         for (int hand = 0; hand < 6; hand++) {
-            obs.log(this.getClass(),LogType.ERROR,"started Round: " + startRoundPlayer.getUsername());
+            hub.log(this.getClass(),LogType.ERROR,"started Round: " + startRoundPlayer.getUsername());
             Player winner = playHand();
             shiftPlayers(winner);//sets winner as new leader
             scoreboard.printPoints();
         }
         endRound();
         dealer.collectCards();
-        obs.log(this.getClass(),LogType.SYSTEM,"--end round---");
+        hub.log(this.getClass(),LogType.SYSTEM,"--end round---");
     }
 
 
@@ -146,7 +143,6 @@ public class Game {
     private void setTeams() {
         for (Player p : players) {
             if (p.isPlayer() && askPlayerToPickUp(p)) {//non ai player and chooses to pick up
-                obs.playSound(SoundEffect.CARD_DRAWN);
                 scoreboard.setPicker(p);
                 return;
             } else if (!p.isNonAIPlayer() && p.chooseToPickUp()) {//ai player and chooses to pick up
@@ -155,7 +151,7 @@ public class Game {
             }
         }
         //blind not picked up by any player
-        obs.displayMessage("Blind not picked up: Leaster will be played!!", "");
+//        hub.displayMessage("Blind not picked up: Leaster will be played!!", ""); // TODO: 2/28/17
         scoreboard.setLeaster();
         table.setLeaster();
     }
@@ -191,10 +187,10 @@ public class Game {
             }
             Card c1 = askPlayerCard(p, " Choose first card to bury:", true);
             p.getHand().remove(c1);
-            obs.log(this.getClass(),LogType.INFO,"buried card: " + c1.toString());
+            hub.log(this.getClass(),LogType.INFO,"buried card: " + c1.toString());
             Card c2 = askPlayerCard(p, " Choose second card to bury:", true);
             p.getHand().remove(c2);
-            obs.log(this.getClass(),LogType.INFO, "buried card: " + c2.toString());
+            hub.log(this.getClass(),LogType.INFO, "buried card: " + c2.toString());
             p.buryCards(c1, c2);
             return true;
         }
@@ -246,7 +242,7 @@ public class Game {
      * plays one hand (six cards)
      * inits end sequences in table
      *
-     * @return PlayerData winner
+     * @return protocols.PlayerData winner
      */
     private Player playHand() {
         for (int i = 0 ; i < 5 ; i++) {
@@ -276,7 +272,7 @@ public class Game {
         try{
             Thread.sleep(1001 - gameSpeed * 10);
         } catch (Exception e){
-            obs.log(this.getClass(),LogType.ERROR,"PROBLEM WITH PLAYER PAUSE, SYSTEM EXIT");
+            hub.log(this.getClass(),LogType.ERROR,"PROBLEM WITH PLAYER PAUSE, SYSTEM EXIT");
             System.exit(1);
         }
     }
@@ -292,14 +288,14 @@ public class Game {
         String input = null;
         try {
             if(yesOrNo){
-                input = obs.yOrN(prompt);
+                input = hub.yOrN( prompt);
             }
             else{
                 input = bufferedReader.readLine();
             }
-            obs.log(this.getClass(),LogType.PLAYER_INPUT,prompt + ": " + input);
+            hub.log(this.getClass(),LogType.PLAYER_INPUT,prompt + ": " + input);
         } catch (IOException e) {
-            obs.log(this.getClass(),LogType.ERROR,"ERROR READING INPUT, SYSTEM EXIT");
+            hub.log(this.getClass(),LogType.ERROR,"ERROR READING INPUT, SYSTEM EXIT");
             e.printStackTrace();
             System.exit(1);
         }
@@ -316,7 +312,7 @@ public class Game {
      * @return card played
      */
     private Card askPlayerCard(Player p, String prompt, boolean buryCard) {
-        Card toPlay = obs.getPlayerCard(prompt);
+        Card toPlay = hub.getPlayerCard(prompt);
         try {
             if (!buryCard) {//card played in game
                 if (!table.validMove(toPlay, p.getHand()))
@@ -340,7 +336,7 @@ public class Game {
         return players;
     }
 
-    //return PlayerData[] from scorekeeper that does not rotate
+    //return protocols.PlayerData[] from scorekeeper that does not rotate
     public Player[] getStaticPlayers(){return scoreboard.getNonStaticPlayers();}
 
     public Table getTable(){
@@ -363,7 +359,7 @@ public class Game {
      */
     public void setGameSpeed(int newSpeed){
         if(newSpeed < 1 || newSpeed > 100){
-            obs.displayMessage(newSpeed + " not in valid range", "error");
+            hub.displayMessage(newSpeed + " not in valid range", "error");
             gameSpeed = 75;
             return;
         }
@@ -380,11 +376,11 @@ public class Game {
 
     public void setDebuggerRunning(boolean setDeubggerOn){
         if(setDeubggerOn && !debuggerRunning){
-            obs.startDebugger();
+            hub.startDebugger();
             debuggerRunning = true;
         }
         else if(!setDeubggerOn && debuggerRunning){
-            obs.closeDebugger();
+            hub.closeDebugger();
             debuggerRunning = false;
         }
 

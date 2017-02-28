@@ -1,6 +1,6 @@
 package client.options;
 
-import client.model.GameState;
+import protocols.GameState;
 
 import javax.swing.*;
 import javax.swing.text.*;

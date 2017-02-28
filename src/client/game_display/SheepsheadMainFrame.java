@@ -1,9 +1,7 @@
 package client.game_display;
 
 import client.Client;
-import client.model.GameState;
-import client.model.PlayerData;
-import client.game_display.GamePanel;
+import protocols.GameState;
 import client.options.*;
 import client.components.StretchIcon;
 
@@ -89,7 +87,7 @@ public class SheepsheadMainFrame extends JFrame {
      * refreshes all values in GUI from server
      * called by notifier
      *
-     * @param g GameState from server
+     * @param g protocols.GameState from server
      * @return success
      */
     public boolean refresh(GameState g) {
@@ -187,27 +185,6 @@ public class SheepsheadMainFrame extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        ArrayList<PlayerData> players = new ArrayList<PlayerData>();
-        for (int i = 0; i < 5; i++) {
-            players.add(new PlayerData(i + "", 10, 5, i, false, false));
-        }
-
-        ArrayList<Integer> cardsOnTable = new ArrayList<Integer>(6){{
-            add(14); add(15); add(4); add(8); add(13); add(1);
-        }};
-
-        ArrayList<Integer> cardsInHand = new ArrayList<Integer>(6){{
-            add(2); add(5); add(7); add(3); add(9); add(11);
-        }};
-
-        GameState defaultData = new GameState(players, cardsOnTable,cardsInHand);
-
-        new Client(defaultData);
-
-
-
-    }
 
 
 }

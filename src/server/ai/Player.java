@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Created by Dave on 9/15/2015.
- * PlayerData functins as both AI and Non-AI players
+ * protocols.PlayerData functins as both AI and Non-AI players
  * the 5 main game players are held in an array in Game players[]
  * all functions are called by Game at appropriate time during round
  * all decision making functions are operated by PlayerBrain

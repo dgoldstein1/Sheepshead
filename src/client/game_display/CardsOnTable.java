@@ -1,7 +1,7 @@
 package client.game_display;
 
-import client.model.GameState;
-import client.model.PlayerData;
+import protocols.GameState;
+import protocols.PlayerData;
 import client.components.ButtonType;
 import client.components.StretchIcon;
 import client.components.TableButton;
