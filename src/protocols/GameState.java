@@ -1,4 +1,4 @@
-package client.model;
+package protocols;
 
 import java.io.Serializable;
 import java.util.ArrayList;

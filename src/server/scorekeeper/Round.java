@@ -1,5 +1,7 @@
-package server;
+package server.scorekeeper;
 
+
+import server.Player;
 
 import java.util.ArrayList;
 import java.util.List;

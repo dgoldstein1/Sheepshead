@@ -1,4 +1,7 @@
-package server;
+package server.ai;
+
+import server.model.*;
+import server.scorekeeper.HandHistory;
 
 import java.util.ArrayList;
 import java.util.List;

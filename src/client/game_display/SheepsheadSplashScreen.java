@@ -1,4 +1,4 @@
-package client;
+package client.game_display;
 
 // SplashScreen.java
 // A simple application to show a title screen in the center of the screen

@@ -1,6 +1,6 @@
-package server;
+package server.scorekeeper;
 
-import client.options.LogType;
+import server.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +70,7 @@ public class ScoreBoard {
             awardNormalPoints(basePoint);
         }
         checkScoresBalance();
-        currRound.createPointHistory(); //finalize scores in scoreboard
+        currRound.createPointHistory(); //finalize scores in scorekeeper
     }
 
     /**

@@ -1,11 +1,15 @@
-package server;
+package server.scorekeeper;
+
+import server.Player;
+import server.model.Card;
+import server.model.Suit;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * history of hand played used to store data and tally up points
- * used by table, scoreboard
+ * used by table, scorekeeper
  * Created by Dave on 9/24/2015.
  */
 public class HandHistory {

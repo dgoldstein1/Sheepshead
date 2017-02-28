@@ -1,5 +1,10 @@
-package server;
+package server.model;
 
+
+import server.Player;
+import server.model.Card;
+import server.model.Deck;
+import server.model.Table;
 
 /**
  * Created by Dave on 9/17/2015.

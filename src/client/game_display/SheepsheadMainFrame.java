@@ -1,5 +1,6 @@
-package client;
+package client.game_display;
 
+import client.Client;
 import client.model.GameState;
 import client.model.PlayerData;
 import client.game_display.GamePanel;

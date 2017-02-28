@@ -1,7 +1,14 @@
-package server;
+package server.model;
 
 import client.options.LogType;
 import client.options.SoundEffect;
+import server.ai.Player;
+import server.model.Card;
+import server.model.Dealer;
+import server.model.Table;
+import server.model.Trait;
+import server.scorekeeper.HandHistory;
+import server.scorekeeper.ScoreBoard;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -24,7 +31,7 @@ public class Game {
     private String[] names;
 
     /**
-     * initializes game by setting up scoreboard, dealer, and table
+     * initializes game by setting up scorekeeper, dealer, and table
      * automatically set to have real player
      *
      */
@@ -154,7 +161,7 @@ public class Game {
     }
 
     /**
-     * updates partners on scoreboard
+     * updates partners on scorekeeper
      / sets partner and non-partner team in players[]
      */
     private void updateTeams() {
@@ -333,7 +340,7 @@ public class Game {
         return players;
     }
 
-    //return PlayerData[] from scoreboard that does not rotate
+    //return PlayerData[] from scorekeeper that does not rotate
     public Player[] getStaticPlayers(){return scoreboard.getNonStaticPlayers();}
 
     public Table getTable(){

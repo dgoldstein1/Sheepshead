@@ -1,4 +1,7 @@
-package server;
+package server.scorekeeper;
+
+import server.Player;
+import server.model.Card;
 
 /**
  * Created by Dave on 9/24/2015.

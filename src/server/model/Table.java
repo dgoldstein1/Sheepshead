@@ -1,7 +1,8 @@
-package server;
+package server.model;
 
-import client.options.LogType;
-import client.options.SoundEffect;
+import server.CardHistory;
+import server.HandHistory;
+import server.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;

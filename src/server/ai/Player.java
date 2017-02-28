@@ -1,4 +1,9 @@
-package server;
+package server.ai;
+
+import server.model.Card;
+import server.model.Hand;
+import server.model.Table;
+import server.model.Trait;
 
 import java.util.ArrayList;
 import java.util.List;
