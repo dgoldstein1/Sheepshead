@@ -12,7 +12,7 @@ TODO: Write usage instructions
 
 ##Issues
 
-1. To display on client
+1. To display on main.client
 -game state
 -player names, points, n cards
 -picker, partner
@@ -20,14 +20,14 @@ TODO: Write usage instructions
 2. Architecture in Client
 -playing of sounds / alerts comes from model obs
 
-3. server/client Dependencies
--Game Log Frame accessed by server
+3. main.server/main.client Dependencies
+-Game Log Frame accessed by main.server
 -Stats window depends on scoreboard
 -gamespeed in settings
 
-4. Add in server
+4. Add in main.server
 -git rid of dealer class
--put logger in server instead of print()
+-put logger in main.server instead of print()
 
 
 ## Contributing
