@@ -7,89 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf21470-676c-4a61-9796-3072011e374f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/client/SheepClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/ClientServer.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/SheepsheadRun.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/ButtonType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/StatsTablePanel$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/StatsTablePanel$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/StatsTablePanel$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/StatsTablePanel$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/StatsTablePanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/StretchIcon.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/components/TableButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/CardBox.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/CardsOnTable$CardPlayedPanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/CardsOnTable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/FadeLabel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/GamePanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/PlayerHandPanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/PlayerPanel$AIPlayerHandDisplay.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/PlayerPanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/game_display/TablePanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/GameLogFrame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/GameLogFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/HelpFrame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/HelpFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/LogEntry.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/LogType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/MainSound$SoundThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/MainSound.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/OptionsPanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/SettingsFrame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/SettingsFrame$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/SettingsFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/SoundEffect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/client/options/StatsFrame.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/Client.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/UIController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/components/ButtonType.java" afterPath="$PROJECT_DIR$/src/main/client/components/ButtonType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/components/StatsTablePanel.java" afterPath="$PROJECT_DIR$/src/main/client/components/StatsTablePanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/components/StretchIcon.java" afterPath="$PROJECT_DIR$/src/main/client/components/StretchIcon.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/components/TableButton.java" afterPath="$PROJECT_DIR$/src/main/client/components/TableButton.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/CardsOnTable.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/CardsOnTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/GamePanel.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/GamePanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/PlayerHandPanel.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/PlayerHandPanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/PlayerPanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/SheepsheadMainFrame.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/SheepsheadMainFrame.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/SheepsheadSplashScreen.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/SheepsheadSplashScreen.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/game_display/TablePanel.java" afterPath="$PROJECT_DIR$/src/main/client/game_display/TablePanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/options/GameLogFrame.java" afterPath="$PROJECT_DIR$/src/main/client/options/GameLogFrame.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/options/LogEntry.java" afterPath="$PROJECT_DIR$/src/main/client/options/LogEntry.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/options/LogType.java" afterPath="$PROJECT_DIR$/src/main/client/options/LogType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/options/MainSound.java" afterPath="$PROJECT_DIR$/src/main/client/options/MainSound.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/options/OptionsPanel.java" afterPath="$PROJECT_DIR$/src/main/client/options/OptionsPanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/options/SoundEffect.java" afterPath="$PROJECT_DIR$/src/main/client/options/SoundEffect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/protocols/DisconnectMessage.java" afterPath="$PROJECT_DIR$/src/main/protocols/DisconnectMessage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/protocols/ForwardedMessage.java" afterPath="$PROJECT_DIR$/src/main/protocols/ForwardedMessage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/protocols/GameState.java" afterPath="$PROJECT_DIR$/src/main/protocols/GameState.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/protocols/PlayerData.java" afterPath="$PROJECT_DIR$/src/main/protocols/PlayerData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/protocols/ResetSignal.java" afterPath="$PROJECT_DIR$/src/main/protocols/ResetSignal.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/Hub.java" afterPath="$PROJECT_DIR$/src/main/server/Hub.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/SheepHub.java" afterPath="$PROJECT_DIR$/src/main/server/SheepHub.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/ai/Player.java" afterPath="$PROJECT_DIR$/src/main/server/ai/Player.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/ai/PlayerBrain.java" afterPath="$PROJECT_DIR$/src/main/server/ai/PlayerBrain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Card.java" afterPath="$PROJECT_DIR$/src/main/server/model/Card.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Dealer.java" afterPath="$PROJECT_DIR$/src/main/server/model/Dealer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Deck.java" afterPath="$PROJECT_DIR$/src/main/server/model/Deck.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Game.java" afterPath="$PROJECT_DIR$/src/main/server/model/Game.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Hand.java" afterPath="$PROJECT_DIR$/src/main/server/model/Hand.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Suit.java" afterPath="$PROJECT_DIR$/src/main/server/model/Suit.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Table.java" afterPath="$PROJECT_DIR$/src/main/server/model/Table.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Trait.java" afterPath="$PROJECT_DIR$/src/main/server/model/Trait.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/model/Value.java" afterPath="$PROJECT_DIR$/src/main/server/model/Value.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/scorekeeper/CardHistory.java" afterPath="$PROJECT_DIR$/src/main/server/scorekeeper/CardHistory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/scorekeeper/HandHistory.java" afterPath="$PROJECT_DIR$/src/main/server/scorekeeper/HandHistory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/scorekeeper/Round.java" afterPath="$PROJECT_DIR$/src/main/server/scorekeeper/Round.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/server/scorekeeper/ScoreBoard.java" afterPath="$PROJECT_DIR$/src/main/server/scorekeeper/ScoreBoard.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Sheepshead/test/ClientServer.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/main/client/Client$ConnectionToHub$ReceiveThread.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/main/client/Client$ConnectionToHub$ReceiveThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/main/client/Client$ConnectionToHub$SendThread.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/main/client/Client$ConnectionToHub$SendThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/main/client/SheepClient.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/main/client/SheepClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/main/server/Hub.class" afterPath="$PROJECT_DIR$/out/production/Sheepshead/main/server/Hub.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sheepshead.iml" afterPath="$PROJECT_DIR$/Sheepshead.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Pages/Sheeshead_Wiki.html" afterPath="$PROJECT_DIR$/lib/Pages/Sheeshead_Wiki.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sheepshead/Pages/Sheeshead_Wiki.html" afterPath="$PROJECT_DIR$/out/production/Sheepshead/Pages/Sheeshead_Wiki.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/client/Client.java" afterPath="$PROJECT_DIR$/src/main/client/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/client/SheepClient.java" afterPath="$PROJECT_DIR$/src/main/client/SheepClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/server/Hub.java" afterPath="$PROJECT_DIR$/src/main/server/Hub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ClientServer.java" afterPath="$PROJECT_DIR$/src/test/ClientServer.java" />
     </list>
     <ignored path="Sheepshead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,8 +42,8 @@
           <file leaf-file-name="ClientServer.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/ClientServer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -128,25 +55,39 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SheepHub.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/server/SheepHub.java">
+          <file leaf-file-name="Hub.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/server/Hub.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="202">
+                  <caret line="92" column="93" lean-forward="false" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SheepClient.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SheepClient.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/client/SheepClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+                <state relative-caret-position="450">
+                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#863#864#0" expanded="true" />
-                    <element signature="e#929#930#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/client/Client.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1376">
+                  <caret line="364" column="55" lean-forward="false" selection-start-line="364" selection-start-column="55" selection-end-line="364" selection-end-column="55" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#12095#12096#0" expanded="true" />
+                    <element signature="e#12148#12149#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -169,25 +110,45 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hub.log</find>
-      <find>localhost</find>
-      <find>ConnectionToClient</find>
-      <find>getPlayerList</find>
       <find>int getPlayerList</find>
       <find>send</find>
       <find>logger</find>
       <find>System.out.println</find>
       <find>LOGGER.log</find>
-      <find>System.out.print</find>
       <find>System.out.println(</find>
       <find>LEVEL.I</find>
       <find>\</find>
       <find>connection acc</find>
+      <find>outGoing</find>
+      <find>in.</find>
+      <find>System.</find>
+      <find>id_number</find>
+      <find>connections on port</find>
+      <find>receivedMessage</find>
+      <find>incomingMessages</find>
+      <find>incomingMessage</find>
+      <find>`</find>
+      <find>received</find>
+      <find>outGoingMessages</find>
+      <find>sending</find>
+      <find>Payer</find>
+      <find>SYstem.out.</find>
+      <find>System.out.print</find>
+      <find>System.ou</find>
+      <find>Logger.log(Level.INFO, &quot;</find>
+      <find>Logger.log(Level.SEVERE, &quot;</find>
+      <find>Logger.</find>
+      <find>Client&quot; +</find>
+      <find>Received message</find>
     </findStrings>
     <replaceStrings>
       <replace>logger.log</replace>
       <replace>LOGGER</replace>
       <replace>LOGGER.log(Level.INFO,</replace>
+      <replace>Logger.log(Level.INFO, &quot;[Client&quot; + id_number + &quot;]</replace>
+      <replace>Logger.log(Level.SEVERE, &quot;[Client&quot; + id_number + &quot;]</replace>
+      <replace>LOGGER.</replace>
+      <replace>Client &quot; +</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -256,12 +217,12 @@
         <option value="$PROJECT_DIR$/src/test/Server.java" />
         <option value="$PROJECT_DIR$/src/test/Protocols.java" />
         <option value="$PROJECT_DIR$/src/main/client/game_display/UIController.java" />
-        <option value="$PROJECT_DIR$/src/test/ClientServer.java" />
         <option value="$PROJECT_DIR$/src/main/server/SheepHub.java" />
-        <option value="$PROJECT_DIR$/src/main/client/SheepClient.java" />
         <option value="$PROJECT_DIR$/src/main/server/model/Game.java" />
         <option value="$PROJECT_DIR$/src/main/client/Client.java" />
         <option value="$PROJECT_DIR$/src/main/server/Hub.java" />
+        <option value="$PROJECT_DIR$/src/main/client/SheepClient.java" />
+        <option value="$PROJECT_DIR$/src/test/ClientServer.java" />
       </list>
     </option>
   </component>
@@ -953,34 +914,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 17m 53s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 16h 56m 26s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 18m 04s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 16h 56m 40s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 20m 11s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 16h 58m 10s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 20m 56s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 01m 25s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 21m 55s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 02m 17s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 22m 18s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 02m 33s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 24m 34s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 02m 59s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 24m 48s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 03m 36s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 48m 37s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 04m 09s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_in_Sheepshead - 2017.06.24 at 15h 54m 21s.xml">
+    <history-entry file="test_in_Sheepshead - 2017.06.24 at 17h 04m 48s.xml">
       <configuration name="test in Sheepshead" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1006,10 +967,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21802002" sideWeight="0.50897664" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21782178" sideWeight="0.49102333" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38217822" sideWeight="0.49102333" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32695374" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13365282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1129,16 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/client/game_display/CardsOnTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/client/components/TableButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1230,37 +1181,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/protocols/ForwardedMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/protocols/DisconnectMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/protocols/ResetSignal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/protocols/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1276,14 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2580">
           <caret line="188" column="0" lean-forward="false" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/protocols/StatusMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1418,34 +1335,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/client/SheepClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/server/SheepHub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="330">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/protocols/DisconnectMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/protocols/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/client/game_display/CardsOnTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/protocols/StatusMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/protocols/ForwardedMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="364" column="55" lean-forward="false" selection-start-line="364" selection-start-column="55" selection-end-line="364" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12095#12096#0" expanded="true" />
+            <element signature="e#12148#12149#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/server/Hub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="278" column="0" lean-forward="true" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+        <state relative-caret-position="202">
+          <caret line="92" column="93" lean-forward="false" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#14519#14520#0" expanded="true" />
-            <element signature="e#14558#14559#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/client/SheepClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1383">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1454,19 +1419,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/ClientServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="690">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/server/SheepHub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

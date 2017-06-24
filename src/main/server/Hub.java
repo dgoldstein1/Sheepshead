@@ -57,7 +57,7 @@ public class Hub {
         playerConnections = new TreeMap<Integer, ConnectionToClient>();
         incomingMessages = new LinkedBlockingQueue<Message>();
         serverSocket = new ServerSocket(port);
-        LOGGER.log(Level.INFO, "Listening for main.client connections on port ", port);
+        LOGGER.log(Level.INFO, "Listening for main.client connections on port " + port);
         serverThread = new ServerThread();
         serverThread.start();
         Thread readerThread = new Thread(){
@@ -90,6 +90,7 @@ public class Hub {
      * @param message The message that was received from the player.
      */
     protected void messageReceived(int playerID, Object message) {
+        LOGGER.log(Level.INFO, " [Server] Received message " + message + " from " + playerID);
         sendToAll(new ForwardedMessage(playerID,message));
     }
 
@@ -291,7 +292,7 @@ public class Hub {
         StatusMessage sm = new StatusMessage(ID,true,getPlayerList());
         sendToAll(sm);
         playerConnected(ID);
-        LOGGER.log(Level.INFO, "Connection accepted from main.client number " + ID);
+        LOGGER.log(Level.INFO, "[Server] Connection accepted from main.client number " + ID);
     }
 
     synchronized private void clientDisconnected(int playerID) {
@@ -300,7 +301,7 @@ public class Hub {
             StatusMessage sm = new StatusMessage(playerID,false,getPlayerList());
             sendToAll(sm);
             playerDisconnected(playerID);
-            LOGGER.log(Level.INFO, "Connection with main.client number " + playerID + " closed by DisconnectMessage from main.client.");
+            LOGGER.log(Level.INFO, "[Server] Connection with main.client number " + playerID + " closed by DisconnectMessage from main.client.");
         }
     }
 
@@ -323,7 +324,7 @@ public class Hub {
                 while ( ! shutdown ) {
                     Socket connection = serverSocket.accept();
                     if (shutdown) {
-                        LOGGER.log(Level.SEVERE, "Listener socket has shut down.");
+                        LOGGER.log(Level.SEVERE, "[Server] Listener socket has shut down.");
                         break;
                     }
                     new ConnectionToClient(incomingMessages,connection);
@@ -331,9 +332,9 @@ public class Hub {
             }
             catch (Exception e) {
                 if (shutdown)
-                    LOGGER.log(Level.SEVERE, "Listener socket has shut down.");
+                    LOGGER.log(Level.SEVERE, "[Server] Listener socket has shut down.");
                 else
-                    LOGGER.log(Level.SEVERE, "Listener socket has been shut down by error: " + e);
+                    LOGGER.log(Level.SEVERE, "[Server] Listener socket has been shut down by error: " + e);
             }
         }
     }
@@ -419,7 +420,7 @@ public class Hub {
                     }
                     catch (Exception e1) {
                     }
-                    LOGGER.log(Level.INFO, "Error while setting up connection: " + e);
+                    LOGGER.log(Level.INFO, "[Server] Error while setting up connection: " + e);
                     e.printStackTrace();
                     return;
                 }
@@ -445,14 +446,14 @@ public class Hub {
                 }
                 catch (IOException e) {
                     if (! closed) {
-                        closedWithError("Error while sending data to main.client.");
-                        LOGGER.log(Level.INFO, "Hub send thread terminated by IOException: " + e);
+                        closedWithError("[Server] Error while sending data to main.client.");
+                        LOGGER.log(Level.INFO, "[Server] Hub send thread terminated by IOException: " + e);
                     }
                 }
                 catch (Exception e) {
                     if (! closed) {
-                        closedWithError("Internal Error: Unexpected exception in output thread: " + e);
-                        LOGGER.log(Level.SEVERE, "Unexpected error shuts down hub's send thread:");
+                        closedWithError("[Server] Internal Error: Unexpected exception in output thread: " + e);
+                        LOGGER.log(Level.SEVERE, "[Server] Unexpected error shuts down hub's send thread:");
                         e.printStackTrace();
                     }
                 }
@@ -492,14 +493,14 @@ public class Hub {
                 }
                 catch (IOException e) {
                     if (! closed) {
-                        closedWithError("Error while reading data from main.client.");
-                        LOGGER.log(Level.SEVERE, "Hub receive thread terminated by IOException: " + e);
+                        closedWithError("[Server] Error while reading data from main.client.");
+                        LOGGER.log(Level.SEVERE, "[Server] Hub receive thread terminated by IOException: " + e);
                     }
                 }
                 catch (Exception e) {
                     if ( ! closed ) {
-                        closedWithError("Internal Error: Unexpected exception in input thread: " + e);
-                        LOGGER.log(Level.SEVERE, "Unexpected error shuts down hub's receive thread:");
+                        closedWithError("[Server] Internal Error: Unexpected exception in input thread: " + e);
+                        LOGGER.log(Level.SEVERE, " [Server] Unexpected error shuts down hub's receive thread:");
                         e.printStackTrace();
                     }
                 }

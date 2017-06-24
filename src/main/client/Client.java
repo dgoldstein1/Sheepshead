@@ -285,7 +285,7 @@ abstract public class Client {
          */
         private class SendThread extends Thread {
             public void run() {
-                LOGGER.log(Level.INFO, "Client send thread started.");
+                LOGGER.log(Level.INFO, "[Client " + id_number + "] send thread started.");
                 try {
                     while ( ! closed ) {
                         Object message = outgoingMessages.take();
@@ -295,6 +295,7 @@ abstract public class Client {
                         else {
                             if (autoreset)
                                 out.reset();
+                            LOGGER.log(Level.INFO, "[Client " + id_number + "] sending message to server : " + message);
                             out.writeObject(message);
                             out.flush();
                             if (message instanceof DisconnectMessage) {
@@ -306,18 +307,18 @@ abstract public class Client {
                 catch (IOException e) {
                     if ( ! closed ) {
                         closedByError("IO error occurred while trying to send message.");
-                        LOGGER.log(Level.SEVERE, "Client send thread terminated by IOException: " + e);
+                        LOGGER.log(Level.SEVERE, "[Client " + id_number + "] Client send thread terminated by IOException: " + e);
                     }
                 }
                 catch (Exception e) {
                     if ( ! closed ) {
                         closedByError("Unexpected internal error in send thread: " + e);
-                        LOGGER.log(Level.SEVERE, "Unexpected error shuts down main.client send thread:");
+                        LOGGER.log(Level.SEVERE, "[Client " + id_number + "] Unexpected error shuts down main.client send thread:");
                         e.printStackTrace();
                     }
                 }
                 finally {
-                    LOGGER.log(Level.SEVERE, "Client send thread terminated.");
+                    LOGGER.log(Level.SEVERE, "[Client " + id_number + "] Client send thread terminated.");
                 }
             }
         }
@@ -327,7 +328,7 @@ abstract public class Client {
          */
         private class ReceiveThread extends Thread {
             public void run() {
-                LOGGER.log(Level.INFO, "Client receive thread started.");
+                LOGGER.log(Level.INFO, "[Client " + id_number + "] receive thread started.");
                 try {
                     while ( ! closed ) {
                         Object obj = in.readObject();
@@ -350,18 +351,18 @@ abstract public class Client {
                 catch (IOException e) {
                     if ( ! closed ) {
                         closedByError("IO error occurred while waiting to receive  message.");
-                        LOGGER.log(Level.SEVERE, "Client receive thread terminated by IOException: " + e);
+                        LOGGER.log(Level.INFO, "[Client " + id_number + "] Client receive thread terminated by IOException: " + e);
                     }
                 }
                 catch (Exception e) {
                     if ( ! closed ) {
                         closedByError("Unexpected internal error in receive thread: " + e);
-                        LOGGER.log(Level.SEVERE, "Unexpected error shuts down main.client receive thread:");
+                        LOGGER.log(Level.INFO, "[Client " + id_number + "] Unexpected error shuts down main.client receive thread:");
                         e.printStackTrace();
                     }
                 }
                 finally {
-                    LOGGER.log(Level.SEVERE, "Client receive thread terminated.");
+                    LOGGER.log(Level.INFO, "[Client " + id_number + "] Client receive thread terminated.");
                 }
             }
         }

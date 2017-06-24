@@ -28,7 +28,6 @@ public class SheepClient extends Client {
     // ---------------- Methods that override Client.java --------------------------
 
     protected void messageReceived(Object message){
-        LOGGER.log(Level.INFO,"Received Message ",message);
     }
 
     protected void playerConnected(int newPlayerId){ }
