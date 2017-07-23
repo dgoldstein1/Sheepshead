@@ -39,8 +39,8 @@ public class ClientUI {
     @After
     public void shutdown() {
         if (clientUI.frame != null) clientUI.frame.dispose();
-//        clientUI = null;
-//        mockState = null;
+        clientUI = null;
+        mockState = null;
     }
 
     @Test

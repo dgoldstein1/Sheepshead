@@ -98,20 +98,20 @@ public class UIController extends MouseAdapter {
         frame.playSound(ef);
     }
 
-    public static void main(String args[]) throws InterruptedException {
-        ArrayList<PlayerData> players = new ArrayList<PlayerData>();
-        for (int i = 0; i < 5; i++) {
-            players.add(new PlayerData(i + "", 10, 5, i, false, false));
-        }
-        ArrayList<Integer> cardsOnTable = new ArrayList<Integer>(6){{
-            add(14); add(15); add(4); add(8); add(13);
-        }};
-        ArrayList<Integer> cardsInHand = new ArrayList<Integer>(6){{
-            add(2); add(5); add(7); add(3); add(9); add(11);
-        }};
-        GameState mockState = new GameState(players, cardsOnTable,cardsInHand, GameState.State.INIT);
-        UIController ui = new UIController(mockState);
-
-    }
+//    public static void main(String args[]) throws InterruptedException {
+//        ArrayList<PlayerData> players = new ArrayList<PlayerData>();
+//        for (int i = 0; i < 5; i++) {
+//            players.add(new PlayerData(i + "", 10, 5, i, false, false));
+//        }
+//        ArrayList<Integer> cardsOnTable = new ArrayList<Integer>(6){{
+//            add(14); add(15); add(4); add(8); add(13);
+//        }};
+//        ArrayList<Integer> cardsInHand = new ArrayList<Integer>(6){{
+//            add(2); add(5); add(7); add(3); add(9); add(11);
+//        }};
+//        GameState mockState = new GameState(players, cardsOnTable,cardsInHand, GameState.State.INIT);
+//        UIController ui = new UIController(mockState);
+//
+//    }
 
 }
