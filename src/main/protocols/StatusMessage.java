@@ -12,7 +12,7 @@ import java.io.Serializable;
  * package and users of this package do not have to deal with
  * them.  This package private class is only used internally
  * in the netgame.common package.  Users of the package will
- * not see these messages; instead, the Client's playerConnected()
+ * not see these messages; instead, the ClientUI's playerConnected()
  * or playerDisconnected() method will be called.
  */
 public final class StatusMessage implements Serializable {

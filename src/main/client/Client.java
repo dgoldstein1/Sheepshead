@@ -1,8 +1,6 @@
 package main.client;
 
-import main.protocols.DisconnectMessage;
-import main.protocols.ResetSignal;
-import main.protocols.StatusMessage;
+import main.protocols.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -48,12 +46,18 @@ abstract public class Client {
     // ---------------- Methods that subclasses can override --------------------------
 
     /**
+     * receives and updates game state sent from server
+     * @param gameState
+     */
+    abstract protected void receiveGameState(GameState gameState);
+
+    /**
      *  This method is called when a message is received from the Hub.
      *  Concrete subclasses of this class must override this method to
      *  say how to respond to messages.  Messages can be arbitrary
      *  Serializable objects.
      */
-    abstract protected void messageReceived(Object message);
+    abstract protected void messageReceived(ForwardedMessage message);
 
     /**
      * This method is called whenever this main.client is notified that
@@ -285,7 +289,7 @@ abstract public class Client {
          */
         private class SendThread extends Thread {
             public void run() {
-                LOGGER.log(Level.INFO, "[Client " + id_number + "] send thread started.");
+                LOGGER.log(Level.INFO, "[ClientUI " + id_number + "] send thread started.");
                 try {
                     while ( ! closed ) {
                         Object message = outgoingMessages.take();
@@ -295,7 +299,7 @@ abstract public class Client {
                         else {
                             if (autoreset)
                                 out.reset();
-                            LOGGER.log(Level.INFO, "[Client " + id_number + "] sending message to server : " + message);
+                            LOGGER.log(Level.INFO, "[ClientUI " + id_number + "] sending message to server : " + message);
                             out.writeObject(message);
                             out.flush();
                             if (message instanceof DisconnectMessage) {
@@ -307,18 +311,18 @@ abstract public class Client {
                 catch (IOException e) {
                     if ( ! closed ) {
                         closedByError("IO error occurred while trying to send message.");
-                        LOGGER.log(Level.SEVERE, "[Client " + id_number + "] Client send thread terminated by IOException: " + e);
+                        LOGGER.log(Level.SEVERE, "[ClientUI " + id_number + "] ClientUI send thread terminated by IOException: " + e);
                     }
                 }
                 catch (Exception e) {
                     if ( ! closed ) {
                         closedByError("Unexpected internal error in send thread: " + e);
-                        LOGGER.log(Level.SEVERE, "[Client " + id_number + "] Unexpected error shuts down main.client send thread:");
+                        LOGGER.log(Level.SEVERE, "[ClientUI " + id_number + "] Unexpected error shuts down main.client send thread:");
                         e.printStackTrace();
                     }
                 }
                 finally {
-                    LOGGER.log(Level.SEVERE, "[Client " + id_number + "] Client send thread terminated.");
+                    LOGGER.log(Level.SEVERE, "[ClientUI " + id_number + "] ClientUI send thread terminated.");
                 }
             }
         }
@@ -328,7 +332,7 @@ abstract public class Client {
          */
         private class ReceiveThread extends Thread {
             public void run() {
-                LOGGER.log(Level.INFO, "[Client " + id_number + "] receive thread started.");
+                LOGGER.log(Level.INFO, "[ClientUI " + id_number + "] receive thread started.");
                 try {
                     while ( ! closed ) {
                         Object obj = in.readObject();
@@ -339,30 +343,29 @@ abstract public class Client {
                         else if (obj instanceof StatusMessage) {
                             StatusMessage msg = (StatusMessage)obj;
                             connectedPlayerIDs = msg.players;
-                            if (msg.connecting)
-                                playerConnected(msg.playerID);
-                            else
-                                playerDisconnected(msg.playerID);
+                            if (msg.connecting) playerConnected(msg.playerID);
+                            else playerDisconnected(msg.playerID);
                         }
-                        else
-                            messageReceived(obj);
+                        else if (obj instanceof ForwardedMessage) messageReceived((ForwardedMessage) obj);
+                        else if (obj instanceof GameState) receiveGameState((GameState) obj);
+                        else LOGGER.log(Level.SEVERE, "[ClientUI " + id_number + "] Bad Message Type received ");
                     }
                 }
                 catch (IOException e) {
                     if ( ! closed ) {
                         closedByError("IO error occurred while waiting to receive  message.");
-                        LOGGER.log(Level.INFO, "[Client " + id_number + "] Client receive thread terminated by IOException: " + e);
+                        LOGGER.log(Level.INFO, "[ClientUI " + id_number + "] ClientUI receive thread terminated by IOException: " + e);
                     }
                 }
                 catch (Exception e) {
                     if ( ! closed ) {
                         closedByError("Unexpected internal error in receive thread: " + e);
-                        LOGGER.log(Level.INFO, "[Client " + id_number + "] Unexpected error shuts down main.client receive thread:");
+                        LOGGER.log(Level.INFO, "[ClientUI " + id_number + "] Unexpected error shuts down main.client receive thread:");
                         e.printStackTrace();
                     }
                 }
                 finally {
-                    LOGGER.log(Level.INFO, "[Client " + id_number + "] Client receive thread terminated.");
+                    LOGGER.log(Level.INFO, "[ClientUI " + id_number + "] ClientUI receive thread terminated.");
                 }
             }
         }

@@ -3,6 +3,7 @@ package main.client.game_display;
 import main.protocols.GameState;
 import main.client.options.*;
 import main.client.components.StretchIcon;
+import main.protocols.PlayerData;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class SheepsheadMainFrame extends JFrame {
     private Dimension standardSize;
     private ArrayList<LogEntry> logEntries;
 
-    public SheepsheadMainFrame(GameState g, final MouseListener listener) {
+    SheepsheadMainFrame(GameState g, final MouseListener listener) {
         super("Sheepshead");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -51,8 +52,8 @@ public class SheepsheadMainFrame extends JFrame {
 
         contentPane = getContentPane();
         sounds = new MainSound();
-        sounds.setMusicMuted(false);
-        sounds.setEffectsMuted(false);
+        sounds.setMusicMuted(true);
+        sounds.setEffectsMuted(true);
         sounds.playMusic("Sounds/Music/CCRmix.wav");
         initPanels(listener, g);
         pack();
@@ -183,6 +184,10 @@ public class SheepsheadMainFrame extends JFrame {
             gameLog = null;
         }
     }
+
+    /* getters and setters */
+
+    public GamePanel getTable() {return table;}
 
 
 

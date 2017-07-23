@@ -13,8 +13,8 @@ import java.awt.event.MouseListener;
  * Table displaying numberFaceDownCards on the table / player hand
  */
 public class GamePanel extends JPanel {
-    private PlayerHandPanel playerHand;
-    private TablePanel tableView;
+    public PlayerHandPanel playerHand;
+    public TablePanel tableView;
 
     /**
      * sets up player hand panel and card table and adds them to this panel

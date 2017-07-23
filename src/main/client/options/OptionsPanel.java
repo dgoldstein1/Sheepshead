@@ -364,7 +364,7 @@ class SettingsFrame extends JFrame {
         launchDebugger = new JCheckBox("");
         launchDebugger.setHorizontalAlignment(JCheckBox.CENTER);
         launchDebugger.setSelected(ctrl.debuggerRunning);
-        enterName = new JTextField(ctrl.username);
+        enterName = new JTextField(ctrl.currPlayerData.name);
 
 
         applyChanges = new JButton("apply changes");
@@ -376,7 +376,7 @@ class SettingsFrame extends JFrame {
                 sounds.setEffectsMuted(!playEffects.isSelected());
                 sounds.setMusicMuted(!playMusic.isSelected());
                 ctrl.debuggerRunning= launchDebugger.isSelected();
-                ctrl.username = enterName.getText();
+                ctrl.currPlayerData.name = enterName.getText();
                 setVisible(false);
                 dispose();
             }

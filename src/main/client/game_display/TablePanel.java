@@ -16,7 +16,7 @@ import java.util.*;
  */
 class TablePanel extends JPanel {
     private ArrayList<PlayerPanel> otherPlayers;
-    private CardsOnTable cardsPlayed;
+    public CardsOnTable cardsPlayed;
 
     public TablePanel(GameState g) {
         cardsPlayed = new CardsOnTable(g);
@@ -71,6 +71,16 @@ class TablePanel extends JPanel {
         c.weightx = 0.5;
         add(otherPlayers.get(3),c);//player 5
 
+    }
+
+    /**
+     * used in testing
+     * @return players currently displayed in UI
+     */
+    public ArrayList<PlayerData> getDisplayedPlayers() {
+        ArrayList<PlayerData> players = new ArrayList();
+        for (PlayerPanel pp : otherPlayers) players.add(pp.getPlayerData());
+        return players;
     }
 
     public boolean refresh(GameState g) {

@@ -19,6 +19,7 @@ public class PlayerPanel extends JPanel {
     private int pointsDisplayed;
     private JLabel pointDisplayer, nameLabel;
     private boolean partnerDisplayed, pickerDislayed;
+    private PlayerData playerData;
 
     //stores cards for each AI main.protocols.PlayerData
     PlayerPanel(String playerName) {
@@ -56,7 +57,7 @@ public class PlayerPanel extends JPanel {
      * @return true if success, false otherwise
      */
     public boolean refresh(PlayerData p) {
-
+        this.playerData = p;
         while (p.nCards > numberFaceDownCards) {//more cards in hand than displayed
             aiHandDisplay.addCard();
         }
@@ -93,6 +94,14 @@ public class PlayerPanel extends JPanel {
 
 
         return true;
+    }
+
+    /**
+     * getter for playerDAta
+     * @return player data currently being displayed
+     */
+    public PlayerData getPlayerData() {
+        return playerData;
     }
 
     //holder for TableButtons within main.protocols.PlayerData Panel

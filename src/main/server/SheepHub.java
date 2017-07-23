@@ -1,5 +1,6 @@
 package main.server;
 
+import main.protocols.GameState;
 import main.server.model.Game;
 
 import java.io.IOException;
@@ -20,6 +21,14 @@ public class SheepHub extends Hub{
 
     public SheepHub(int port) throws IOException {
         super(port);
+    }
+
+    /**
+     * sends game state to all players
+     * @param gs
+     */
+    public void sendGameState(GameState gs) {
+        this.sendToAll(gs);
     }
 
 

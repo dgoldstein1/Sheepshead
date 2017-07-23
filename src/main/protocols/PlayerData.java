@@ -12,7 +12,6 @@ public class PlayerData implements Serializable {
     public boolean partner,picker;
 
     public PlayerData(String name, int points, int nCards, int id, boolean partner, boolean picker){
-
         this.name = name;
         this.points = points;
         this.nCards = nCards;

@@ -136,10 +136,13 @@ class CardsOnTable extends JPanel {
             }
         }
         //add numberFaceDownCards not already displayed
-        for (int c : g.cardsOnTable) {
-            if (!showing(c)) {
-                addCardToTable(c);
-            }
+        ArrayList<Integer> cardsOnTable1 = g.cardsOnTable;
+        for (int i = 0 ; i < g.cardsOnTable.size(); i++) {
+            int model = g.cardsOnTable.get(i);
+            int ui    = cardsOnTable.get(i).getCard();
+
+            // set card if not set already
+            if (model != ui) cardsOnTable.get(i).setCard(model);
         }
 
         repaint();
@@ -156,29 +159,17 @@ class CardsOnTable extends JPanel {
      */
     private boolean showing(int c) {
         for (CardPlayedPanel cpp : cardsOnTable) {
-            if (cpp.getCard() != -1) { //check for nullpointer
+            if (cpp.getCard() != -1) { //check for null pointer
                 if (cpp.getCard()==c) return true;
             }
         }
         return false;
     }
 
-    /**
-     * adds card to hand in null spot
-     *
-     * @param c card to add
-     * @throws IndexOutOfBoundsException hand is full
-     */
-    private void addCardToTable(int c) {
-
-        //// TODO: 2/22/17
-//        for (CardPlayedPanel cpp : cardsOnTable) {
-//            if (cpp.getPlayer().equals(ch.playerBy())) {
-//                cpp.setCard(ch.card());
-//                return;
-//            }
-//        }
-//        throw new IndexOutOfBoundsException("NO PLAYER FOUND IN ADDING CARD TO TABLE");
+    public ArrayList<Integer> getCardsOnTable() {
+        ArrayList<Integer> cards = new ArrayList();
+        for (CardPlayedPanel cpp : cardsOnTable) cards.add(cpp.card.card());
+        return cards;
     }
 
     //panel for individual card Played

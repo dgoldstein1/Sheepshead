@@ -8,11 +8,13 @@ import main.client.components.ButtonType;
 import main.client.components.TableButton;
 import main.protocols.GameState;
 import main.protocols.PlayerData;
+import main.server.model.Card;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -209,6 +211,18 @@ class PlayerHandPanel extends JPanel {
                 playerCardEntered = c;
             }
         }
+    }
+
+    /**
+     * used in testing to make sure correct cards are being displayed
+     * @return
+     */
+    public ArrayList<Integer> getPlayerCards() {
+        ArrayList<Integer> cardsAsInt = new ArrayList<Integer>();
+        for (TableButton c : cardsDisplayed.cards)
+            // '-1' signifies not being displayed
+            if (c.card() != -1) cardsAsInt.add(c.card());
+        return cardsAsInt;
     }
 
 

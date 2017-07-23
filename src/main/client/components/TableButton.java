@@ -79,9 +79,7 @@ public class TableButton extends JButton{
      * @return card
      */
     public int cardID(){
-        if(c!=-1)
-            return c;
-        return -1;
+        return c!=-1? c : -1;
     }
 
     /**
