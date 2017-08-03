@@ -30,9 +30,6 @@ public class ClientUIServerConnection {
         sheepHub = new SheepHub(port);
         sheepClients = new ArrayList();
 
-        System.out.println("sleeping..");git
-        Thread.sleep(1000);
-
         //add players and assert correct number were added
         for(int i = 0 ; i < maxPlayers ; i ++) sheepClients.add(new SheepClient("localhost", port));
         Assert.assertEquals(maxPlayers,sheepHub.getPlayerList().length);
@@ -83,8 +80,6 @@ public class ClientUIServerConnection {
             Assert.assertNull(c.UI.frame); //frame has not been created
             Assert.assertNotNull(c.UI.usersettings);
         }
-
-
     }
 
 }

@@ -1,7 +1,9 @@
 package test;
 
-import main.client.game_display.GamePanel;
+import main.client.components.ButtonType;
+import main.client.components.TableButton;
 import main.client.game_display.UIController;
+import main.protocols.ActionRequest;
 import main.protocols.GameState;
 import main.protocols.PlayerData;
 import org.junit.After;
@@ -9,7 +11,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Field;
+import java.awt.Component;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
@@ -38,7 +41,7 @@ public class ClientUI {
 
     @After
     public void shutdown() {
-        if (clientUI.frame != null) clientUI.frame.dispose();
+        if (clientUI != null && clientUI.frame != null) clientUI.frame.dispose();
         clientUI = null;
         mockState = null;
     }
@@ -46,26 +49,51 @@ public class ClientUI {
     @Test
     // frame is NOT initialized when gameState is empty
     public void frameIsNullOnStart() {
-        clientUI = new UIController(new GameState());
+        clientUI = new UIController(new GameState(), null);
         Assert.assertNull(clientUI.frame);
     }
 
     @Test
     // frame initializes on dummy data
     public void frameInitializesOnData() throws InterruptedException, NoSuchFieldException {
-        clientUI = new UIController(mockState);
+        clientUI = new UIController(mockState, null);
         Assert.assertNotNull(clientUI.frame);
     }
 
     @Test
     // frame displaying correct mock
     public void frameDisplayingCorrectCards() {
-        clientUI = new UIController(mockState);
+        clientUI = new UIController(mockState, null);
         GameState displayedState = clientUI.getDataCurrentlyDisplayed();
         Assert.assertEquals(mockState.cardsInHand, displayedState.cardsInHand);
         Assert.assertEquals(mockState.cardsOnTable, displayedState.cardsOnTable);
         Assert.assertEquals(mockState.players, displayedState.players);
         Assert.assertEquals(mockState.state, displayedState.state);
+    }
+
+    @Test
+    /**
+     * sends msg when card is clicked
+     */
+    public void sendsCardPlayed() {
+        clientUI = new UIController(mockState, null);
+
+        // emulate clicking seven of spades in player hand
+        TableButton pressed = new TableButton(ButtonType.PLAYERCARD);
+        pressed.setCard(2);
+        MouseEvent mockEvent = new MouseEvent(
+                pressed,
+                1,
+                (long) 1,
+                0,0,0,0,false,
+                1
+        );
+        clientUI.mousePressed(mockEvent);
+        ActionRequest requestMade = clientUI.requests.get(0);
+        Assert.assertNotNull(requestMade);
+        Assert.assertEquals(2, requestMade.data);
+        Assert.assertEquals(requestMade.playerId, clientUI.currPlayerData.id);
+        Assert.assertEquals(requestMade.type, ActionRequest.ActionType.CARD_PLAYED);
     }
 
 

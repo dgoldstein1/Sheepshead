@@ -39,7 +39,7 @@ public class SheepClient extends Client {
      * adds them to messagesRecieved stack
      */
     protected void messageReceived(ForwardedMessage message){
-        messagesReceived.push((ForwardedMessage) message);
+        messagesReceived.push(message);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class SheepClient extends Client {
      * If the game state is null, initializes game state whatever is passed
      */
     protected void receiveGameState(GameState gameState) {
-        if (UI == null) UI = new UIController(gameState);
+        if (UI == null) UI = new UIController(gameState, this);
         else if (!UI.refresh(gameState)) LOGGER.log(Level.SEVERE, "[ClientUI " + this.getID() + "] could not update UI.");
     }
 
