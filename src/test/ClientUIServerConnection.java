@@ -25,10 +25,13 @@ public class ClientUIServerConnection {
      * initialize server and add clients
      * test that number of clients added is same as number in server
      */
-    public void setUp() throws IOException {
+    public void setUp() throws IOException, InterruptedException {
         port = 8080;
         sheepHub = new SheepHub(port);
         sheepClients = new ArrayList();
+
+        System.out.println("sleeping..");git
+        Thread.sleep(1000);
 
         //add players and assert correct number were added
         for(int i = 0 ; i < maxPlayers ; i ++) sheepClients.add(new SheepClient("localhost", port));
