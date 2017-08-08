@@ -9,11 +9,12 @@ import main.client.options.SoundEffect;
 import main.client.components.TableButton;
 import main.server.SheepHub;
 
-import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Dave on 11/2/2015.
@@ -24,7 +25,8 @@ public class UIController extends MouseAdapter {
     public int[] usersettings = new int[] {0,0,50,0}; //[sound effects, play music, game speed percentage, run debugger]public String name;
     public PlayerData currPlayerData;
     public GameState.State currState;
-    private SheepClient client;
+    public SheepClient client;
+    private static final Logger LOGGER = Logger.getLogger( SheepClient.class.getName() );
 
     // for testing
     public ArrayList<ActionRequest> requests = new ArrayList();
@@ -82,7 +84,29 @@ public class UIController extends MouseAdapter {
 
     }
 
+    /**
+     * displays information to user
+     * @param msg msg body
+     * @param title title at top
+     */
+    public void displayMessage(String msg, String title) {
+        frame.displayMessage(msg,title);
+    }
+
+    /**
+     * asks user for prompt
+     * @param msg
+     * @return
+     */
+    public boolean yOrN(String msg) {
+        return frame.yOrN(msg);
+    }
+
     @Override
+    /**
+     * when user clicks a button
+     * makes request to server
+     */
     public void mousePressed(MouseEvent e) {
 
         if (e.getButton() == MouseEvent.BUTTON1) {
@@ -99,6 +123,9 @@ public class UIController extends MouseAdapter {
             } else if (buttonType.equals(ButtonType.SETTINGS)) {
                 frame.settingsPushed(this);
 
+            } else if (buttonType.equals(ButtonType.JOIN_CREATE)) {
+                frame.joinCreatePushed(this);
+
             } else if (buttonType.equals(ButtonType.PLAYERCARD)) {
                 if (button.cardID() != -1){ // send card played request to server
                     // create request
@@ -114,6 +141,51 @@ public class UIController extends MouseAdapter {
 
             }
         }
+    }
+
+    /**
+     * joins existing game
+     * @param name
+     * @param port
+     */
+    public void joinGame(String name, int port) {
+        if (this.client != null) {
+            LOGGER.log(Level.INFO, "Could not join game " + name + " because client is not null");
+            this.displayMessage("Could not join game " + name + " on port " + port +". Already connected to different game.", "Network Error");
+            return;
+        }
+        try {
+            client = new SheepClient(name, port);
+        } catch (IOException e) {
+            e.printStackTrace();
+            this.displayMessage("Could not join game " + name + " on port " + port + ". Error connecting to game.", "Network Error");
+            return;
+        }
+        // joined successfully
+        this.displayMessage("successfully joined" + name + " on port " + port, "Connection Successful");
+    }
+
+    /**
+     * creates new game
+     * @param name
+     * @param port
+     */
+    public void createGame(String name, int port) {
+        try {
+            new SheepHub(port);
+            Thread.sleep(100);
+        } catch (IOException e) {
+            this.displayMessage("Could not create game. Error connecting to port.", "Network Error");
+            e.printStackTrace();
+            return;
+        } catch (InterruptedException e) {
+            this.displayMessage("Could not create game. Error waiting for game to start", "Concurrecny Error");
+            e.printStackTrace();
+            return;
+        }
+        // created game successfully
+        this.displayMessage("Game created successfully","Connection Successful");
+        this.joinGame(name, port);
     }
 
     public void playSound(SoundEffect ef){
@@ -138,6 +210,8 @@ public class UIController extends MouseAdapter {
         }};
         GameState mockState = new GameState(players, cardsOnTable,cardsInHand, GameState.State.INIT);
         UIController ui = new UIController(mockState, null);
+
+
 
     }
 

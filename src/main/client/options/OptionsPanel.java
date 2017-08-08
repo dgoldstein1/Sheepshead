@@ -22,6 +22,7 @@ public class OptionsPanel extends JPanel {
     private MainSound sounds;
     private Dimension standardWindowSize;
     private StatsFrame statsFrame;
+    private JoinCreateFrame joinCreateFrame;
     private HelpFrame helpFrame;
     private SettingsFrame optionsFrame;
     private MouseListener listener;
@@ -38,6 +39,7 @@ public class OptionsPanel extends JPanel {
         initButton(ButtonType.SETTINGS, " ", listener);
         initButton(ButtonType.HELP, " ", listener);
         initButton(ButtonType.SCOREBOARD, " ", listener);
+        initButton(ButtonType.JOIN_CREATE, " Join or Create Game ", listener);
     }
 
     /**
@@ -68,6 +70,10 @@ public class OptionsPanel extends JPanel {
 
     public void optionsPushed(UIController ctrl) {
         optionsFrame = new SettingsFrame(ctrl, sounds);
+    }
+
+    public void joinCreatePushed(UIController ctrl) {
+        joinCreateFrame = new JoinCreateFrame(ctrl, sounds);
     }
 
     public void helpPushed() {
@@ -398,6 +404,115 @@ class SettingsFrame extends JFrame {
 
         add(settings, BorderLayout.CENTER);
         add(applyChanges, BorderLayout.SOUTH);
+
+    }
+
+    private void addLabel(JPanel jpanel, String s) {
+        JLabel label = new JLabel(s, SwingConstants.CENTER);
+        label.setFont(new Font("Helvetica", Font.PLAIN, 12));
+        label.setForeground(Color.WHITE);
+        label.setOpaque(false);
+        jpanel.add(label);
+    }
+
+}
+
+class JoinCreateFrame extends JFrame {
+    JPanel joinCreatePanel;
+    JSlider gameSpeed;
+    JButton createGame, joinGame;
+    MainSound sounds;
+    UIController ctrl;
+    JTextField port, name;
+
+    JoinCreateFrame(UIController ctrl, MainSound sounds) {
+        super("Join or Create Game");
+        setContentPane(new JLabel(new StretchIcon("Textures/wood.jpg", false)));
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+        setPreferredSize(new Dimension(350, 150));
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                setVisible(false);
+                dispose();
+            }
+        });
+        setLayout(new BorderLayout());
+        this.ctrl = ctrl;
+        this.sounds = sounds;
+        init();
+        pack();
+        setVisible(true);
+    }
+
+    /**
+     * inits components of this frame
+     */
+    private void init() {
+
+        //initiatlization
+        port = new JTextField("8080");
+        name = new JTextField("localhost");
+
+        joinGame = new JButton("join game");
+        createGame = new JButton("create game");
+
+        //apply changes + button
+        joinGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int serverPort;
+                try {
+                    serverPort = Integer.parseInt(port.getText());
+                } catch (NumberFormatException ex) {
+                    ex.printStackTrace();
+                    return;
+                }
+                ctrl.joinGame(name.getText(), serverPort);
+                setVisible(false);
+                dispose();
+            }
+        });
+
+        createGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int serverPort;
+                try {
+                    serverPort = Integer.parseInt(port.getText());
+                } catch (NumberFormatException ex) {
+                    ex.printStackTrace();
+                    return;
+                }
+                ctrl.createGame(name.getText(), serverPort);
+                setVisible(false);
+                dispose();
+            }
+        });
+
+        //add to JPabels / frame
+        joinCreatePanel = new JPanel(new GridLayout(2, 2));
+        joinCreatePanel.setOpaque(false);
+        addLabel(joinCreatePanel, "port : ");
+        joinCreatePanel.add(port);
+        addLabel(joinCreatePanel, "ip : ");
+        joinCreatePanel.add(name);
+
+        JPanel apply = new JPanel(new GridLayout(1,2));
+        apply.add(joinGame);
+        apply.add(createGame);
+
+        this.add(joinCreatePanel, BorderLayout.CENTER);
+        this.add(apply, BorderLayout.SOUTH);
 
     }
 

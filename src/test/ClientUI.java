@@ -6,6 +6,7 @@ import main.client.game_display.UIController;
 import main.protocols.ActionRequest;
 import main.protocols.GameState;
 import main.protocols.PlayerData;
+import main.server.SheepHub;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,6 +14,7 @@ import org.junit.Test;
 
 import java.awt.Component;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -22,10 +24,12 @@ import java.util.ArrayList;
 public class ClientUI {
     UIController clientUI;
     GameState mockState;
+    SheepHub hub;
+    int port = 8080;
 
     @Before
     // creates dummy data in defaultState
-    public void setup() {
+    public void setup() throws IOException {
         ArrayList<PlayerData> players = new ArrayList<PlayerData>();
         for (int i = 0; i < 5; i++) {
             players.add(new PlayerData(i + "", 10, 5, i, false, false));
@@ -37,6 +41,7 @@ public class ClientUI {
             add(2); add(5); add(7); add(3); add(9); add(11);
         }};
         mockState = new GameState(players, cardsOnTable,cardsInHand, GameState.State.INIT);
+        hub = new SheepHub(port);
     }
 
     @After
@@ -44,6 +49,7 @@ public class ClientUI {
         if (clientUI != null && clientUI.frame != null) clientUI.frame.dispose();
         clientUI = null;
         mockState = null;
+        hub.shutDownHub();
     }
 
     @Test
@@ -96,5 +102,23 @@ public class ClientUI {
         Assert.assertEquals(requestMade.type, ActionRequest.ActionType.CARD_PLAYED);
     }
 
+    @Test
+    /**
+     * emulates click when player attempts to join game
+     */
+    public void joinGame() {
+        clientUI = new UIController(mockState, null);
+        clientUI.joinGame("localhost", port);
+        Assert.assertNotNull(clientUI.client);
+    }
 
+    @Test
+    /**
+     * emulates click when player attempts to join game
+     */
+    public void createGame() throws IOException {
+        clientUI = new UIController(mockState, null);
+        clientUI.createGame("localhost", 8081);
+        Assert.assertNotNull(clientUI.client);
+    }
 }

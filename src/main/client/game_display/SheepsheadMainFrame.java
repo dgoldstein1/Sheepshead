@@ -114,13 +114,10 @@ public class SheepsheadMainFrame extends JFrame {
      * creates Jdialog for player to choose yes or no prompt
      *
      * @param prompt message displayed to user
-     * @return String (testing done in game to assert 'y' or 'no')
+     * @return boolean (testing done in game to assert 'y' or 'no')
      */
-    public String yOrN(String prompt) {
-        int n = JOptionPane.showConfirmDialog(this, prompt, "", JOptionPane.YES_NO_OPTION);
-        if (n == 0)
-            return "y";
-        return "n";
+    public boolean yOrN(String prompt) {
+        return (JOptionPane.showConfirmDialog(this, prompt, "", JOptionPane.YES_NO_OPTION) == 0);
     }
 
     /**
@@ -170,6 +167,11 @@ public class SheepsheadMainFrame extends JFrame {
     public void settingsPushed(UIController ctrl) {
         logEntries.add(new LogEntry(this.getClass(), LogType.PLAYER_INPUT, "settings panel opened"));
         options.optionsPushed(ctrl);
+    }
+
+    public void joinCreatePushed(UIController ctrl) {
+        logEntries.add(new LogEntry(this.getClass(), LogType.PLAYER_INPUT, "join-create panel opened"));
+        options.joinCreatePushed(ctrl);
     }
 
     public void launchDebugger() {//// TODO: 2/22/17  
