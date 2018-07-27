@@ -40,7 +40,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **David Goldstein** - [See More Work](https://david-goldstein.updog.co/#)
+* **David Goldstein** - [See More Work](davidcharlesgoldstein.com)
 
 ## License
 
