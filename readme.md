@@ -40,7 +40,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **David Goldstein** - [See More Work](https://davidcharlesgoldstein.com)
+* **David Goldstein** - [See More Work](https://davidcharlesgoldstein.com/?github-sheepshead)
 
 ## License
 
